@@ -1,0 +1,19 @@
+postgres_db_source:
+  drivername: postgresql                    # Driver
+  host: localhost                           # Dirección del servidor de origen
+  port: 5432                                # Puerto
+  database: mensajeria_colombia_db          # Nombre de la base de datos origen
+  user: postgres                            # Usuario con permisos de lectura
+  password: root                            # Contraseña asociada
+  timeout: 120                              # Timeout en segundos
+  pool_size: 5                              # Conexiones simultaneas a la BD 
+
+postgres_db_target:
+  drivername: postgresql
+  host: localhost
+  port: 5432
+  database: mensajeria_colombia_dw
+  user: postgres
+  password: root
+  timeout: 120
+  pool_size: 5
