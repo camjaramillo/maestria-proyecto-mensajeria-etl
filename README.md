@@ -1,4 +1,7 @@
-# maestria-trabajo-integrador
+# Maestría en Analítica e Inteligencia de Negocios
+## Curso Introducción a la Ingeniería de Datos y Big Data
+
+### Proyecto Mensajería - ETL
 
 🐍 Configuración del Entorno Virtual
 Para garantizar que las dependencias de este proyecto no interfieran con otras instalaciones de Python en tu sistema, es recomendable crear un entorno virtual. Sigue estos pasos según tu sistema operativo:
