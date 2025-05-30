@@ -7,9 +7,8 @@ import sys
 sys.path.append(str(Path(__file__).resolve().parent / "src")) 
 
 # Scripts
-from pipelines.etl_dim_cliente import run_etl_pipeline
-from utils.constants import DBConnection
-
+from utils.logger import logger
+from pipelines.etl_master import execute as run_etl_master
 
 '''
 def test_connection(env_name: str):
@@ -28,17 +27,28 @@ def test_connection(env_name: str):
 '''
 
 def main():
-    print("Iniciando proceso ETL completo...\n")
+    try:
+        logger.info("Iniciando ETL Master")
+        
+        # Ejecutar todos los pipelines o seleccionar específicos
+        results = run_etl_master()  # Para todos los pipelines
+        # results = run_etl_master(['dim_cliente'])  # Solo DimCliente
+        
+        # Mostrar resumen
+        logger.info("Resumen de ejecución:")
 
-    # Ejecutar pipelines
-    run_etl_pipeline()
-
-    print("\nProceso ETL finalizado.")
+        for pipeline, success in results.items():
+            status = "ÉXITO" if success else "FALLÓ"
+            logger.info(f"  - {pipeline.upper():<15}: {status}")
+            
+        if all(results.values()):
+            logger.info("¡Todos los pipelines completados con éxito!")
+        else:
+            logger.error("Algunos pipelines fallaron. Ver logs.")
+            
+    except Exception as e:
+        logger.error(f"Error crítico en main: {str(e)}", exc_info=True)
+        raise
 
 if __name__ == "__main__":
-    #test_connection(DBConnection.SOURCE)
-    #test_connection(DBConnection.STAGING)
-    #test_connection(DBConnection.TARGET)
-    print("Todas las conexiones funcionan correctamente.")
-    print("Ejecutando ETL...")
     main()

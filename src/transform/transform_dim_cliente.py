@@ -1,58 +1,72 @@
+from sqlalchemy import text
 import pandas as pd
+from utils.logger import logger
+from typing import Tuple
 
-def transform_dim_cliente(df_cliente, df_ciudad, df_departamento):
+def validate_staging_table(session) -> bool:
+    """Verifica que la tabla temporal existe y tiene datos"""
+    try:
+        # 1. Verificar existencia (forma correcta en PostgreSQL)
+        exists = session.execute(text("""
+            SELECT EXISTS (
+                SELECT 1 FROM information_schema.tables 
+                WHERE table_schema LIKE 'pg_temp%'
+                AND table_name = 'stg_dim_cliente'
+            )
+        """)).scalar()
+        
+        if not exists:
+            logger.error("La tabla stg_dim_cliente no existe en el esquema temporal")
+            return False
+        
+        # 2. Verificar filas
+        count = session.execute(text("SELECT COUNT(*) FROM pg_temp.stg_dim_cliente")).scalar()
+        
+        if count == 0:
+            logger.warning("La tabla stg_dim_cliente está vacía")
+            return False
+            
+        return True
+    
+    except Exception as e:
+        logger.error("Error validando staging table", exc_info=True)
+        return False
+
+def transform_data(session) -> pd.DataFrame:
+    """Transforma datos desde la tabla temporal"""
+    try:
+        query = text("""
+        SELECT 
+            ROW_NUMBER() OVER (ORDER BY cliente_id) AS cliente_key, -- SKU secuencial
+            nit,
+            UPPER(TRIM(nombre)) AS nombre,
+            email,
+            direccion,
+            telefono,
+            UPPER(TRIM(ciudad)) AS ciudad,
+            UPPER(TRIM(departamento)) AS departamento,
+            UPPER(TRIM(sector)) AS sector,
+            activo
+        FROM pg_temp.stg_dim_cliente
+        """)
+        
+        return pd.read_sql(query, session.connection())
+        
+    except Exception as e:
+        logger.error("Error transformando datos", exc_info=True)
+        raise
+
+def run_transform(session) -> Tuple[pd.DataFrame, bool]:
     """
-    Transforma y combina los datos de cliente, ciudad y departamento para construir la dimensión DimCliente.
-
-    Parámetros:
-    - df_cliente (DataFrame): Datos extraídos de la tabla cliente.
-    - df_ciudad (DataFrame): Datos extraídos de la tabla ciudad.
-    - df_departamento (DataFrame): Datos extraídos de la tabla departamento.
-
-    Retorna:
-    - DataFrame: Datos transformados listos para cargar en la dimensión DimCliente.
+    Ejecutar todo el proceso de transformación
+    Retorna: (DataFrame transformado, éxito booleano)
     """
-
-    # Combinar cliente con ciudad
-    df = pd.merge(df_cliente, df_ciudad, how="left", on="ciudad_id", suffixes=('_cliente', '_ciudad'))
-
-    # Combinar el resultado anterior con departamento
-    df = pd.merge(df, df_departamento, how="left", on="departamento_id", suffixes=('_cliente', '_departamento'))
-
-    # Seleccionar y renombrar columnas relevantes
-    df_final = df[[
-        "cliente_id",
-        "nit_cliente",
-        "nombre_cliente",
-        "email",
-        "direccion",
-        "telefono",
-        "ciudad_id",
-        "nombre_ciudad",
-        "nombre_departamento",
-        "activo",
-        "sector"
-    ]].rename(columns={
-        "nit_cliente": "nit",
-        "nombre_cliente": "nombre",
-        "nombre_ciudad": "ciudad",
-        "nombre_departamento": "departamento"
-    })
-
-    # Opcional: ordenar las columnas
-    columnas_ordenadas = [
-        "cliente_id",
-        "nit_cliente",
-        "nombre_cliente",
-        "email",
-        "direccion",
-        "telefono",
-        "nombre_contacto",
-        "ciudad",
-        "departamento",
-        "activo",
-        "sector"
-    ]
-    df_final = df_final[columnas_ordenadas]
-
-    return df_final
+    if not validate_staging_table(session):
+        return pd.DataFrame(), False
+    
+    try:
+        df = transform_data(session)
+        logger.info(f"Transformación exitosa. Filas procesadas: {len(df)}")
+        return df, True
+    except Exception as e:
+        return pd.DataFrame(), False

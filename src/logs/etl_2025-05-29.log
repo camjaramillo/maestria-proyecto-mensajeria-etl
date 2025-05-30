@@ -18,3 +18,143 @@
 2025-05-29 00:11:36,180 - etl_pipeline - INFO - Iniciando extracción...
 2025-05-29 00:11:36,297 - etl_pipeline - INFO - Cargando datos a staging...
 2025-05-29 00:11:36,355 - etl_pipeline - INFO - Proceso completado exitosamente!
+2025-05-29 21:33:04,248 - etl_pipeline - INFO - Iniciando extracción...
+2025-05-29 21:33:04,548 - etl_pipeline - INFO - Cargando datos a staging...
+2025-05-29 21:33:04,593 - etl_pipeline - INFO - Transformando datos...
+2025-05-29 21:33:04,598 - etl_pipeline - ERROR - Error validando staging table
+Traceback (most recent call last):
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UndefinedTable: no existe la relación «pg_temp.pg_tables»
+LINE 2:             SELECT 1 FROM pg_temp.pg_tables 
+                                  ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\src\transform\transform_dim_cliente.py", line 12, in validate_staging_table
+    exists = session.execute(text("""
+             ~~~~~~~~~~~~~~~^^^^^^^^^
+        SELECT 1 FROM pg_temp.pg_tables
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        WHERE tablename = 'stg_dim_cliente'
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    """)).scalar()
+    ^^^^^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2365, in execute
+    return self._execute_internal(
+           ~~~~~~~~~~~~~~~~~~~~~~^
+        statement,
+        ^^^^^^^^^^
+    ...<4 lines>...
+        _add_event=_add_event,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2260, in _execute_internal
+    result = conn.execute(
+        statement, params or {}, execution_options=execution_options
+    )
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1415, in execute
+    return meth(
+        self,
+        distilled_parameters,
+        execution_options or NO_OPTIONS,
+    )
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self, distilled_params, execution_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1637, in _execute_clauseelement
+    ret = self._execute_context(
+        dialect,
+    ...<8 lines>...
+        cache_hit=cache_hit,
+    )
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1842, in _execute_context
+    return self._exec_single_context(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        dialect, context, statement, parameters
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1982, in _exec_single_context
+    self._handle_dbapi_exception(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        e, str_statement, effective_parameters, cursor, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2351, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedTable) no existe la relación «pg_temp.pg_tables»
+LINE 2:             SELECT 1 FROM pg_temp.pg_tables 
+                                  ^
+
+[SQL: 
+            SELECT 1 FROM pg_temp.pg_tables 
+            WHERE tablename = 'stg_dim_cliente'
+        ]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-05-29 21:33:04,615 - etl_pipeline - ERROR - Falló la transformación. Abortando pipeline...
+2025-05-29 21:33:04,615 - etl_pipeline - ERROR - Error en el pipeline: Error en transformación
+2025-05-29 21:37:56,577 - etl_pipeline - INFO - Iniciando extracción...
+2025-05-29 21:37:56,650 - etl_pipeline - INFO - Cargando datos a staging...
+2025-05-29 21:37:56,684 - etl_pipeline - INFO - Transformando datos...
+2025-05-29 21:37:56,689 - etl_pipeline - INFO - Transformación exitosa. Filas procesadas: 27
+2025-05-29 21:37:56,690 - etl_pipeline - INFO - Proceso completado exitosamente!
+2025-05-29 21:38:31,201 - etl_pipeline - INFO - Iniciando extracción...
+2025-05-29 21:38:31,272 - etl_pipeline - INFO - Cargando datos a staging...
+2025-05-29 21:38:31,305 - etl_pipeline - INFO - Transformando datos...
+2025-05-29 21:38:31,308 - etl_pipeline - INFO - Transformación exitosa. Filas procesadas: 27
+2025-05-29 21:38:31,316 - etl_pipeline - INFO - Proceso completado exitosamente!
+2025-05-29 21:41:40,424 - etl_pipeline - INFO - Iniciando extracción...
+2025-05-29 21:41:40,495 - etl_pipeline - INFO - Cargando datos a staging...
+2025-05-29 21:41:40,528 - etl_pipeline - INFO - Transformando datos...
+2025-05-29 21:41:40,531 - etl_pipeline - INFO - Transformación exitosa. Filas procesadas: 27
+2025-05-29 21:41:40,535 - etl_pipeline - INFO - Proceso completado exitosamente!
+2025-05-29 21:42:29,028 - etl_pipeline - INFO - Iniciando extracción...
+2025-05-29 21:42:29,106 - etl_pipeline - INFO - Cargando datos a staging...
+2025-05-29 21:42:29,138 - etl_pipeline - INFO - Transformando datos...
+2025-05-29 21:42:29,141 - etl_pipeline - INFO - Transformación exitosa. Filas procesadas: 27
+2025-05-29 21:42:29,149 - etl_pipeline - INFO - Proceso completado exitosamente!
+2025-05-29 22:31:31,838 - etl_pipeline - INFO - Iniciando extracción...
+2025-05-29 22:31:31,918 - etl_pipeline - INFO - Cargando datos a staging...
+2025-05-29 22:31:32,069 - etl_pipeline - INFO - Transformando datos...
+2025-05-29 22:31:32,072 - etl_pipeline - INFO - Transformación exitosa. Filas procesadas: 27
+2025-05-29 22:31:32,075 - etl_pipeline - INFO - Proceso completado exitosamente!
+2025-05-29 22:37:48,194 - etl_pipeline - INFO - Iniciando extracción...
+2025-05-29 22:37:48,266 - etl_pipeline - INFO - Cargando datos a staging...
+2025-05-29 22:37:48,300 - etl_pipeline - INFO - Transformando datos...
+2025-05-29 22:37:48,303 - etl_pipeline - INFO - Transformación exitosa. Filas procesadas: 27
+2025-05-29 22:37:48,312 - etl_pipeline - WARNING - ¡Tabla dim_cliente truncada (carga completa)!
+2025-05-29 22:37:48,330 - etl_pipeline - INFO - ETL completado. 27 registros cargados en dim_cliente
+2025-05-29 23:39:00,226 - etl_pipeline - INFO - Iniciando extracción...
+2025-05-29 23:39:00,346 - etl_pipeline - INFO - Cargando datos a staging...
+2025-05-29 23:39:00,410 - etl_pipeline - INFO - Transformando datos...
+2025-05-29 23:39:00,416 - etl_pipeline - INFO - Transformación exitosa. Filas procesadas: 27
+2025-05-29 23:39:00,423 - etl_pipeline - WARNING - ¡Tabla dim_cliente truncada (carga completa)!
+2025-05-29 23:39:00,432 - etl_pipeline - INFO - Carga exitosa. Total registros en dim_cliente: 27
+2025-05-29 23:39:00,432 - etl_pipeline - INFO - ETL completado. 27 registros cargados en dim_cliente
