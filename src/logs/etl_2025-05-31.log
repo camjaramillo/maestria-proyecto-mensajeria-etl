@@ -1,0 +1,841 @@
+2025-05-31 17:15:53,966 - etl_pipeline - INFO - Iniciando ETL Master
+2025-05-31 17:15:56,760 - etl_pipeline - INFO - Extrayendo datos... dim_cliente
+2025-05-31 17:15:57,191 - etl_pipeline - INFO - Cargando a staging ... dim_cliente
+2025-05-31 17:15:57,232 - etl_pipeline - ERROR - Error en ETL: module 'utils.logger' has no attribute 'error'
+Traceback (most recent call last):
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\src\staging\staging_dim_cliente.py", line 27, in run_staging
+    df.to_sql('stg_dim_cliente', session.connection(), if_exists='replace', index=False)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\core\generic.py", line 3087, in to_sql
+    return sql.to_sql(
+           ~~~~~~~~~~^
+        self,
+        ^^^^^
+    ...<8 lines>...
+        method=method,
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 842, in to_sql
+    return pandas_sql.to_sql(
+           ~~~~~~~~~~~~~~~~~^
+        frame,
+        ^^^^^^
+    ...<9 lines>...
+        **engine_kwargs,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 2008, in to_sql
+    table = self.prep_table(
+        frame=frame,
+    ...<5 lines>...
+        dtype=dtype,
+    )
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 1912, in prep_table
+    table.create()
+    ~~~~~~~~~~~~^^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 988, in create
+    self.pd_sql.drop_table(self.name, self.schema)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 2059, in drop_table
+    self.meta.reflect(
+    ~~~~~~~~~~~~~~~~~^
+        bind=self.con, only=[table_name], schema=schema, views=True
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\sql\schema.py", line 5873, in reflect
+    raise exc.InvalidRequestError(
+    ...<2 lines>...
+    )
+sqlalchemy.exc.InvalidRequestError: Could not reflect: requested table(s) not available in Engine(postgresql://postgres:***@localhost:5432/mensajeria_colombia_dw): (stg_dim_cliente)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\src\pipelines\etl_base.py", line 34, in run_etl_with_staging
+    if not staging_fn(df_raw, session):
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\src\staging\staging_dim_cliente.py", line 32, in run_staging
+    logger.error("Error creando tabla stg_dim_cliente", exc_info=True)
+    ^^^^^^^^^^^^
+AttributeError: module 'utils.logger' has no attribute 'error'
+2025-05-31 17:15:57,290 - etl_pipeline - INFO - ERROR DIM_CLIENTE
+2025-05-31 17:15:57,290 - etl_pipeline - INFO - Resumen de ejecución:
+2025-05-31 17:15:57,290 - etl_pipeline - INFO -   - DIM_CLIENTE    : FALLÓ
+2025-05-31 17:15:57,290 - etl_pipeline - ERROR - Algunos pipelines fallaron. Ver logs.
+2025-05-31 17:19:24,035 - etl_pipeline - INFO - Iniciando ETL Master
+2025-05-31 17:19:24,619 - etl_pipeline - INFO - Extrayendo datos... dim_cliente
+2025-05-31 17:19:24,687 - etl_pipeline - INFO - Cargando a staging ... dim_cliente
+2025-05-31 17:19:24,727 - etl_pipeline - ERROR - Error en ETL: module 'utils.logger' has no attribute 'error'
+Traceback (most recent call last):
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\src\staging\staging_dim_cliente.py", line 27, in run_staging
+    df.to_sql('stg_dim_cliente', session.connection(), if_exists='replace', index=False)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\core\generic.py", line 3087, in to_sql
+    return sql.to_sql(
+           ~~~~~~~~~~^
+        self,
+        ^^^^^
+    ...<8 lines>...
+        method=method,
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 842, in to_sql
+    return pandas_sql.to_sql(
+           ~~~~~~~~~~~~~~~~~^
+        frame,
+        ^^^^^^
+    ...<9 lines>...
+        **engine_kwargs,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 2008, in to_sql
+    table = self.prep_table(
+        frame=frame,
+    ...<5 lines>...
+        dtype=dtype,
+    )
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 1912, in prep_table
+    table.create()
+    ~~~~~~~~~~~~^^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 988, in create
+    self.pd_sql.drop_table(self.name, self.schema)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 2059, in drop_table
+    self.meta.reflect(
+    ~~~~~~~~~~~~~~~~~^
+        bind=self.con, only=[table_name], schema=schema, views=True
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\sql\schema.py", line 5873, in reflect
+    raise exc.InvalidRequestError(
+    ...<2 lines>...
+    )
+sqlalchemy.exc.InvalidRequestError: Could not reflect: requested table(s) not available in Engine(postgresql://postgres:***@localhost:5432/mensajeria_colombia_dw): (stg_dim_cliente)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\src\pipelines\etl_base.py", line 34, in run_etl_with_staging
+    if not staging_fn(df_raw, session):
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\src\staging\staging_dim_cliente.py", line 32, in run_staging
+    logger.error("Error creando tabla stg_dim_cliente", exc_info=True)
+    ^^^^^^^^^^^^
+AttributeError: module 'utils.logger' has no attribute 'error'
+2025-05-31 17:19:24,731 - etl_pipeline - INFO - ERROR DIM_CLIENTE
+2025-05-31 17:19:24,732 - etl_pipeline - INFO - Resumen de ejecución:
+2025-05-31 17:19:24,732 - etl_pipeline - INFO -   - DIM_CLIENTE    : FALLÓ
+2025-05-31 17:19:24,732 - etl_pipeline - ERROR - Algunos pipelines fallaron. Ver logs.
+2025-05-31 17:20:54,229 - etl_pipeline - INFO - Iniciando ETL Master
+2025-05-31 17:20:54,772 - etl_pipeline - INFO - Extrayendo datos... dim_cliente
+2025-05-31 17:20:54,840 - etl_pipeline - INFO - Cargando a staging ... dim_cliente
+2025-05-31 17:20:54,881 - etl_pipeline - ERROR - Error en ETL: module 'utils.logger' has no attribute 'error'
+Traceback (most recent call last):
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\src\staging\staging_dim_cliente.py", line 27, in run_staging
+    df.to_sql('stg_dim_cliente', session.connection(), if_exists='replace', index=False)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\core\generic.py", line 3087, in to_sql
+    return sql.to_sql(
+           ~~~~~~~~~~^
+        self,
+        ^^^^^
+    ...<8 lines>...
+        method=method,
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 842, in to_sql
+    return pandas_sql.to_sql(
+           ~~~~~~~~~~~~~~~~~^
+        frame,
+        ^^^^^^
+    ...<9 lines>...
+        **engine_kwargs,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 2008, in to_sql
+    table = self.prep_table(
+        frame=frame,
+    ...<5 lines>...
+        dtype=dtype,
+    )
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 1912, in prep_table
+    table.create()
+    ~~~~~~~~~~~~^^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 988, in create
+    self.pd_sql.drop_table(self.name, self.schema)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 2059, in drop_table
+    self.meta.reflect(
+    ~~~~~~~~~~~~~~~~~^
+        bind=self.con, only=[table_name], schema=schema, views=True
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\sql\schema.py", line 5873, in reflect
+    raise exc.InvalidRequestError(
+    ...<2 lines>...
+    )
+sqlalchemy.exc.InvalidRequestError: Could not reflect: requested table(s) not available in Engine(postgresql://postgres:***@localhost:5432/mensajeria_colombia_dw): (stg_dim_cliente)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\src\pipelines\etl_base.py", line 34, in run_etl_with_staging
+    if not staging_fn(df_raw, session):
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\src\staging\staging_dim_cliente.py", line 32, in run_staging
+    logger.error("Error creando tabla stg_dim_cliente", exc_info=True)
+    ^^^^^^^^^^^^
+AttributeError: module 'utils.logger' has no attribute 'error'
+2025-05-31 17:20:54,886 - etl_pipeline - INFO - ERROR DIM_CLIENTE
+2025-05-31 17:20:54,886 - etl_pipeline - INFO - Resumen de ejecución:
+2025-05-31 17:20:54,886 - etl_pipeline - INFO -   - DIM_CLIENTE    : FALLÓ
+2025-05-31 17:20:54,886 - etl_pipeline - ERROR - Algunos pipelines fallaron. Ver logs.
+2025-05-31 17:23:31,359 - etl_pipeline - INFO - Iniciando ETL Master
+2025-05-31 17:23:31,939 - etl_pipeline - INFO - Extrayendo datos... dim_cliente
+2025-05-31 17:23:32,012 - etl_pipeline - INFO - Cargando a staging ... dim_cliente
+2025-05-31 17:23:32,050 - etl_pipeline - ERROR - Error en ETL: module 'utils.logger' has no attribute 'error'
+Traceback (most recent call last):
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\src\staging\staging_dim_cliente.py", line 27, in run_staging
+    df.to_sql('stg_dim_cliente', session.connection(), if_exists='replace', index=False)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\core\generic.py", line 3087, in to_sql
+    return sql.to_sql(
+           ~~~~~~~~~~^
+        self,
+        ^^^^^
+    ...<8 lines>...
+        method=method,
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 842, in to_sql
+    return pandas_sql.to_sql(
+           ~~~~~~~~~~~~~~~~~^
+        frame,
+        ^^^^^^
+    ...<9 lines>...
+        **engine_kwargs,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 2008, in to_sql
+    table = self.prep_table(
+        frame=frame,
+    ...<5 lines>...
+        dtype=dtype,
+    )
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 1912, in prep_table
+    table.create()
+    ~~~~~~~~~~~~^^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 988, in create
+    self.pd_sql.drop_table(self.name, self.schema)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 2059, in drop_table
+    self.meta.reflect(
+    ~~~~~~~~~~~~~~~~~^
+        bind=self.con, only=[table_name], schema=schema, views=True
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\sql\schema.py", line 5873, in reflect
+    raise exc.InvalidRequestError(
+    ...<2 lines>...
+    )
+sqlalchemy.exc.InvalidRequestError: Could not reflect: requested table(s) not available in Engine(postgresql://postgres:***@localhost:5432/mensajeria_colombia_dw): (stg_dim_cliente)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\src\pipelines\etl_base.py", line 34, in run_etl_with_staging
+    if not staging_fn(df_raw, session):
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\src\staging\staging_dim_cliente.py", line 32, in run_staging
+    logger.error("Error creando tabla stg_dim_cliente", exc_info=True)
+    ^^^^^^^^^^^^
+AttributeError: module 'utils.logger' has no attribute 'error'
+2025-05-31 17:23:32,055 - etl_pipeline - INFO - ERROR DIM_CLIENTE
+2025-05-31 17:23:32,055 - etl_pipeline - INFO - Resumen de ejecución:
+2025-05-31 17:23:32,055 - etl_pipeline - INFO -   - DIM_CLIENTE    : FALLÓ
+2025-05-31 17:23:32,055 - etl_pipeline - ERROR - Algunos pipelines fallaron. Ver logs.
+2025-05-31 17:26:44,521 - etl_pipeline - INFO - Iniciando ETL Master
+2025-05-31 17:26:45,098 - etl_pipeline - INFO - Extrayendo datos... dim_cliente
+2025-05-31 17:26:45,169 - etl_pipeline - INFO - Cargando a staging ... dim_cliente
+2025-05-31 17:26:45,209 - etl_pipeline - INFO - ERROR DIM_CLIENTE
+2025-05-31 17:26:45,209 - etl_pipeline - INFO - Resumen de ejecución:
+2025-05-31 17:26:45,210 - etl_pipeline - INFO -   - DIM_CLIENTE    : FALLÓ
+2025-05-31 17:26:45,210 - etl_pipeline - ERROR - Algunos pipelines fallaron. Ver logs.
+2025-05-31 17:31:26,137 - etl_pipeline - INFO - Iniciando ETL Master
+2025-05-31 17:31:26,707 - etl_pipeline - INFO - Extrayendo datos... dim_cliente
+2025-05-31 17:31:26,782 - etl_pipeline - INFO - Cargando a staging ... dim_cliente
+2025-05-31 17:31:26,831 - etl_pipeline - INFO - ERROR DIM_CLIENTE
+2025-05-31 17:31:26,831 - etl_pipeline - INFO - Resumen de ejecución:
+2025-05-31 17:31:26,831 - etl_pipeline - INFO -   - DIM_CLIENTE    : FALLÓ
+2025-05-31 17:31:26,831 - etl_pipeline - ERROR - Algunos pipelines fallaron. Ver logs.
+2025-05-31 17:31:41,558 - etl_pipeline - INFO - Iniciando ETL Master
+2025-05-31 17:31:42,048 - etl_pipeline - INFO - Extrayendo datos... dim_cliente
+2025-05-31 17:31:42,116 - etl_pipeline - INFO - Cargando a staging ... dim_cliente
+2025-05-31 17:31:42,154 - etl_pipeline - INFO - ERROR DIM_CLIENTE
+2025-05-31 17:31:42,154 - etl_pipeline - INFO - Resumen de ejecución:
+2025-05-31 17:31:42,154 - etl_pipeline - INFO -   - DIM_CLIENTE    : FALLÓ
+2025-05-31 17:31:42,154 - etl_pipeline - ERROR - Algunos pipelines fallaron. Ver logs.
+2025-05-31 17:34:33 - etl_pipeline - DEBUG - Mensaje DEBUG - Solo visible en archivo
+2025-05-31 17:34:33 - etl_pipeline - INFO - Mensaje INFO - Visible en consola y archivo
+2025-05-31 17:34:33 - etl_pipeline - WARNING - Mensaje WARNING - Visible en consola y archivo
+2025-05-31 17:34:33 - etl_pipeline - ERROR - Mensaje ERROR - Visible en consola y archivo
+2025-05-31 17:34:33 - etl_pipeline - ERROR - Error con traceback
+Traceback (most recent call last):
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\test.py", line 9, in test_logger
+    1/0
+    ~^~
+ZeroDivisionError: division by zero
+2025-05-31 17:34:50 - etl_pipeline - INFO - Iniciando ETL Master
+2025-05-31 17:34:51 - etl_pipeline - INFO - Extrayendo datos... dim_cliente
+2025-05-31 17:34:51 - etl_pipeline - INFO - Cargando a staging ... dim_cliente
+2025-05-31 17:34:51 - etl_pipeline - INFO - ERROR DIM_CLIENTE
+2025-05-31 17:34:51 - etl_pipeline - INFO - Resumen de ejecución:
+2025-05-31 17:34:51 - etl_pipeline - INFO -   - DIM_CLIENTE    : FALLÓ
+2025-05-31 17:34:51 - etl_pipeline - ERROR - Algunos pipelines fallaron. Ver logs.
+2025-05-31 17:36:01 - etl_pipeline - INFO - Iniciando ETL Master
+2025-05-31 17:36:01 - etl_pipeline - INFO - Extrayendo datos... dim_cliente
+2025-05-31 17:36:01 - etl_pipeline - INFO - Cargando a staging ... dim_cliente
+2025-05-31 17:36:01 - etl_pipeline - INFO - ERROR DIM_CLIENTE
+2025-05-31 17:36:01 - etl_pipeline - INFO - Resumen de ejecución:
+2025-05-31 17:36:01 - etl_pipeline - INFO -   - DIM_CLIENTE    : FALLÓ
+2025-05-31 17:36:01 - etl_pipeline - ERROR - Algunos pipelines fallaron. Ver logs.
+2025-05-31 17:36:20 - etl_pipeline - INFO - Iniciando ETL Master
+2025-05-31 17:36:20 - etl_pipeline - INFO - Extrayendo datos... dim_cliente
+2025-05-31 17:36:20 - etl_pipeline - INFO - Cargando a staging ... dim_cliente
+2025-05-31 17:36:20 - etl_pipeline - ERROR - Error en ETL: module 'utils.logger' has no attribute 'error'
+Traceback (most recent call last):
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\src\staging\staging_dim_cliente.py", line 42, in run_staging
+    logger.info(f"Staging completado ({len(df)} filas)")
+    ^^^^^^^^^^^
+AttributeError: module 'utils.logger' has no attribute 'info'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\src\pipelines\etl_base.py", line 34, in run_etl_with_staging
+    if not staging_fn(df_raw, session):
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\src\staging\staging_dim_cliente.py", line 46, in run_staging
+    logger.error("Error creando tabla stg_dim_cliente", exc_info=True)
+    ^^^^^^^^^^^^
+AttributeError: module 'utils.logger' has no attribute 'error'
+2025-05-31 17:36:20 - etl_pipeline - INFO - ERROR DIM_CLIENTE
+2025-05-31 17:36:20 - etl_pipeline - INFO - Resumen de ejecución:
+2025-05-31 17:36:20 - etl_pipeline - INFO -   - DIM_CLIENTE    : FALLÓ
+2025-05-31 17:36:20 - etl_pipeline - ERROR - Algunos pipelines fallaron. Ver logs.
+2025-05-31 17:37:07 - etl_pipeline - INFO - Iniciando ETL Master
+2025-05-31 17:37:08 - etl_pipeline - INFO - Extrayendo datos... dim_cliente
+2025-05-31 17:37:08 - etl_pipeline - INFO - Cargando a staging ... dim_cliente
+2025-05-31 17:37:08 - etl_pipeline - INFO - Staging completado (27 filas)
+2025-05-31 17:37:08 - etl_pipeline - INFO - Transformando... dim_cliente
+2025-05-31 17:37:08 - etl_pipeline - INFO - Transformación completada (27 filas)
+2025-05-31 17:37:08 - etl_pipeline - INFO - Cargando a destino... dim_cliente
+2025-05-31 17:37:08 - etl_pipeline - INFO - Carga exitosa. Total registros: 27
+2025-05-31 17:37:08 - etl_pipeline - INFO - ETL completado. Filas cargadas: 27 en dim_cliente
+2025-05-31 17:37:08 - etl_pipeline - INFO - SUCCESS DIM_CLIENTE
+2025-05-31 17:37:08 - etl_pipeline - INFO - Resumen de ejecución:
+2025-05-31 17:37:08 - etl_pipeline - INFO -   - DIM_CLIENTE    : ÉXITO
+2025-05-31 17:37:08 - etl_pipeline - INFO - ¡Todos los pipelines completados con éxito!
+2025-05-31 17:38:19 - etl_pipeline - INFO - Iniciando ETL Master
+2025-05-31 17:38:19 - etl_pipeline - INFO - Extrayendo datos... dim_cliente
+2025-05-31 17:38:20 - etl_pipeline - INFO - Cargando a staging ... dim_cliente
+2025-05-31 17:38:20 - etl_pipeline - INFO - Staging completado (27 filas)
+2025-05-31 17:38:20 - etl_pipeline - INFO - Transformando... dim_cliente
+2025-05-31 17:38:20 - etl_pipeline - INFO - Transformación completada (27 filas)
+2025-05-31 17:38:20 - etl_pipeline - INFO - Cargando a destino... dim_cliente
+2025-05-31 17:38:20 - etl_pipeline - INFO - Carga exitosa. Total registros: 27
+2025-05-31 17:38:20 - etl_pipeline - INFO - ETL completado. Filas cargadas: 27 en dim_cliente
+2025-05-31 17:38:20 - etl_pipeline - INFO - SUCCESS DIM_CLIENTE
+2025-05-31 17:38:20 - etl_pipeline - INFO - Resumen de ejecución:
+2025-05-31 17:38:20 - etl_pipeline - INFO -   - DIM_CLIENTE    : ÉXITO
+2025-05-31 17:38:20 - etl_pipeline - INFO - ¡Todos los pipelines completados con éxito!
+2025-05-31 17:45:19,650 - etl_pipeline - INFO - Iniciando ETL Master
+2025-05-31 17:45:20,217 - etl_pipeline - INFO - Extrayendo datos... dim_cliente
+2025-05-31 17:45:20,289 - etl_pipeline - INFO - Cargando a staging ... dim_cliente
+2025-05-31 17:45:20,332 - etl_pipeline - INFO - Staging completado (27 filas)
+2025-05-31 17:45:20,332 - etl_pipeline - INFO - Transformando... dim_cliente
+2025-05-31 17:45:20,334 - etl_pipeline - INFO - Transformación completada (27 filas)
+2025-05-31 17:45:20,334 - etl_pipeline - INFO - Cargando a destino... dim_cliente
+2025-05-31 17:45:20,341 - etl_pipeline - INFO - Carga exitosa. Total registros: 27
+2025-05-31 17:45:20,341 - etl_pipeline - INFO - ETL completado. Filas cargadas: 27 en dim_cliente
+2025-05-31 17:45:20,343 - etl_pipeline - INFO - SUCCESS DIM_CLIENTE
+2025-05-31 17:45:20,343 - etl_pipeline - INFO - Resumen de ejecución:
+2025-05-31 17:45:20,343 - etl_pipeline - INFO -   - DIM_CLIENTE    : ÉXITO
+2025-05-31 17:45:20,343 - etl_pipeline - INFO - ¡Todos los pipelines completados con éxito!
+2025-05-31 17:45:45,865 - etl_pipeline - INFO - Iniciando ETL Master
+2025-05-31 17:45:46,356 - etl_pipeline - INFO - Extrayendo datos... dim_cliente
+2025-05-31 17:45:46,425 - etl_pipeline - INFO - Cargando a staging ... dim_cliente
+2025-05-31 17:45:46,461 - etl_pipeline - ERROR - Staging completado (27 filas)
+2025-05-31 17:45:46,461 - etl_pipeline - INFO - Transformando... dim_cliente
+2025-05-31 17:45:46,462 - etl_pipeline - INFO - Transformación completada (27 filas)
+2025-05-31 17:45:46,462 - etl_pipeline - INFO - Cargando a destino... dim_cliente
+2025-05-31 17:45:46,471 - etl_pipeline - INFO - Carga exitosa. Total registros: 27
+2025-05-31 17:45:46,471 - etl_pipeline - INFO - ETL completado. Filas cargadas: 27 en dim_cliente
+2025-05-31 17:45:46,474 - etl_pipeline - INFO - SUCCESS DIM_CLIENTE
+2025-05-31 17:45:46,474 - etl_pipeline - INFO - Resumen de ejecución:
+2025-05-31 17:45:46,474 - etl_pipeline - INFO -   - DIM_CLIENTE    : ÉXITO
+2025-05-31 17:45:46,474 - etl_pipeline - INFO - ¡Todos los pipelines completados con éxito!
+2025-05-31 17:57:50,065 - etl_pipeline - INFO - Iniciando ETL Master
+2025-05-31 17:57:50,622 - etl_pipeline - INFO - Extrayendo datos... dim_cliente
+2025-05-31 17:57:50,687 - etl_pipeline - INFO - Cargando a staging ... dim_cliente
+2025-05-31 17:57:50,729 - etl_pipeline - INFO - Staging completado (27 filas)
+2025-05-31 17:57:50,729 - etl_pipeline - INFO - Transformando... dim_cliente
+2025-05-31 17:57:50,732 - etl_pipeline - INFO - Transformación completada (27 filas)
+2025-05-31 17:57:50,732 - etl_pipeline - INFO - Cargando a destino... dim_cliente
+2025-05-31 17:57:50,740 - etl_pipeline - INFO - Carga exitosa. Total registros: 27
+2025-05-31 17:57:50,743 - etl_pipeline - INFO - ETL completado. Filas cargadas: 27 en dim_cliente
+2025-05-31 17:57:50,749 - etl_pipeline - INFO - SUCCESS DIM_CLIENTE
+2025-05-31 17:57:50,782 - etl_pipeline - ERROR - Error en dim_mensajero: run_etl_with_staging() missing 1 required positional argument: 'table_name'
+Traceback (most recent call last):
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\src\pipelines\etl_master.py", line 55, in execute
+    success, _ = module.run_etl(truncate=True)
+                 ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\src\pipelines\etl_dim_mensajero.py", line 10, in run_etl
+    return run_etl_with_staging(
+        extract_fn=run_extract,
+    ...<3 lines>...
+        truncate=truncate
+    )
+TypeError: run_etl_with_staging() missing 1 required positional argument: 'table_name'
+2025-05-31 17:57:50,784 - etl_pipeline - INFO - Resumen de ejecución:
+2025-05-31 17:57:50,784 - etl_pipeline - INFO -   - DIM_CLIENTE    : ÉXITO
+2025-05-31 17:57:50,785 - etl_pipeline - INFO -   - DIM_MENSAJERO  : FALLÓ
+2025-05-31 17:57:50,786 - etl_pipeline - ERROR - Algunos pipelines fallaron. Ver logs.
+2025-05-31 17:58:31,731 - etl_pipeline - INFO - Iniciando ETL Master
+2025-05-31 17:58:32,207 - etl_pipeline - INFO - Extrayendo datos... dim_cliente
+2025-05-31 17:58:32,274 - etl_pipeline - INFO - Cargando a staging ... dim_cliente
+2025-05-31 17:58:32,315 - etl_pipeline - INFO - Staging completado (27 filas)
+2025-05-31 17:58:32,315 - etl_pipeline - INFO - Transformando... dim_cliente
+2025-05-31 17:58:32,317 - etl_pipeline - INFO - Transformación completada (27 filas)
+2025-05-31 17:58:32,317 - etl_pipeline - INFO - Cargando a destino... dim_cliente
+2025-05-31 17:58:32,325 - etl_pipeline - INFO - Carga exitosa. Total registros: 27
+2025-05-31 17:58:32,325 - etl_pipeline - INFO - ETL completado. Filas cargadas: 27 en dim_cliente
+2025-05-31 17:58:32,327 - etl_pipeline - INFO - SUCCESS DIM_CLIENTE
+2025-05-31 17:58:32,336 - etl_pipeline - INFO - Extrayendo datos... dim_mensajero
+2025-05-31 17:58:32,384 - etl_pipeline - ERROR - Error en extracción: (psycopg2.errors.SyntaxError) error de sintaxis en o cerca de «u»
+LINE 5:             u.first_name AS nombre,
+                    ^
+
+[SQL: 
+        SELECT 
+            m.id AS cliente_mensajero_id,
+            u.username AS nombre_usuario
+            u.first_name AS nombre,
+            u.last_name AS apellido,
+            m.telefono,
+            c.nombre AS ciudad_operacion,
+            d.nombre AS departamento_operacion,
+            m.activo
+        FROM clientes_mensajeroaquitoy m
+        JOIN auth_user u ON m.user_id = u.id
+        LEFT JOIN ciudad c ON m.ciudad_operacion_id = c.ciudad_id
+        LEFT JOIN departamento d ON c.departamento_id = d.departamento_id
+        ]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+Traceback (most recent call last):
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.SyntaxError: error de sintaxis en o cerca de «u»
+LINE 5:             u.first_name AS nombre,
+                    ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\src\extract\extract_dim_mensajero.py", line 26, in run_extract
+    df = pd.read_sql(query, session.connection())
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 734, in read_sql
+    return pandas_sql.read_query(
+           ~~~~~~~~~~~~~~~~~~~~~^
+        sql,
+        ^^^^
+    ...<6 lines>...
+        dtype=dtype,
+        ^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 1836, in read_query
+    result = self.execute(sql, params)
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 1659, in execute
+    return self.con.exec_driver_sql(sql, *args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1775, in exec_driver_sql
+    ret = self._execute_context(
+        dialect,
+    ...<5 lines>...
+        distilled_parameters,
+    )
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1842, in _execute_context
+    return self._exec_single_context(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        dialect, context, statement, parameters
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1982, in _exec_single_context
+    self._handle_dbapi_exception(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        e, str_statement, effective_parameters, cursor, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2351, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.SyntaxError) error de sintaxis en o cerca de «u»
+LINE 5:             u.first_name AS nombre,
+                    ^
+
+[SQL: 
+        SELECT 
+            m.id AS cliente_mensajero_id,
+            u.username AS nombre_usuario
+            u.first_name AS nombre,
+            u.last_name AS apellido,
+            m.telefono,
+            c.nombre AS ciudad_operacion,
+            d.nombre AS departamento_operacion,
+            m.activo
+        FROM clientes_mensajeroaquitoy m
+        JOIN auth_user u ON m.user_id = u.id
+        LEFT JOIN ciudad c ON m.ciudad_operacion_id = c.ciudad_id
+        LEFT JOIN departamento d ON c.departamento_id = d.departamento_id
+        ]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-05-31 17:58:32,402 - etl_pipeline - ERROR - Falló la extracción o DataFrame vacío
+2025-05-31 17:58:32,402 - etl_pipeline - INFO - ERROR DIM_MENSAJERO
+2025-05-31 17:58:32,402 - etl_pipeline - INFO - Resumen de ejecución:
+2025-05-31 17:58:32,402 - etl_pipeline - INFO -   - DIM_CLIENTE    : ÉXITO
+2025-05-31 17:58:32,402 - etl_pipeline - INFO -   - DIM_MENSAJERO  : FALLÓ
+2025-05-31 17:58:32,402 - etl_pipeline - ERROR - Algunos pipelines fallaron. Ver logs.
+2025-05-31 17:59:29,444 - etl_pipeline - INFO - Iniciando ETL Master
+2025-05-31 17:59:29,934 - etl_pipeline - INFO - Extrayendo datos... dim_cliente
+2025-05-31 17:59:30,005 - etl_pipeline - INFO - Cargando a staging ... dim_cliente
+2025-05-31 17:59:30,046 - etl_pipeline - INFO - Staging completado (27 filas)
+2025-05-31 17:59:30,046 - etl_pipeline - INFO - Transformando... dim_cliente
+2025-05-31 17:59:30,048 - etl_pipeline - INFO - Transformación completada (27 filas)
+2025-05-31 17:59:30,048 - etl_pipeline - INFO - Cargando a destino... dim_cliente
+2025-05-31 17:59:30,055 - etl_pipeline - INFO - Carga exitosa. Total registros: 27
+2025-05-31 17:59:30,055 - etl_pipeline - INFO - ETL completado. Filas cargadas: 27 en dim_cliente
+2025-05-31 17:59:30,056 - etl_pipeline - INFO - SUCCESS DIM_CLIENTE
+2025-05-31 17:59:30,066 - etl_pipeline - INFO - Extrayendo datos... dim_mensajero
+2025-05-31 17:59:30,111 - etl_pipeline - INFO - Extraídos 50 registros de mensajeros
+2025-05-31 17:59:30,113 - etl_pipeline - INFO - Cargando a staging ... dim_mensajero
+2025-05-31 17:59:30,147 - etl_pipeline - ERROR - Error en staging: Could not reflect: requested table(s) not available in Engine(postgresql://postgres:***@localhost:5432/mensajeria_colombia_dw): (stg_dim_mensajero)
+Traceback (most recent call last):
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\src\staging\staging_dim_mensajero.py", line 23, in run_staging
+    df.to_sql('stg_dim_mensajero', session.connection(), if_exists='replace', index=False)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\core\generic.py", line 3087, in to_sql
+    return sql.to_sql(
+           ~~~~~~~~~~^
+        self,
+        ^^^^^
+    ...<8 lines>...
+        method=method,
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 842, in to_sql
+    return pandas_sql.to_sql(
+           ~~~~~~~~~~~~~~~~~^
+        frame,
+        ^^^^^^
+    ...<9 lines>...
+        **engine_kwargs,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 2008, in to_sql
+    table = self.prep_table(
+        frame=frame,
+    ...<5 lines>...
+        dtype=dtype,
+    )
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 1912, in prep_table
+    table.create()
+    ~~~~~~~~~~~~^^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 988, in create
+    self.pd_sql.drop_table(self.name, self.schema)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 2059, in drop_table
+    self.meta.reflect(
+    ~~~~~~~~~~~~~~~~~^
+        bind=self.con, only=[table_name], schema=schema, views=True
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\sql\schema.py", line 5873, in reflect
+    raise exc.InvalidRequestError(
+    ...<2 lines>...
+    )
+sqlalchemy.exc.InvalidRequestError: Could not reflect: requested table(s) not available in Engine(postgresql://postgres:***@localhost:5432/mensajeria_colombia_dw): (stg_dim_mensajero)
+2025-05-31 17:59:30,152 - etl_pipeline - INFO - ERROR DIM_MENSAJERO
+2025-05-31 17:59:30,152 - etl_pipeline - INFO - Resumen de ejecución:
+2025-05-31 17:59:30,153 - etl_pipeline - INFO -   - DIM_CLIENTE    : ÉXITO
+2025-05-31 17:59:30,153 - etl_pipeline - INFO -   - DIM_MENSAJERO  : FALLÓ
+2025-05-31 17:59:30,153 - etl_pipeline - ERROR - Algunos pipelines fallaron. Ver logs.
+2025-05-31 18:03:18,638 - etl_pipeline - INFO - Iniciando ETL Master
+2025-05-31 18:03:19,233 - etl_pipeline - INFO - Extrayendo datos... dim_cliente
+2025-05-31 18:03:19,304 - etl_pipeline - INFO - Cargando a staging ... dim_cliente
+2025-05-31 18:03:19,341 - etl_pipeline - INFO - Staging completado (27 filas)
+2025-05-31 18:03:19,341 - etl_pipeline - INFO - Transformando... dim_cliente
+2025-05-31 18:03:19,342 - etl_pipeline - INFO - Transformación completada (27 filas)
+2025-05-31 18:03:19,342 - etl_pipeline - INFO - Cargando a destino... dim_cliente
+2025-05-31 18:03:19,348 - etl_pipeline - INFO - Carga exitosa. Total registros: 27
+2025-05-31 18:03:19,348 - etl_pipeline - INFO - ETL completado. Filas cargadas: 27 en dim_cliente
+2025-05-31 18:03:19,350 - etl_pipeline - INFO - SUCCESS DIM_CLIENTE
+2025-05-31 18:03:19,359 - etl_pipeline - INFO - Extrayendo datos... dim_mensajero
+2025-05-31 18:03:19,394 - etl_pipeline - INFO - Extraídos 50 registros de mensajeros
+2025-05-31 18:03:19,396 - etl_pipeline - INFO - Cargando a staging ... dim_mensajero
+2025-05-31 18:03:19,431 - etl_pipeline - INFO - Staging completado (50 filas)
+2025-05-31 18:03:19,432 - etl_pipeline - INFO - Transformando... dim_mensajero
+2025-05-31 18:03:19,433 - etl_pipeline - INFO - Transformación completada (50 filas)
+2025-05-31 18:03:19,434 - etl_pipeline - INFO - Cargando a destino... dim_mensajero
+2025-05-31 18:03:19,448 - etl_pipeline - INFO - Carga exitosa. Total registros: 50
+2025-05-31 18:03:19,448 - etl_pipeline - INFO - ETL completado. Filas cargadas: 50 en dim_mensajero
+2025-05-31 18:03:19,449 - etl_pipeline - INFO - SUCCESS DIM_MENSAJERO
+2025-05-31 18:03:19,449 - etl_pipeline - INFO - Resumen de ejecución:
+2025-05-31 18:03:19,449 - etl_pipeline - INFO -   - DIM_CLIENTE    : ÉXITO
+2025-05-31 18:03:19,449 - etl_pipeline - INFO -   - DIM_MENSAJERO  : ÉXITO
+2025-05-31 18:03:19,449 - etl_pipeline - INFO - ¡Todos los pipelines completados con éxito!
+2025-05-31 18:05:42,729 - etl_pipeline - INFO - Iniciando ETL Master
+2025-05-31 18:05:43,290 - etl_pipeline - INFO - Extrayendo datos... dim_cliente
+2025-05-31 18:05:43,358 - etl_pipeline - INFO - Cargando a staging ... dim_cliente
+2025-05-31 18:05:43,405 - etl_pipeline - INFO - Staging completado (27 filas)
+2025-05-31 18:05:43,405 - etl_pipeline - INFO - Transformando... dim_cliente
+2025-05-31 18:05:43,406 - etl_pipeline - INFO - Transformación completada (27 filas)
+2025-05-31 18:05:43,406 - etl_pipeline - INFO - Cargando a destino... dim_cliente
+2025-05-31 18:05:43,414 - etl_pipeline - INFO - Carga exitosa. Total registros: 27
+2025-05-31 18:05:43,414 - etl_pipeline - INFO - ETL completado. Filas cargadas: 27 en dim_cliente
+2025-05-31 18:05:43,416 - etl_pipeline - INFO - SUCCESS DIM_CLIENTE
+2025-05-31 18:05:43,439 - etl_pipeline - INFO - Extrayendo datos... dim_mensajero
+2025-05-31 18:05:43,480 - etl_pipeline - INFO - Extraídos 50 registros de mensajeros
+2025-05-31 18:05:43,482 - etl_pipeline - INFO - Cargando a staging ... dim_mensajero
+2025-05-31 18:05:43,521 - etl_pipeline - INFO - Staging completado (50 filas)
+2025-05-31 18:05:43,522 - etl_pipeline - INFO - Transformando... dim_mensajero
+2025-05-31 18:05:43,523 - etl_pipeline - INFO - Transformación completada (50 filas)
+2025-05-31 18:05:43,523 - etl_pipeline - INFO - Cargando a destino... dim_mensajero
+2025-05-31 18:05:43,532 - etl_pipeline - INFO - Carga exitosa. Total registros: 50
+2025-05-31 18:05:43,532 - etl_pipeline - INFO - ETL completado. Filas cargadas: 50 en dim_mensajero
+2025-05-31 18:05:43,534 - etl_pipeline - INFO - SUCCESS DIM_MENSAJERO
+2025-05-31 18:05:43,534 - etl_pipeline - INFO - Resumen de ejecución:
+2025-05-31 18:05:43,534 - etl_pipeline - INFO -   - DIM_CLIENTE    : ÉXITO
+2025-05-31 18:05:43,534 - etl_pipeline - INFO -   - DIM_MENSAJERO  : ÉXITO
+2025-05-31 18:05:43,534 - etl_pipeline - INFO - ¡Todos los pipelines completados con éxito!
+2025-05-31 18:08:08,436 - etl_pipeline - INFO - Iniciando ETL Master
+2025-05-31 18:08:09,011 - etl_pipeline - INFO - Extrayendo datos... dim_cliente
+2025-05-31 18:08:09,081 - etl_pipeline - INFO - Cargando a staging ... dim_cliente
+2025-05-31 18:08:09,118 - etl_pipeline - INFO - Staging completado (27 filas)
+2025-05-31 18:08:09,118 - etl_pipeline - INFO - Transformando... dim_cliente
+2025-05-31 18:08:09,119 - etl_pipeline - INFO - Transformación completada (27 filas)
+2025-05-31 18:08:09,119 - etl_pipeline - INFO - Cargando a destino... dim_cliente
+2025-05-31 18:08:09,132 - etl_pipeline - INFO - Carga exitosa. Total registros: 27
+2025-05-31 18:08:09,133 - etl_pipeline - INFO - ETL completado. Filas cargadas: 27 en dim_cliente
+2025-05-31 18:08:09,133 - etl_pipeline - INFO - SUCCESS DIM_CLIENTE
+2025-05-31 18:08:09,135 - etl_pipeline - INFO - Extrayendo datos... dim_mensajero
+2025-05-31 18:08:09,199 - etl_pipeline - INFO - Extraídos 50 registros de mensajeros
+2025-05-31 18:08:09,200 - etl_pipeline - INFO - Cargando a staging ... dim_mensajero
+2025-05-31 18:08:09,236 - etl_pipeline - INFO - Staging completado (50 filas)
+2025-05-31 18:08:09,236 - etl_pipeline - INFO - Transformando... dim_mensajero
+2025-05-31 18:08:09,238 - etl_pipeline - INFO - Transformación completada (50 filas)
+2025-05-31 18:08:09,238 - etl_pipeline - INFO - Cargando a destino... dim_mensajero
+2025-05-31 18:08:09,250 - etl_pipeline - ERROR - Error en carga: (psycopg2.errors.UndefinedColumn) no existe la columna «cliente_mensajero_id» en la relación «dim_mensajero»
+LINE 1: INSERT INTO dim_mensajero (mensajero_key, cliente_mensajero_...
+                                                  ^
+
+[SQL: INSERT INTO dim_mensajero (mensajero_key, cliente_mensajero_id, nombre_usuario, nombre, apellido, telefono, ciudad_operacion, departamento_operacion, activo) VALUES (%(mensajero_key__0)s, %(cliente_mensajero_id__0)s, %(nombre_usuario__0)s, %(nombre__ ... 9973 characters truncated ... o__49)s, %(telefono__49)s, %(ciudad_operacion__49)s, %(departamento_operacion__49)s, %(activo__49)s)]
+[parameters: {'cliente_mensajero_id__0': 1, 'departamento_operacion__0': 'VALLE DEL CAUCA', 'activo__0': True, 'ciudad_operacion__0': 'ACOPI YUMBO', 'nombre_usuario__0': 'mensajero1', 'nombre__0': 'PEPITO_EL_RAPIDO', 'telefono__0': '310-300000', 'mensajero_key__0': 1, 'apellido__0': 'PEPITO_EL_FURIOSO', 'cliente_mensajero_id__1': 2, 'departamento_operacion__1': None, 'activo__1': True, 'ciudad_operacion__1': None, 'nombre_usuario__1': 'mensajero2', 'nombre__1': 'PEPITO_EL_RAPIDO', 'telefono__1': '310-300000', 'mensajero_key__1': 2, 'apellido__1': 'PEPITO_EL_FURIOSO', 'cliente_mensajero_id__2': 3, 'departamento_operacion__2': 'VALLE DEL CAUCA', 'activo__2': True, 'ciudad_operacion__2': 'CALI', 'nombre_usuario__2': 'Biil-Gates', 'nombre__2': 'PEPITO_EL_RAPIDO', 'telefono__2': '310-300000', 'mensajero_key__2': 3, 'apellido__2': 'PEPITO_EL_FURIOSO', 'cliente_mensajero_id__3': 4, 'departamento_operacion__3': 'VALLE DEL CAUCA', 'activo__3': False, 'ciudad_operacion__3': 'CALI', 'nombre_usuario__3': 'Lionel_messi', 'nombre__3': 'PEPITO_EL_RAPIDO', 'telefono__3': '310-300000', 'mensajero_key__3': 4, 'apellido__3': 'PEPITO_EL_FURIOSO', 'cliente_mensajero_id__4': 5, 'departamento_operacion__4': None, 'activo__4': True, 'ciudad_operacion__4': None, 'nombre_usuario__4': 'James Rodriguez', 'nombre__4': 'PEPITO_EL_RAPIDO', 'telefono__4': '310-300000', 'mensajero_key__4': 5, 'apellido__4': 'PEPITO_EL_FURIOSO', 'cliente_mensajero_id__5': 6, 'departamento_operacion__5': None, 'activo__5': True, 'ciudad_operacion__5': None, 'nombre_usuario__5': 'mensajero_o' ... 350 parameters truncated ... 'nombre_usuario__44': 'HVARGAS', 'nombre__44': 'PEPITO_EL_RAPIDO', 'telefono__44': '310-300000', 'mensajero_key__44': 45, 'apellido__44': 'PEPITO_EL_FURIOSO', 'cliente_mensajero_id__45': 48, 'departamento_operacion__45': 'VALLE DEL CAUCA', 'activo__45': True, 'ciudad_operacion__45': 'CALI', 'nombre_usuario__45': 'JULIANVILLANUEVA', 'nombre__45': 'PEPITO_EL_RAPIDO', 'telefono__45': '310-300000', 'mensajero_key__45': 46, 'apellido__45': 'PEPITO_EL_FURIOSO', 'cliente_mensajero_id__46': 49, 'departamento_operacion__46': None, 'activo__46': True, 'ciudad_operacion__46': None, 'nombre_usuario__46': 'JSANCHEZ', 'nombre__46': 'PEPITO_EL_RAPIDO', 'telefono__46': '310-300000', 'mensajero_key__46': 47, 'apellido__46': 'PEPITO_EL_FURIOSO', 'cliente_mensajero_id__47': 50, 'departamento_operacion__47': 'VALLE DEL CAUCA', 'activo__47': True, 'ciudad_operacion__47': 'CALI', 'nombre_usuario__47': 'MVERONICA', 'nombre__47': 'PEPITO_EL_RAPIDO', 'telefono__47': '310-300000', 'mensajero_key__47': 48, 'apellido__47': 'PEPITO_EL_FURIOSO', 'cliente_mensajero_id__48': 83, 'departamento_operacion__48': 'VALLE DEL CAUCA', 'activo__48': True, 'ciudad_operacion__48': 'CALI', 'nombre_usuario__48': 'DANIELMAZUERA', 'nombre__48': 'PEPITO_EL_RAPIDO', 'telefono__48': '310-300000', 'mensajero_key__48': 49, 'apellido__48': 'PEPITO_EL_FURIOSO', 'cliente_mensajero_id__49': 84, 'departamento_operacion__49': 'VALLE DEL CAUCA', 'activo__49': True, 'ciudad_operacion__49': 'CALI', 'nombre_usuario__49': 'WILSONMORALES', 'nombre__49': 'PEPITO_EL_RAPIDO', 'telefono__49': '310-300000', 'mensajero_key__49': 50, 'apellido__49': 'PEPITO_EL_FURIOSO'}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+Traceback (most recent call last):
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2114, in _exec_insertmany_context
+    dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~^
+        cursor,
+        ^^^^^^^
+    ...<2 lines>...
+        context,
+        ^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UndefinedColumn: no existe la columna «cliente_mensajero_id» en la relación «dim_mensajero»
+LINE 1: INSERT INTO dim_mensajero (mensajero_key, cliente_mensajero_...
+                                                  ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\src\load\load_dim_mensajero.py", line 29, in run_load
+    df.to_sql(
+    ~~~~~~~~~^
+        'dim_mensajero',
+        ^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        chunksize=1000
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\core\generic.py", line 3087, in to_sql
+    return sql.to_sql(
+           ~~~~~~~~~~^
+        self,
+        ^^^^^
+    ...<8 lines>...
+        method=method,
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 842, in to_sql
+    return pandas_sql.to_sql(
+           ~~~~~~~~~~~~~~~~~^
+        frame,
+        ^^^^^^
+    ...<9 lines>...
+        **engine_kwargs,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 2018, in to_sql
+    total_inserted = sql_engine.insert_records(
+        table=table,
+    ...<7 lines>...
+        **engine_kwargs,
+    )
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 1567, in insert_records
+    raise err
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 1558, in insert_records
+    return table.insert(chunksize=chunksize, method=method)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 1119, in insert
+    num_inserted = exec_insert(conn, keys, chunk_iter)
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 1010, in _execute_insert
+    result = conn.execute(self.table.insert(), data)
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1415, in execute
+    return meth(
+        self,
+        distilled_parameters,
+        execution_options or NO_OPTIONS,
+    )
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self, distilled_params, execution_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1637, in _execute_clauseelement
+    ret = self._execute_context(
+        dialect,
+    ...<8 lines>...
+        cache_hit=cache_hit,
+    )
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1840, in _execute_context
+    return self._exec_insertmany_context(dialect, context)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2122, in _exec_insertmany_context
+    self._handle_dbapi_exception(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        e,
+        ^^
+    ...<4 lines>...
+        is_sub_exec=True,
+        ^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2351, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2114, in _exec_insertmany_context
+    dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~^
+        cursor,
+        ^^^^^^^
+    ...<2 lines>...
+        context,
+        ^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedColumn) no existe la columna «cliente_mensajero_id» en la relación «dim_mensajero»
+LINE 1: INSERT INTO dim_mensajero (mensajero_key, cliente_mensajero_...
+                                                  ^
+
+[SQL: INSERT INTO dim_mensajero (mensajero_key, cliente_mensajero_id, nombre_usuario, nombre, apellido, telefono, ciudad_operacion, departamento_operacion, activo) VALUES (%(mensajero_key__0)s, %(cliente_mensajero_id__0)s, %(nombre_usuario__0)s, %(nombre__ ... 9973 characters truncated ... o__49)s, %(telefono__49)s, %(ciudad_operacion__49)s, %(departamento_operacion__49)s, %(activo__49)s)]
+[parameters: {'cliente_mensajero_id__0': 1, 'departamento_operacion__0': 'VALLE DEL CAUCA', 'activo__0': True, 'ciudad_operacion__0': 'ACOPI YUMBO', 'nombre_usuario__0': 'mensajero1', 'nombre__0': 'PEPITO_EL_RAPIDO', 'telefono__0': '310-300000', 'mensajero_key__0': 1, 'apellido__0': 'PEPITO_EL_FURIOSO', 'cliente_mensajero_id__1': 2, 'departamento_operacion__1': None, 'activo__1': True, 'ciudad_operacion__1': None, 'nombre_usuario__1': 'mensajero2', 'nombre__1': 'PEPITO_EL_RAPIDO', 'telefono__1': '310-300000', 'mensajero_key__1': 2, 'apellido__1': 'PEPITO_EL_FURIOSO', 'cliente_mensajero_id__2': 3, 'departamento_operacion__2': 'VALLE DEL CAUCA', 'activo__2': True, 'ciudad_operacion__2': 'CALI', 'nombre_usuario__2': 'Biil-Gates', 'nombre__2': 'PEPITO_EL_RAPIDO', 'telefono__2': '310-300000', 'mensajero_key__2': 3, 'apellido__2': 'PEPITO_EL_FURIOSO', 'cliente_mensajero_id__3': 4, 'departamento_operacion__3': 'VALLE DEL CAUCA', 'activo__3': False, 'ciudad_operacion__3': 'CALI', 'nombre_usuario__3': 'Lionel_messi', 'nombre__3': 'PEPITO_EL_RAPIDO', 'telefono__3': '310-300000', 'mensajero_key__3': 4, 'apellido__3': 'PEPITO_EL_FURIOSO', 'cliente_mensajero_id__4': 5, 'departamento_operacion__4': None, 'activo__4': True, 'ciudad_operacion__4': None, 'nombre_usuario__4': 'James Rodriguez', 'nombre__4': 'PEPITO_EL_RAPIDO', 'telefono__4': '310-300000', 'mensajero_key__4': 5, 'apellido__4': 'PEPITO_EL_FURIOSO', 'cliente_mensajero_id__5': 6, 'departamento_operacion__5': None, 'activo__5': True, 'ciudad_operacion__5': None, 'nombre_usuario__5': 'mensajero_o' ... 350 parameters truncated ... 'nombre_usuario__44': 'HVARGAS', 'nombre__44': 'PEPITO_EL_RAPIDO', 'telefono__44': '310-300000', 'mensajero_key__44': 45, 'apellido__44': 'PEPITO_EL_FURIOSO', 'cliente_mensajero_id__45': 48, 'departamento_operacion__45': 'VALLE DEL CAUCA', 'activo__45': True, 'ciudad_operacion__45': 'CALI', 'nombre_usuario__45': 'JULIANVILLANUEVA', 'nombre__45': 'PEPITO_EL_RAPIDO', 'telefono__45': '310-300000', 'mensajero_key__45': 46, 'apellido__45': 'PEPITO_EL_FURIOSO', 'cliente_mensajero_id__46': 49, 'departamento_operacion__46': None, 'activo__46': True, 'ciudad_operacion__46': None, 'nombre_usuario__46': 'JSANCHEZ', 'nombre__46': 'PEPITO_EL_RAPIDO', 'telefono__46': '310-300000', 'mensajero_key__46': 47, 'apellido__46': 'PEPITO_EL_FURIOSO', 'cliente_mensajero_id__47': 50, 'departamento_operacion__47': 'VALLE DEL CAUCA', 'activo__47': True, 'ciudad_operacion__47': 'CALI', 'nombre_usuario__47': 'MVERONICA', 'nombre__47': 'PEPITO_EL_RAPIDO', 'telefono__47': '310-300000', 'mensajero_key__47': 48, 'apellido__47': 'PEPITO_EL_FURIOSO', 'cliente_mensajero_id__48': 83, 'departamento_operacion__48': 'VALLE DEL CAUCA', 'activo__48': True, 'ciudad_operacion__48': 'CALI', 'nombre_usuario__48': 'DANIELMAZUERA', 'nombre__48': 'PEPITO_EL_RAPIDO', 'telefono__48': '310-300000', 'mensajero_key__48': 49, 'apellido__48': 'PEPITO_EL_FURIOSO', 'cliente_mensajero_id__49': 84, 'departamento_operacion__49': 'VALLE DEL CAUCA', 'activo__49': True, 'ciudad_operacion__49': 'CALI', 'nombre_usuario__49': 'WILSONMORALES', 'nombre__49': 'PEPITO_EL_RAPIDO', 'telefono__49': '310-300000', 'mensajero_key__49': 50, 'apellido__49': 'PEPITO_EL_FURIOSO'}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-05-31 18:08:09,258 - etl_pipeline - INFO - ERROR DIM_MENSAJERO
+2025-05-31 18:08:09,258 - etl_pipeline - INFO - Resumen de ejecución:
+2025-05-31 18:08:09,258 - etl_pipeline - INFO -   - DIM_CLIENTE    : ÉXITO
+2025-05-31 18:08:09,258 - etl_pipeline - INFO -   - DIM_MENSAJERO  : FALLÓ
+2025-05-31 18:08:09,258 - etl_pipeline - ERROR - Algunos pipelines fallaron. Ver logs.
+2025-05-31 18:09:48,167 - etl_pipeline - INFO - Iniciando ETL Master
+2025-05-31 18:09:48,704 - etl_pipeline - INFO - Extrayendo datos... dim_cliente
+2025-05-31 18:09:48,773 - etl_pipeline - INFO - Cargando a staging ... dim_cliente
+2025-05-31 18:09:48,813 - etl_pipeline - INFO - Staging completado (27 filas)
+2025-05-31 18:09:48,813 - etl_pipeline - INFO - Transformando... dim_cliente
+2025-05-31 18:09:48,814 - etl_pipeline - INFO - Transformación completada (27 filas)
+2025-05-31 18:09:48,814 - etl_pipeline - INFO - Cargando a destino... dim_cliente
+2025-05-31 18:09:48,822 - etl_pipeline - INFO - Carga exitosa. Total registros: 27
+2025-05-31 18:09:48,822 - etl_pipeline - INFO - ETL completado. Filas cargadas: 27 en dim_cliente
+2025-05-31 18:09:48,823 - etl_pipeline - INFO - SUCCESS DIM_CLIENTE
+2025-05-31 18:09:48,834 - etl_pipeline - INFO - Extrayendo datos... dim_mensajero
+2025-05-31 18:09:48,872 - etl_pipeline - INFO - Extraídos 50 registros de mensajeros
+2025-05-31 18:09:48,874 - etl_pipeline - INFO - Cargando a staging ... dim_mensajero
+2025-05-31 18:09:48,913 - etl_pipeline - INFO - Staging completado (50 filas)
+2025-05-31 18:09:48,913 - etl_pipeline - INFO - Transformando... dim_mensajero
+2025-05-31 18:09:48,914 - etl_pipeline - INFO - Transformación completada (50 filas)
+2025-05-31 18:09:48,915 - etl_pipeline - INFO - Cargando a destino... dim_mensajero
+2025-05-31 18:09:48,926 - etl_pipeline - INFO - Carga exitosa. Total registros: 50
+2025-05-31 18:09:48,926 - etl_pipeline - INFO - ETL completado. Filas cargadas: 50 en dim_mensajero
+2025-05-31 18:09:48,927 - etl_pipeline - INFO - SUCCESS DIM_MENSAJERO
+2025-05-31 18:09:48,927 - etl_pipeline - INFO - Resumen de ejecución:
+2025-05-31 18:09:48,927 - etl_pipeline - INFO -   - DIM_CLIENTE    : ÉXITO
+2025-05-31 18:09:48,927 - etl_pipeline - INFO -   - DIM_MENSAJERO  : ÉXITO
+2025-05-31 18:09:48,927 - etl_pipeline - INFO - ¡Todos los pipelines completados con éxito!

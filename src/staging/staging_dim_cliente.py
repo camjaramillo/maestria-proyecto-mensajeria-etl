@@ -1,21 +1,16 @@
 from sqlalchemy import text
 import pandas as pd
 
-from utils import logger
+from utils.logger import logger
 
-def run_staging(df: pd.DataFrame, session):
-    """Punto de entrada principal"""
-    if create_staging_table(session):
-        return load_to_staging(df, session)
-
-    return False
-
-def create_staging_table(session) -> bool:
-    """
-    Crea una tabla temporal para stg_dim_cliente.
-    Esta tabla se eliminará automáticamente al finalizar la sesión.
-    """
+def run_staging(df: pd.DataFrame, session) -> bool:
+    """Carga datos a tabla temporal"""
     try:
+         # 1. Eliminar tabla temporal si existe (evita problemas con if_exists='replace')
+        session.execute(text("DROP TABLE IF EXISTS pg_temp.stg_dim_cliente"))
+        session.commit()
+
+        # 2. Crear tabla temporal
         session.execute(text("""
         CREATE TEMPORARY TABLE stg_dim_cliente (
             cliente_id INTEGER NOT NULL,
@@ -32,24 +27,20 @@ def create_staging_table(session) -> bool:
             activo BOOLEAN NOT NULL
         ) ON COMMIT PRESERVE ROWS;
         """))
+
+        # 3. Cargar datos
+        df.to_sql(
+            'stg_dim_cliente',
+            session.connection(),
+            if_exists='append',
+            index=False,
+            method='multi',
+            chunksize=1000
+        )
+
+        logger.info(f"Staging completado ({len(df)} filas)")
         return True
+    
     except Exception as e:
         logger.error("Error creando tabla stg_dim_cliente", exc_info=True)
         return False
-
-
-def load_to_staging(df: pd.DataFrame, session) -> bool:
-    """
-    Carga el DataFrame en la tabla temporal 'stg_dim_cliente'.
-    """
-    try:
-        df.to_sql('stg_dim_cliente', con=session.connection(), if_exists='append', index=False)
-        # Verificar datos
-        count = session.execute(text("SELECT COUNT(*) FROM stg_dim_cliente")).scalar()
-        print(f"Tabla temporal 'stg_dim_cliente' creada con {count} registros")
-
-        return True
-    except Exception as e:
-        logger.error("Error cargando los datos a tabla stg_dim_cliente", exc_info=True)
-        return False
-     

@@ -3,6 +3,7 @@ import pandas as pd
 from utils.logger import logger
 from typing import Tuple
 
+'''
 def validate_staging_table(session) -> bool:
     """Verifica que la tabla temporal existe y tiene datos"""
     try:
@@ -31,9 +32,10 @@ def validate_staging_table(session) -> bool:
     except Exception as e:
         logger.error("Error validando staging table", exc_info=True)
         return False
+'''
 
-def transform_data(session) -> pd.DataFrame:
-    """Transforma datos desde la tabla temporal"""
+def run_transform(session) -> Tuple[pd.DataFrame, bool]:
+    """Transforma datos desde staging"""
     try:
         query = text("""
         SELECT 
@@ -50,23 +52,10 @@ def transform_data(session) -> pd.DataFrame:
         FROM pg_temp.stg_dim_cliente
         """)
         
-        return pd.read_sql(query, session.connection())
+        df = pd.read_sql(query, session.connection())
+        logger.info(f"Transformación completada ({len(df)} filas)")
+        return df, True
         
     except Exception as e:
-        logger.error("Error transformando datos", exc_info=True)
-        raise
-
-def run_transform(session) -> Tuple[pd.DataFrame, bool]:
-    """
-    Ejecutar todo el proceso de transformación
-    Retorna: (DataFrame transformado, éxito booleano)
-    """
-    if not validate_staging_table(session):
-        return pd.DataFrame(), False
-    
-    try:
-        df = transform_data(session)
-        logger.info(f"Transformación exitosa. Filas procesadas: {len(df)}")
-        return df, True
-    except Exception as e:
+        logger.error(f"Error en transformación: {str(e)}", exc_info=True)
         return pd.DataFrame(), False

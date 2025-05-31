@@ -7,6 +7,10 @@ PIPELINES = {
     'dim_cliente': {
         'module': 'pipelines.etl_dim_cliente',
         'dependencies': []  # No tiene dependencias
+    },
+    'dim_mensajero': {
+        'module': 'pipelines.etl_dim_mensajero',
+        'dependencies': []  # No depende de otras dimensiones
     }
     ##'dim_fecha': {
     ##    'module': 'pipelines.etl_dim_fecha',

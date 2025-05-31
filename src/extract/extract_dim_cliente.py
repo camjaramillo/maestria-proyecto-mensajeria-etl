@@ -1,6 +1,6 @@
 from typing import Tuple
 import pandas as pd
-from utils import logger
+from utils.logger import logger
 from utils.database import db_session, DBConnection
 
 def run_extract() -> Tuple[pd.DataFrame, bool]:
