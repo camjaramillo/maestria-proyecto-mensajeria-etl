@@ -839,3 +839,618 @@ LINE 1: INSERT INTO dim_mensajero (mensajero_key, cliente_mensajero_...
 2025-05-31 18:09:48,927 - etl_pipeline - INFO -   - DIM_CLIENTE    : ÉXITO
 2025-05-31 18:09:48,927 - etl_pipeline - INFO -   - DIM_MENSAJERO  : ÉXITO
 2025-05-31 18:09:48,927 - etl_pipeline - INFO - ¡Todos los pipelines completados con éxito!
+2025-05-31 19:45:00,326 - etl_pipeline - INFO - Iniciando ETL Master
+2025-05-31 19:45:00,891 - etl_pipeline - INFO - Extrayendo datos... dim_cliente
+2025-05-31 19:45:00,961 - etl_pipeline - INFO - Cargando a staging ... dim_cliente
+2025-05-31 19:45:01,008 - etl_pipeline - INFO - Staging completado (27 filas)
+2025-05-31 19:45:01,008 - etl_pipeline - INFO - Transformando... dim_cliente
+2025-05-31 19:45:01,010 - etl_pipeline - INFO - Transformación completada (27 filas)
+2025-05-31 19:45:01,010 - etl_pipeline - INFO - Cargando a destino... dim_cliente
+2025-05-31 19:45:01,017 - etl_pipeline - INFO - Carga exitosa. Total registros: 27
+2025-05-31 19:45:01,017 - etl_pipeline - INFO - ETL completado. Filas cargadas: 27 en dim_cliente
+2025-05-31 19:45:01,019 - etl_pipeline - INFO - SUCCESS DIM_CLIENTE
+2025-05-31 19:45:01,021 - etl_pipeline - INFO - Extrayendo datos... dim_mensajero
+2025-05-31 19:45:01,057 - etl_pipeline - INFO - Extraídos 50 registros de mensajeros
+2025-05-31 19:45:01,059 - etl_pipeline - INFO - Cargando a staging ... dim_mensajero
+2025-05-31 19:45:01,098 - etl_pipeline - INFO - Staging completado (50 filas)
+2025-05-31 19:45:01,098 - etl_pipeline - INFO - Transformando... dim_mensajero
+2025-05-31 19:45:01,099 - etl_pipeline - INFO - Transformación completada (50 filas)
+2025-05-31 19:45:01,100 - etl_pipeline - INFO - Cargando a destino... dim_mensajero
+2025-05-31 19:45:01,107 - etl_pipeline - INFO - Carga exitosa. Total registros: 50
+2025-05-31 19:45:01,107 - etl_pipeline - INFO - ETL completado. Filas cargadas: 50 en dim_mensajero
+2025-05-31 19:45:01,110 - etl_pipeline - INFO - SUCCESS DIM_MENSAJERO
+2025-05-31 19:45:01,111 - etl_pipeline - INFO - Extrayendo datos... dim_novedad
+2025-05-31 19:45:01,150 - etl_pipeline - INFO - Cargando a staging ... dim_novedad
+2025-05-31 19:45:01,190 - etl_pipeline - INFO - Staging completado (27 filas)
+2025-05-31 19:45:01,190 - etl_pipeline - INFO - Transformando... dim_novedad
+2025-05-31 19:45:01,191 - etl_pipeline - INFO - Transformación completada (27 filas)
+2025-05-31 19:45:01,191 - etl_pipeline - INFO - Cargando a destino... dim_novedad
+2025-05-31 19:45:01,198 - etl_pipeline - INFO - Carga exitosa. Total registros: 27
+2025-05-31 19:45:01,199 - etl_pipeline - INFO - ETL completado. Filas cargadas: 27 en dim_novedad
+2025-05-31 19:45:01,200 - etl_pipeline - INFO - SUCCESS DIM_NOVEDAD
+2025-05-31 19:45:01,200 - etl_pipeline - INFO - Resumen de ejecución:
+2025-05-31 19:45:01,200 - etl_pipeline - INFO -   - DIM_CLIENTE    : ÉXITO
+2025-05-31 19:45:01,201 - etl_pipeline - INFO -   - DIM_MENSAJERO  : ÉXITO
+2025-05-31 19:45:01,201 - etl_pipeline - INFO -   - DIM_NOVEDAD    : ÉXITO
+2025-05-31 19:45:01,201 - etl_pipeline - INFO - ¡Todos los pipelines completados con éxito!
+2025-05-31 19:47:45,692 - etl_pipeline - INFO - Iniciando ETL Master
+2025-05-31 19:47:46,287 - etl_pipeline - INFO - Extrayendo datos... dim_cliente
+2025-05-31 19:47:46,355 - etl_pipeline - INFO - Cargando a staging ... dim_cliente
+2025-05-31 19:47:46,393 - etl_pipeline - INFO - Staging completado (27 filas)
+2025-05-31 19:47:46,393 - etl_pipeline - INFO - Transformando... dim_cliente
+2025-05-31 19:47:46,394 - etl_pipeline - INFO - Transformación completada (27 filas)
+2025-05-31 19:47:46,394 - etl_pipeline - INFO - Cargando a destino... dim_cliente
+2025-05-31 19:47:46,402 - etl_pipeline - INFO - Carga exitosa. Total registros: 27
+2025-05-31 19:47:46,402 - etl_pipeline - INFO - ETL completado. Filas cargadas: 27 en dim_cliente
+2025-05-31 19:47:46,404 - etl_pipeline - INFO - SUCCESS DIM_CLIENTE
+2025-05-31 19:47:46,406 - etl_pipeline - INFO - Extrayendo datos... dim_mensajero
+2025-05-31 19:47:46,443 - etl_pipeline - INFO - Extraídos 50 registros de mensajeros
+2025-05-31 19:47:46,445 - etl_pipeline - INFO - Cargando a staging ... dim_mensajero
+2025-05-31 19:47:46,483 - etl_pipeline - INFO - Staging completado (50 filas)
+2025-05-31 19:47:46,483 - etl_pipeline - INFO - Transformando... dim_mensajero
+2025-05-31 19:47:46,485 - etl_pipeline - INFO - Transformación completada (50 filas)
+2025-05-31 19:47:46,485 - etl_pipeline - INFO - Cargando a destino... dim_mensajero
+2025-05-31 19:47:46,496 - etl_pipeline - INFO - Carga exitosa. Total registros: 50
+2025-05-31 19:47:46,497 - etl_pipeline - INFO - ETL completado. Filas cargadas: 50 en dim_mensajero
+2025-05-31 19:47:46,501 - etl_pipeline - INFO - SUCCESS DIM_MENSAJERO
+2025-05-31 19:47:46,518 - etl_pipeline - INFO - Extrayendo datos... dim_novedad
+2025-05-31 19:47:46,662 - etl_pipeline - ERROR - Error extrayendo los datos para dim_novedad
+Traceback (most recent call last):
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.FeatureNotSupported: no están implementadas las referencias entre bases de datos: «public.public.mensajeria_tiponovedad»
+LINE 5:         FROM public.public.mensajeria_tiponovedad tn
+                     ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\src\extract\extract_dim_novedad.py", line 19, in run_extract
+    return pd.read_sql(query, session.connection()), True
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 734, in read_sql
+    return pandas_sql.read_query(
+           ~~~~~~~~~~~~~~~~~~~~~^
+        sql,
+        ^^^^
+    ...<6 lines>...
+        dtype=dtype,
+        ^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 1836, in read_query
+    result = self.execute(sql, params)
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 1659, in execute
+    return self.con.exec_driver_sql(sql, *args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1775, in exec_driver_sql
+    ret = self._execute_context(
+        dialect,
+    ...<5 lines>...
+        distilled_parameters,
+    )
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1842, in _execute_context
+    return self._exec_single_context(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        dialect, context, statement, parameters
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1982, in _exec_single_context
+    self._handle_dbapi_exception(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        e, str_statement, effective_parameters, cursor, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2351, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+sqlalchemy.exc.NotSupportedError: (psycopg2.errors.FeatureNotSupported) no están implementadas las referencias entre bases de datos: «public.public.mensajeria_tiponovedad»
+LINE 5:         FROM public.public.mensajeria_tiponovedad tn
+                     ^
+
+[SQL: 
+        SELECT
+            tn.id AS novedad_id,
+            tn.nombre
+        FROM public.public.mensajeria_tiponovedad tn
+        ]
+(Background on this error at: https://sqlalche.me/e/20/tw8g)
+2025-05-31 19:47:46,666 - etl_pipeline - ERROR - Falló la extracción o DataFrame vacío
+2025-05-31 19:47:46,666 - etl_pipeline - INFO - ERROR DIM_NOVEDAD
+2025-05-31 19:47:46,666 - etl_pipeline - INFO - Resumen de ejecución:
+2025-05-31 19:47:46,666 - etl_pipeline - INFO -   - DIM_CLIENTE    : ÉXITO
+2025-05-31 19:47:46,667 - etl_pipeline - INFO -   - DIM_MENSAJERO  : ÉXITO
+2025-05-31 19:47:46,667 - etl_pipeline - INFO -   - DIM_NOVEDAD    : FALLÓ
+2025-05-31 19:47:46,667 - etl_pipeline - ERROR - Algunos pipelines fallaron. Ver logs.
+2025-05-31 19:49:28,130 - etl_pipeline - INFO - Iniciando ETL Master
+2025-05-31 19:49:28,704 - etl_pipeline - INFO - Extrayendo datos... dim_cliente
+2025-05-31 19:49:28,771 - etl_pipeline - INFO - Cargando a staging ... dim_cliente
+2025-05-31 19:49:28,808 - etl_pipeline - INFO - Staging completado (27 filas)
+2025-05-31 19:49:28,808 - etl_pipeline - INFO - Transformando... dim_cliente
+2025-05-31 19:49:28,810 - etl_pipeline - INFO - Transformación completada (27 filas)
+2025-05-31 19:49:28,810 - etl_pipeline - INFO - Cargando a destino... dim_cliente
+2025-05-31 19:49:28,817 - etl_pipeline - INFO - Carga exitosa. Total registros: 27
+2025-05-31 19:49:28,817 - etl_pipeline - INFO - ETL completado. Filas cargadas: 27 en dim_cliente
+2025-05-31 19:49:28,819 - etl_pipeline - INFO - SUCCESS DIM_CLIENTE
+2025-05-31 19:49:28,820 - etl_pipeline - INFO - Extrayendo datos... dim_mensajero
+2025-05-31 19:49:28,855 - etl_pipeline - INFO - Extraídos 50 registros de mensajeros
+2025-05-31 19:49:28,857 - etl_pipeline - INFO - Cargando a staging ... dim_mensajero
+2025-05-31 19:49:28,899 - etl_pipeline - INFO - Staging completado (50 filas)
+2025-05-31 19:49:28,899 - etl_pipeline - INFO - Transformando... dim_mensajero
+2025-05-31 19:49:28,900 - etl_pipeline - INFO - Transformación completada (50 filas)
+2025-05-31 19:49:28,901 - etl_pipeline - INFO - Cargando a destino... dim_mensajero
+2025-05-31 19:49:28,909 - etl_pipeline - INFO - Carga exitosa. Total registros: 50
+2025-05-31 19:49:28,909 - etl_pipeline - INFO - ETL completado. Filas cargadas: 50 en dim_mensajero
+2025-05-31 19:49:28,911 - etl_pipeline - INFO - SUCCESS DIM_MENSAJERO
+2025-05-31 19:49:28,922 - etl_pipeline - INFO - Extrayendo datos... dim_novedad
+2025-05-31 19:49:29,079 - etl_pipeline - INFO - Cargando a staging ... dim_novedad
+2025-05-31 19:49:29,115 - etl_pipeline - ERROR - Error creando tabla stg_dim_novedad
+Traceback (most recent call last):
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.SyntaxError: error de sintaxis en o cerca de «)»
+LINE 5:         ) ON COMMIT PRESERVE ROWS;
+                ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\src\staging\staging_dim_novedad.py", line 14, in run_staging
+    session.execute(text("""
+    ~~~~~~~~~~~~~~~^^^^^^^^^
+    CREATE TEMPORARY TABLE stg_dim_novedad (
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+    ) ON COMMIT PRESERVE ROWS;
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    """))
+    ^^^^^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2365, in execute
+    return self._execute_internal(
+           ~~~~~~~~~~~~~~~~~~~~~~^
+        statement,
+        ^^^^^^^^^^
+    ...<4 lines>...
+        _add_event=_add_event,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2260, in _execute_internal
+    result = conn.execute(
+        statement, params or {}, execution_options=execution_options
+    )
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1415, in execute
+    return meth(
+        self,
+        distilled_parameters,
+        execution_options or NO_OPTIONS,
+    )
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self, distilled_params, execution_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1637, in _execute_clauseelement
+    ret = self._execute_context(
+        dialect,
+    ...<8 lines>...
+        cache_hit=cache_hit,
+    )
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1842, in _execute_context
+    return self._exec_single_context(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        dialect, context, statement, parameters
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1982, in _exec_single_context
+    self._handle_dbapi_exception(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        e, str_statement, effective_parameters, cursor, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2351, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.SyntaxError) error de sintaxis en o cerca de «)»
+LINE 5:         ) ON COMMIT PRESERVE ROWS;
+                ^
+
+[SQL: 
+        CREATE TEMPORARY TABLE stg_dim_novedad (
+            novedad_id INTEGER NOT NULL,
+            nombre VARCHAR(30) NOT NULL,
+        ) ON COMMIT PRESERVE ROWS;
+        ]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-05-31 19:49:29,120 - etl_pipeline - INFO - ERROR DIM_NOVEDAD
+2025-05-31 19:49:29,120 - etl_pipeline - INFO - Resumen de ejecución:
+2025-05-31 19:49:29,120 - etl_pipeline - INFO -   - DIM_CLIENTE    : ÉXITO
+2025-05-31 19:49:29,120 - etl_pipeline - INFO -   - DIM_MENSAJERO  : ÉXITO
+2025-05-31 19:49:29,120 - etl_pipeline - INFO -   - DIM_NOVEDAD    : FALLÓ
+2025-05-31 19:49:29,120 - etl_pipeline - ERROR - Algunos pipelines fallaron. Ver logs.
+2025-05-31 19:49:53,142 - etl_pipeline - INFO - Iniciando ETL Master
+2025-05-31 19:49:53,609 - etl_pipeline - INFO - Extrayendo datos... dim_cliente
+2025-05-31 19:49:53,678 - etl_pipeline - INFO - Cargando a staging ... dim_cliente
+2025-05-31 19:49:53,830 - etl_pipeline - INFO - Staging completado (27 filas)
+2025-05-31 19:49:53,830 - etl_pipeline - INFO - Transformando... dim_cliente
+2025-05-31 19:49:53,832 - etl_pipeline - INFO - Transformación completada (27 filas)
+2025-05-31 19:49:53,832 - etl_pipeline - INFO - Cargando a destino... dim_cliente
+2025-05-31 19:49:53,839 - etl_pipeline - INFO - Carga exitosa. Total registros: 27
+2025-05-31 19:49:53,839 - etl_pipeline - INFO - ETL completado. Filas cargadas: 27 en dim_cliente
+2025-05-31 19:49:53,840 - etl_pipeline - INFO - SUCCESS DIM_CLIENTE
+2025-05-31 19:49:53,842 - etl_pipeline - INFO - Extrayendo datos... dim_mensajero
+2025-05-31 19:49:53,878 - etl_pipeline - INFO - Extraídos 50 registros de mensajeros
+2025-05-31 19:49:53,880 - etl_pipeline - INFO - Cargando a staging ... dim_mensajero
+2025-05-31 19:49:53,917 - etl_pipeline - INFO - Staging completado (50 filas)
+2025-05-31 19:49:53,918 - etl_pipeline - INFO - Transformando... dim_mensajero
+2025-05-31 19:49:53,919 - etl_pipeline - INFO - Transformación completada (50 filas)
+2025-05-31 19:49:53,919 - etl_pipeline - INFO - Cargando a destino... dim_mensajero
+2025-05-31 19:49:53,935 - etl_pipeline - INFO - Carga exitosa. Total registros: 50
+2025-05-31 19:49:53,935 - etl_pipeline - INFO - ETL completado. Filas cargadas: 50 en dim_mensajero
+2025-05-31 19:49:53,938 - etl_pipeline - INFO - SUCCESS DIM_MENSAJERO
+2025-05-31 19:49:53,958 - etl_pipeline - INFO - Extrayendo datos... dim_novedad
+2025-05-31 19:49:54,006 - etl_pipeline - INFO - Cargando a staging ... dim_novedad
+2025-05-31 19:49:54,047 - etl_pipeline - INFO - Staging completado (2 filas)
+2025-05-31 19:49:54,048 - etl_pipeline - INFO - Transformando... dim_novedad
+2025-05-31 19:49:54,049 - etl_pipeline - ERROR - Error en transformación: (psycopg2.errors.SyntaxError) error de sintaxis en o cerca de «FROM»
+LINE 5:         FROM pg_temp.stg_dim_cliente
+                ^
+
+[SQL: 
+        SELECT 
+            ROW_NUMBER() OVER (ORDER BY novedad_id) AS novedad_key,
+            UPPER(TRIM(nombre)) AS nombre,
+        FROM pg_temp.stg_dim_cliente
+        ]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+Traceback (most recent call last):
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.SyntaxError: error de sintaxis en o cerca de «FROM»
+LINE 5:         FROM pg_temp.stg_dim_cliente
+                ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\src\transform\transform_dim_novedad.py", line 16, in run_transform
+    df = pd.read_sql(query, session.connection())
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 734, in read_sql
+    return pandas_sql.read_query(
+           ~~~~~~~~~~~~~~~~~~~~~^
+        sql,
+        ^^^^
+    ...<6 lines>...
+        dtype=dtype,
+        ^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 1836, in read_query
+    result = self.execute(sql, params)
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 1660, in execute
+    return self.con.execute(sql, *args)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1415, in execute
+    return meth(
+        self,
+        distilled_parameters,
+        execution_options or NO_OPTIONS,
+    )
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self, distilled_params, execution_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1637, in _execute_clauseelement
+    ret = self._execute_context(
+        dialect,
+    ...<8 lines>...
+        cache_hit=cache_hit,
+    )
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1842, in _execute_context
+    return self._exec_single_context(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        dialect, context, statement, parameters
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1982, in _exec_single_context
+    self._handle_dbapi_exception(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        e, str_statement, effective_parameters, cursor, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2351, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.SyntaxError) error de sintaxis en o cerca de «FROM»
+LINE 5:         FROM pg_temp.stg_dim_cliente
+                ^
+
+[SQL: 
+        SELECT 
+            ROW_NUMBER() OVER (ORDER BY novedad_id) AS novedad_key,
+            UPPER(TRIM(nombre)) AS nombre,
+        FROM pg_temp.stg_dim_cliente
+        ]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-05-31 19:49:54,054 - etl_pipeline - INFO - ERROR DIM_NOVEDAD
+2025-05-31 19:49:54,054 - etl_pipeline - INFO - Resumen de ejecución:
+2025-05-31 19:49:54,054 - etl_pipeline - INFO -   - DIM_CLIENTE    : ÉXITO
+2025-05-31 19:49:54,054 - etl_pipeline - INFO -   - DIM_MENSAJERO  : ÉXITO
+2025-05-31 19:49:54,055 - etl_pipeline - INFO -   - DIM_NOVEDAD    : FALLÓ
+2025-05-31 19:49:54,055 - etl_pipeline - ERROR - Algunos pipelines fallaron. Ver logs.
+2025-05-31 19:50:56,105 - etl_pipeline - INFO - Iniciando ETL Master
+2025-05-31 19:50:56,585 - etl_pipeline - INFO - Extrayendo datos... dim_cliente
+2025-05-31 19:50:56,655 - etl_pipeline - INFO - Cargando a staging ... dim_cliente
+2025-05-31 19:50:56,693 - etl_pipeline - INFO - Staging completado (27 filas)
+2025-05-31 19:50:56,693 - etl_pipeline - INFO - Transformando... dim_cliente
+2025-05-31 19:50:56,694 - etl_pipeline - INFO - Transformación completada (27 filas)
+2025-05-31 19:50:56,694 - etl_pipeline - INFO - Cargando a destino... dim_cliente
+2025-05-31 19:50:56,701 - etl_pipeline - INFO - Carga exitosa. Total registros: 27
+2025-05-31 19:50:56,701 - etl_pipeline - INFO - ETL completado. Filas cargadas: 27 en dim_cliente
+2025-05-31 19:50:56,703 - etl_pipeline - INFO - SUCCESS DIM_CLIENTE
+2025-05-31 19:50:56,705 - etl_pipeline - INFO - Extrayendo datos... dim_mensajero
+2025-05-31 19:50:56,740 - etl_pipeline - INFO - Extraídos 50 registros de mensajeros
+2025-05-31 19:50:56,742 - etl_pipeline - INFO - Cargando a staging ... dim_mensajero
+2025-05-31 19:50:56,782 - etl_pipeline - INFO - Staging completado (50 filas)
+2025-05-31 19:50:56,782 - etl_pipeline - INFO - Transformando... dim_mensajero
+2025-05-31 19:50:56,784 - etl_pipeline - INFO - Transformación completada (50 filas)
+2025-05-31 19:50:56,784 - etl_pipeline - INFO - Cargando a destino... dim_mensajero
+2025-05-31 19:50:56,791 - etl_pipeline - INFO - Carga exitosa. Total registros: 50
+2025-05-31 19:50:56,791 - etl_pipeline - INFO - ETL completado. Filas cargadas: 50 en dim_mensajero
+2025-05-31 19:50:56,793 - etl_pipeline - INFO - SUCCESS DIM_MENSAJERO
+2025-05-31 19:50:56,795 - etl_pipeline - INFO - Extrayendo datos... dim_novedad
+2025-05-31 19:50:56,827 - etl_pipeline - INFO - Cargando a staging ... dim_novedad
+2025-05-31 19:50:56,858 - etl_pipeline - INFO - Staging completado (2 filas)
+2025-05-31 19:50:56,858 - etl_pipeline - INFO - Transformando... dim_novedad
+2025-05-31 19:50:56,859 - etl_pipeline - ERROR - Error en transformación: (psycopg2.errors.SyntaxError) error de sintaxis en o cerca de «FROM»
+LINE 5:         FROM pg_temp.stg_dim_cliente
+                ^
+
+[SQL: 
+        SELECT 
+            ROW_NUMBER() OVER (ORDER BY novedad_id) AS novedad_key,
+            UPPER(TRIM(nombre)) AS nombre,
+        FROM pg_temp.stg_dim_cliente
+        ]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+Traceback (most recent call last):
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.SyntaxError: error de sintaxis en o cerca de «FROM»
+LINE 5:         FROM pg_temp.stg_dim_cliente
+                ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\src\transform\transform_dim_novedad.py", line 16, in run_transform
+    df = pd.read_sql(query, session.connection())
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 734, in read_sql
+    return pandas_sql.read_query(
+           ~~~~~~~~~~~~~~~~~~~~~^
+        sql,
+        ^^^^
+    ...<6 lines>...
+        dtype=dtype,
+        ^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 1836, in read_query
+    result = self.execute(sql, params)
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 1660, in execute
+    return self.con.execute(sql, *args)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1415, in execute
+    return meth(
+        self,
+        distilled_parameters,
+        execution_options or NO_OPTIONS,
+    )
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self, distilled_params, execution_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1637, in _execute_clauseelement
+    ret = self._execute_context(
+        dialect,
+    ...<8 lines>...
+        cache_hit=cache_hit,
+    )
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1842, in _execute_context
+    return self._exec_single_context(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        dialect, context, statement, parameters
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1982, in _exec_single_context
+    self._handle_dbapi_exception(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        e, str_statement, effective_parameters, cursor, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2351, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.SyntaxError) error de sintaxis en o cerca de «FROM»
+LINE 5:         FROM pg_temp.stg_dim_cliente
+                ^
+
+[SQL: 
+        SELECT 
+            ROW_NUMBER() OVER (ORDER BY novedad_id) AS novedad_key,
+            UPPER(TRIM(nombre)) AS nombre,
+        FROM pg_temp.stg_dim_cliente
+        ]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-05-31 19:50:56,863 - etl_pipeline - INFO - ERROR DIM_NOVEDAD
+2025-05-31 19:50:56,863 - etl_pipeline - INFO - Resumen de ejecución:
+2025-05-31 19:50:56,864 - etl_pipeline - INFO -   - DIM_CLIENTE    : ÉXITO
+2025-05-31 19:50:56,864 - etl_pipeline - INFO -   - DIM_MENSAJERO  : ÉXITO
+2025-05-31 19:50:56,864 - etl_pipeline - INFO -   - DIM_NOVEDAD    : FALLÓ
+2025-05-31 19:50:56,864 - etl_pipeline - ERROR - Algunos pipelines fallaron. Ver logs.
+2025-05-31 19:51:18,336 - etl_pipeline - INFO - Iniciando ETL Master
+2025-05-31 19:51:18,817 - etl_pipeline - INFO - Extrayendo datos... dim_cliente
+2025-05-31 19:51:19,016 - etl_pipeline - INFO - Cargando a staging ... dim_cliente
+2025-05-31 19:51:19,054 - etl_pipeline - INFO - Staging completado (27 filas)
+2025-05-31 19:51:19,054 - etl_pipeline - INFO - Transformando... dim_cliente
+2025-05-31 19:51:19,055 - etl_pipeline - INFO - Transformación completada (27 filas)
+2025-05-31 19:51:19,056 - etl_pipeline - INFO - Cargando a destino... dim_cliente
+2025-05-31 19:51:19,063 - etl_pipeline - INFO - Carga exitosa. Total registros: 27
+2025-05-31 19:51:19,063 - etl_pipeline - INFO - ETL completado. Filas cargadas: 27 en dim_cliente
+2025-05-31 19:51:19,065 - etl_pipeline - INFO - SUCCESS DIM_CLIENTE
+2025-05-31 19:51:19,066 - etl_pipeline - INFO - Extrayendo datos... dim_mensajero
+2025-05-31 19:51:19,111 - etl_pipeline - INFO - Extraídos 50 registros de mensajeros
+2025-05-31 19:51:19,112 - etl_pipeline - INFO - Cargando a staging ... dim_mensajero
+2025-05-31 19:51:19,149 - etl_pipeline - INFO - Staging completado (50 filas)
+2025-05-31 19:51:19,149 - etl_pipeline - INFO - Transformando... dim_mensajero
+2025-05-31 19:51:19,150 - etl_pipeline - INFO - Transformación completada (50 filas)
+2025-05-31 19:51:19,151 - etl_pipeline - INFO - Cargando a destino... dim_mensajero
+2025-05-31 19:51:19,158 - etl_pipeline - INFO - Carga exitosa. Total registros: 50
+2025-05-31 19:51:19,158 - etl_pipeline - INFO - ETL completado. Filas cargadas: 50 en dim_mensajero
+2025-05-31 19:51:19,160 - etl_pipeline - INFO - SUCCESS DIM_MENSAJERO
+2025-05-31 19:51:19,172 - etl_pipeline - INFO - Extrayendo datos... dim_novedad
+2025-05-31 19:51:19,210 - etl_pipeline - INFO - Cargando a staging ... dim_novedad
+2025-05-31 19:51:19,240 - etl_pipeline - INFO - Staging completado (2 filas)
+2025-05-31 19:51:19,241 - etl_pipeline - INFO - Transformando... dim_novedad
+2025-05-31 19:51:19,242 - etl_pipeline - INFO - Transformación completada (2 filas)
+2025-05-31 19:51:19,242 - etl_pipeline - INFO - Cargando a destino... dim_novedad
+2025-05-31 19:51:19,248 - etl_pipeline - INFO - Carga exitosa. Total registros: 2
+2025-05-31 19:51:19,248 - etl_pipeline - INFO - ETL completado. Filas cargadas: 2 en dim_novedad
+2025-05-31 19:51:19,249 - etl_pipeline - INFO - SUCCESS DIM_NOVEDAD
+2025-05-31 19:51:19,249 - etl_pipeline - INFO - Resumen de ejecución:
+2025-05-31 19:51:19,249 - etl_pipeline - INFO -   - DIM_CLIENTE    : ÉXITO
+2025-05-31 19:51:19,249 - etl_pipeline - INFO -   - DIM_MENSAJERO  : ÉXITO
+2025-05-31 19:51:19,249 - etl_pipeline - INFO -   - DIM_NOVEDAD    : ÉXITO
+2025-05-31 19:51:19,249 - etl_pipeline - INFO - ¡Todos los pipelines completados con éxito!
+2025-05-31 21:05:45,076 - etl_pipeline - INFO - Iniciando ETL Master
+2025-05-31 21:05:46,043 - etl_pipeline - INFO - Extrayendo datos... dim_cliente
+2025-05-31 21:05:46,156 - etl_pipeline - INFO - Cargando a staging ... dim_cliente
+2025-05-31 21:05:46,216 - etl_pipeline - INFO - Staging stg_dim_cliente completado (27 filas)
+2025-05-31 21:05:46,216 - etl_pipeline - INFO - Transformando... dim_cliente
+2025-05-31 21:05:46,218 - etl_pipeline - INFO - Transformación completada (27 filas)
+2025-05-31 21:05:46,218 - etl_pipeline - INFO - Cargando a destino... dim_cliente
+2025-05-31 21:05:46,237 - etl_pipeline - INFO - Carga exitosa. Total registros: 27
+2025-05-31 21:05:46,238 - etl_pipeline - INFO - ETL completado. Filas cargadas: 27 en dim_cliente
+2025-05-31 21:05:46,241 - etl_pipeline - INFO - SUCCESS DIM_CLIENTE
+2025-05-31 21:05:46,245 - etl_pipeline - INFO - Extrayendo datos... dim_mensajero
+2025-05-31 21:05:46,301 - etl_pipeline - INFO - Extraídos 50 registros de mensajeros
+2025-05-31 21:05:46,304 - etl_pipeline - INFO - Cargando a staging ... dim_mensajero
+2025-05-31 21:05:46,365 - etl_pipeline - INFO - Staging stg_dim_mensajero completado (50 filas)
+2025-05-31 21:05:46,365 - etl_pipeline - INFO - Transformando... dim_mensajero
+2025-05-31 21:05:46,368 - etl_pipeline - INFO - Transformación completada (50 filas)
+2025-05-31 21:05:46,368 - etl_pipeline - INFO - Cargando a destino... dim_mensajero
+2025-05-31 21:05:46,380 - etl_pipeline - INFO - Carga exitosa. Total registros: 50
+2025-05-31 21:05:46,381 - etl_pipeline - INFO - ETL completado. Filas cargadas: 50 en dim_mensajero
+2025-05-31 21:05:46,387 - etl_pipeline - INFO - SUCCESS DIM_MENSAJERO
+2025-05-31 21:05:46,394 - etl_pipeline - INFO - Extrayendo datos... dim_novedad
+2025-05-31 21:05:46,577 - etl_pipeline - INFO - Cargando a staging ... dim_novedad
+2025-05-31 21:05:46,635 - etl_pipeline - INFO - Staging stg_dim_novedad completado (2 filas)
+2025-05-31 21:05:46,635 - etl_pipeline - INFO - Transformando... dim_novedad
+2025-05-31 21:05:46,637 - etl_pipeline - INFO - Transformación completada (2 filas)
+2025-05-31 21:05:46,638 - etl_pipeline - INFO - Cargando a destino... dim_novedad
+2025-05-31 21:05:46,647 - etl_pipeline - INFO - Carga exitosa. Total registros: 2
+2025-05-31 21:05:46,647 - etl_pipeline - INFO - ETL completado. Filas cargadas: 2 en dim_novedad
+2025-05-31 21:05:46,652 - etl_pipeline - INFO - SUCCESS DIM_NOVEDAD
+2025-05-31 21:05:46,673 - etl_pipeline - INFO - Extrayendo datos... dim_estado_servicio
+2025-05-31 21:05:46,734 - etl_pipeline - INFO - Cargando a staging ... dim_estado_servicio
+2025-05-31 21:05:46,797 - etl_pipeline - INFO - Staging stg_dim_estado_servicio completado (6 filas)
+2025-05-31 21:05:46,798 - etl_pipeline - INFO - Transformando... dim_estado_servicio
+2025-05-31 21:05:46,799 - etl_pipeline - INFO - Transformación completada (6 filas)
+2025-05-31 21:05:46,800 - etl_pipeline - INFO - Cargando a destino... dim_estado_servicio
+2025-05-31 21:05:46,817 - etl_pipeline - INFO - Carga exitosa. Total registros: 6
+2025-05-31 21:05:46,817 - etl_pipeline - INFO - ETL completado. Filas cargadas: 6 en dim_estado_servicio
+2025-05-31 21:05:46,819 - etl_pipeline - INFO - SUCCESS DIM_ESTADO_SERVICIO
+2025-05-31 21:05:46,819 - etl_pipeline - INFO - Resumen de ejecución:
+2025-05-31 21:05:46,819 - etl_pipeline - INFO -   - DIM_CLIENTE    : ÉXITO
+2025-05-31 21:05:46,819 - etl_pipeline - INFO -   - DIM_MENSAJERO  : ÉXITO
+2025-05-31 21:05:46,820 - etl_pipeline - INFO -   - DIM_NOVEDAD    : ÉXITO
+2025-05-31 21:05:46,820 - etl_pipeline - INFO -   - DIM_ESTADO_SERVICIO: ÉXITO
+2025-05-31 21:05:46,821 - etl_pipeline - INFO - ¡Todos los pipelines completados con éxito!

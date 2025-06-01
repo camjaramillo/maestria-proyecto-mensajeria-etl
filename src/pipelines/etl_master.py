@@ -6,10 +6,18 @@ from utils.logger import logger
 PIPELINES = {
     'dim_cliente': {
         'module': 'pipelines.etl_dim_cliente',
-        'dependencies': []  # No tiene dependencias
+        'dependencies': []  # No depende de otras dimensiones
     },
     'dim_mensajero': {
         'module': 'pipelines.etl_dim_mensajero',
+        'dependencies': []  # No depende de otras dimensiones
+    },
+    'dim_novedad': {
+        'module': 'pipelines.etl_dim_novedad',
+        'dependencies': []  # No depende de otras dimensiones
+    },
+    'dim_estado_servicio': {
+        'module': 'pipelines.etl_dim_estado_servicio',
         'dependencies': []  # No depende de otras dimensiones
     }
     ##'dim_fecha': {

@@ -38,9 +38,9 @@ def run_staging(df: pd.DataFrame, session) -> bool:
             chunksize=1000
         )
 
-        logger.info(f"Staging completado ({len(df)} filas)")
+        logger.info(f"Staging stg_dim_cliente completado ({len(df)} filas)")
         return True
     
     except Exception as e:
-        logger.error("Error creando tabla stg_dim_cliente", exc_info=True)
+        logger.error(f"Error creando tabla stg_dim_cliente: {str(e)}", exc_info=True)
         return False
