@@ -1562,3 +1562,888 @@ LINE 5:         FROM pg_temp.stg_dim_cliente
 2025-05-31 21:24:08,590 - etl_pipeline - INFO -   - DIM_ESTADO_SERVICIO: ÉXITO
 2025-05-31 21:24:08,590 - etl_pipeline - INFO -   - DIM_TIPO_SERVICIO: ÉXITO
 2025-05-31 21:24:08,590 - etl_pipeline - INFO - ¡Todos los pipelines completados con éxito!
+2025-05-31 22:56:37,046 - etl_pipeline - INFO - Iniciando ETL Master
+2025-05-31 22:56:38,010 - etl_pipeline - INFO - Extrayendo datos... dim_cliente
+2025-05-31 22:56:38,139 - etl_pipeline - INFO - Cargando a staging ... dim_cliente
+2025-05-31 22:56:38,206 - etl_pipeline - INFO - Staging stg_dim_cliente completado (27 filas)
+2025-05-31 22:56:38,206 - etl_pipeline - INFO - Transformando... dim_cliente
+2025-05-31 22:56:38,209 - etl_pipeline - INFO - Transformación completada (27 filas)
+2025-05-31 22:56:38,209 - etl_pipeline - INFO - Cargando a destino... dim_cliente
+2025-05-31 22:56:38,240 - etl_pipeline - ERROR - Error en carga: (psycopg2.errors.NotNullViolation) el valor nulo en la columna «cliente_id» de la relación «dim_cliente» viola la restricción de no nulo
+DETAIL:  La fila que falla contiene (1, null, 25, CLIENTE 2, algo.com, Calle 100 No 25-18, 327-00000, CALI, VALLE DEL CAUCA, S, t, 2025-05-31 22:56:38.183616).
+
+[SQL: INSERT INTO dim_cliente (cliente_key, nit, nombre, email, direccion, telefono, ciudad, departamento, sector, activo) VALUES (%(cliente_key__0)s, %(nit__0)s, %(nombre__0)s, %(email__0)s, %(direccion__0)s, %(telefono__0)s, %(ciudad__0)s, %(departamento ... 4370 characters truncated ... ccion__26)s, %(telefono__26)s, %(ciudad__26)s, %(departamento__26)s, %(sector__26)s, %(activo__26)s)]
+[parameters: {'activo__0': True, 'direccion__0': 'Calle 100 No 25-18', 'email__0': 'algo.com', 'cliente_key__0': 1, 'telefono__0': '327-00000', 'departamento__0': 'VALLE DEL CAUCA', 'ciudad__0': 'CALI', 'sector__0': 'S', 'nombre__0': 'CLIENTE 2', 'nit__0': '25', 'activo__1': True, 'direccion__1': 'Calle 100 No 25-18', 'email__1': 'algo.com', 'cliente_key__1': 2, 'telefono__1': '327-00000', 'departamento__1': 'VALLE DEL CAUCA', 'ciudad__1': 'CALI', 'sector__1': 'INDUSTRIAL', 'nombre__1': 'CLIENTE 1', 'nit__1': '123', 'activo__2': True, 'direccion__2': 'Calle 100 No 25-18', 'email__2': 'algo.com', 'cliente_key__2': 3, 'telefono__2': '327-00000', 'departamento__2': 'VALLE DEL CAUCA', 'ciudad__2': 'CALI', 'sector__2': 'SALUD', 'nombre__2': 'BANCO REGIONAL  DE SANGRE BLOD-LIFE', 'nit__2': '312289-5', 'activo__3': True, 'direccion__3': 'Calle 100 No 25-18', 'email__3': 'algo.com', 'cliente_key__3': 4, 'telefono__3': '327-00000', 'departamento__3': 'VALLE DEL CAUCA', 'ciudad__3': 'CALI', 'sector__3': 'SALUD', 'nombre__3': 'CRUZ AZUL-LIFE', 'nit__3': '306215-0', 'activo__4': True, 'direccion__4': 'Calle 100 No 25-18', 'email__4': 'algo.com', 'cliente_key__4': 5, 'telefono__4': '327-00000', 'departamento__4': 'VALLE DEL CAUCA', 'ciudad__4': 'CALI', 'sector__4': 'SALUD', 'nombre__4': 'CLINICA CALI -JOVEN', 'nit__4': '300513-3' ... 170 parameters truncated ... 'activo__22': True, 'direccion__22': 'Calle 100 No 25-18', 'email__22': 'algo.com', 'cliente_key__22': 23, 'telefono__22': '327-00000', 'departamento__22': 'VALLE DEL CAUCA', 'ciudad__22': 'CALI', 'sector__22': 'SALUD', 'nombre__22': 'CLINICA MEDICA S.A.S', 'nit__22': '900603', 'activo__23': True, 'direccion__23': 'Calle 100 No 25-18', 'email__23': 'algo.com', 'cliente_key__23': 24, 'telefono__23': '327-00000', 'departamento__23': 'VALLE DEL CAUCA', 'ciudad__23': 'CALI', 'sector__23': 'SALUD', 'nombre__23': 'CLINICA SAN RAFAEL DE OCCIDENTE', 'nit__23': '9009754', 'activo__24': True, 'direccion__24': 'Calle 100 No 25-18', 'email__24': 'algo.com', 'cliente_key__24': 25, 'telefono__24': '327-00000', 'departamento__24': 'VALLE DEL CAUCA', 'ciudad__24': 'CALI', 'sector__24': 'SALUD', 'nombre__24': 'CALI SULUD Y VIDA', 'nit__24': '900361', 'activo__25': True, 'direccion__25': 'Calle 100 No 25-18', 'email__25': 'algo.com', 'cliente_key__25': 26, 'telefono__25': '327-00000', 'departamento__25': 'VALLE DEL CAUCA', 'ciudad__25': 'CALI', 'sector__25': 'SALUD', 'nombre__25': 'OCCIDENTE DE SALUD-CALI', 'nit__25': '25478', 'activo__26': True, 'direccion__26': 'Calle 100 No 25-18', 'email__26': 'algo.com', 'cliente_key__26': 27, 'telefono__26': '327-00000', 'departamento__26': 'VALLE DEL CAUCA', 'ciudad__26': 'CALI', 'sector__26': 'INDUSTRIAL', 'nombre__26': 'MEDICOS Y SALUD', 'nit__26': '201478'}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+Traceback (most recent call last):
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2114, in _exec_insertmany_context
+    dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~^
+        cursor,
+        ^^^^^^^
+    ...<2 lines>...
+        context,
+        ^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.NotNullViolation: el valor nulo en la columna «cliente_id» de la relación «dim_cliente» viola la restricción de no nulo
+DETAIL:  La fila que falla contiene (1, null, 25, CLIENTE 2, algo.com, Calle 100 No 25-18, 327-00000, CALI, VALLE DEL CAUCA, S, t, 2025-05-31 22:56:38.183616).
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\src\load\load_dim_cliente.py", line 34, in run_load
+    df.to_sql(
+    ~~~~~~~~~^
+        'dim_cliente',
+        ^^^^^^^^^^^^^^
+    ...<3 lines>...
+        chunksize=1000
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\core\generic.py", line 3087, in to_sql
+    return sql.to_sql(
+           ~~~~~~~~~~^
+        self,
+        ^^^^^
+    ...<8 lines>...
+        method=method,
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 842, in to_sql
+    return pandas_sql.to_sql(
+           ~~~~~~~~~~~~~~~~~^
+        frame,
+        ^^^^^^
+    ...<9 lines>...
+        **engine_kwargs,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 2018, in to_sql
+    total_inserted = sql_engine.insert_records(
+        table=table,
+    ...<7 lines>...
+        **engine_kwargs,
+    )
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 1567, in insert_records
+    raise err
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 1558, in insert_records
+    return table.insert(chunksize=chunksize, method=method)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 1119, in insert
+    num_inserted = exec_insert(conn, keys, chunk_iter)
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 1010, in _execute_insert
+    result = conn.execute(self.table.insert(), data)
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1415, in execute
+    return meth(
+        self,
+        distilled_parameters,
+        execution_options or NO_OPTIONS,
+    )
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self, distilled_params, execution_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1637, in _execute_clauseelement
+    ret = self._execute_context(
+        dialect,
+    ...<8 lines>...
+        cache_hit=cache_hit,
+    )
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1840, in _execute_context
+    return self._exec_insertmany_context(dialect, context)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2122, in _exec_insertmany_context
+    self._handle_dbapi_exception(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        e,
+        ^^
+    ...<4 lines>...
+        is_sub_exec=True,
+        ^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2351, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2114, in _exec_insertmany_context
+    dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~^
+        cursor,
+        ^^^^^^^
+    ...<2 lines>...
+        context,
+        ^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+sqlalchemy.exc.IntegrityError: (psycopg2.errors.NotNullViolation) el valor nulo en la columna «cliente_id» de la relación «dim_cliente» viola la restricción de no nulo
+DETAIL:  La fila que falla contiene (1, null, 25, CLIENTE 2, algo.com, Calle 100 No 25-18, 327-00000, CALI, VALLE DEL CAUCA, S, t, 2025-05-31 22:56:38.183616).
+
+[SQL: INSERT INTO dim_cliente (cliente_key, nit, nombre, email, direccion, telefono, ciudad, departamento, sector, activo) VALUES (%(cliente_key__0)s, %(nit__0)s, %(nombre__0)s, %(email__0)s, %(direccion__0)s, %(telefono__0)s, %(ciudad__0)s, %(departamento ... 4370 characters truncated ... ccion__26)s, %(telefono__26)s, %(ciudad__26)s, %(departamento__26)s, %(sector__26)s, %(activo__26)s)]
+[parameters: {'activo__0': True, 'direccion__0': 'Calle 100 No 25-18', 'email__0': 'algo.com', 'cliente_key__0': 1, 'telefono__0': '327-00000', 'departamento__0': 'VALLE DEL CAUCA', 'ciudad__0': 'CALI', 'sector__0': 'S', 'nombre__0': 'CLIENTE 2', 'nit__0': '25', 'activo__1': True, 'direccion__1': 'Calle 100 No 25-18', 'email__1': 'algo.com', 'cliente_key__1': 2, 'telefono__1': '327-00000', 'departamento__1': 'VALLE DEL CAUCA', 'ciudad__1': 'CALI', 'sector__1': 'INDUSTRIAL', 'nombre__1': 'CLIENTE 1', 'nit__1': '123', 'activo__2': True, 'direccion__2': 'Calle 100 No 25-18', 'email__2': 'algo.com', 'cliente_key__2': 3, 'telefono__2': '327-00000', 'departamento__2': 'VALLE DEL CAUCA', 'ciudad__2': 'CALI', 'sector__2': 'SALUD', 'nombre__2': 'BANCO REGIONAL  DE SANGRE BLOD-LIFE', 'nit__2': '312289-5', 'activo__3': True, 'direccion__3': 'Calle 100 No 25-18', 'email__3': 'algo.com', 'cliente_key__3': 4, 'telefono__3': '327-00000', 'departamento__3': 'VALLE DEL CAUCA', 'ciudad__3': 'CALI', 'sector__3': 'SALUD', 'nombre__3': 'CRUZ AZUL-LIFE', 'nit__3': '306215-0', 'activo__4': True, 'direccion__4': 'Calle 100 No 25-18', 'email__4': 'algo.com', 'cliente_key__4': 5, 'telefono__4': '327-00000', 'departamento__4': 'VALLE DEL CAUCA', 'ciudad__4': 'CALI', 'sector__4': 'SALUD', 'nombre__4': 'CLINICA CALI -JOVEN', 'nit__4': '300513-3' ... 170 parameters truncated ... 'activo__22': True, 'direccion__22': 'Calle 100 No 25-18', 'email__22': 'algo.com', 'cliente_key__22': 23, 'telefono__22': '327-00000', 'departamento__22': 'VALLE DEL CAUCA', 'ciudad__22': 'CALI', 'sector__22': 'SALUD', 'nombre__22': 'CLINICA MEDICA S.A.S', 'nit__22': '900603', 'activo__23': True, 'direccion__23': 'Calle 100 No 25-18', 'email__23': 'algo.com', 'cliente_key__23': 24, 'telefono__23': '327-00000', 'departamento__23': 'VALLE DEL CAUCA', 'ciudad__23': 'CALI', 'sector__23': 'SALUD', 'nombre__23': 'CLINICA SAN RAFAEL DE OCCIDENTE', 'nit__23': '9009754', 'activo__24': True, 'direccion__24': 'Calle 100 No 25-18', 'email__24': 'algo.com', 'cliente_key__24': 25, 'telefono__24': '327-00000', 'departamento__24': 'VALLE DEL CAUCA', 'ciudad__24': 'CALI', 'sector__24': 'SALUD', 'nombre__24': 'CALI SULUD Y VIDA', 'nit__24': '900361', 'activo__25': True, 'direccion__25': 'Calle 100 No 25-18', 'email__25': 'algo.com', 'cliente_key__25': 26, 'telefono__25': '327-00000', 'departamento__25': 'VALLE DEL CAUCA', 'ciudad__25': 'CALI', 'sector__25': 'SALUD', 'nombre__25': 'OCCIDENTE DE SALUD-CALI', 'nit__25': '25478', 'activo__26': True, 'direccion__26': 'Calle 100 No 25-18', 'email__26': 'algo.com', 'cliente_key__26': 27, 'telefono__26': '327-00000', 'departamento__26': 'VALLE DEL CAUCA', 'ciudad__26': 'CALI', 'sector__26': 'INDUSTRIAL', 'nombre__26': 'MEDICOS Y SALUD', 'nit__26': '201478'}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-05-31 22:56:38,255 - etl_pipeline - INFO - ERROR DIM_CLIENTE
+2025-05-31 22:56:38,260 - etl_pipeline - INFO - Extrayendo datos... dim_mensajero
+2025-05-31 22:56:38,453 - etl_pipeline - INFO - Extraídos 50 registros de mensajeros
+2025-05-31 22:56:38,455 - etl_pipeline - INFO - Cargando a staging ... dim_mensajero
+2025-05-31 22:56:38,517 - etl_pipeline - INFO - Staging stg_dim_mensajero completado (50 filas)
+2025-05-31 22:56:38,517 - etl_pipeline - INFO - Transformando... dim_mensajero
+2025-05-31 22:56:38,519 - etl_pipeline - INFO - Transformación completada (50 filas)
+2025-05-31 22:56:38,519 - etl_pipeline - INFO - Cargando a destino... dim_mensajero
+2025-05-31 22:56:38,533 - etl_pipeline - INFO - Carga exitosa. Total registros: 50
+2025-05-31 22:56:38,533 - etl_pipeline - INFO - ETL completado. Filas cargadas: 50 en dim_mensajero
+2025-05-31 22:56:38,537 - etl_pipeline - INFO - SUCCESS DIM_MENSAJERO
+2025-05-31 22:56:38,544 - etl_pipeline - INFO - Extrayendo datos... dim_novedad
+2025-05-31 22:56:38,597 - etl_pipeline - INFO - Cargando a staging ... dim_novedad
+2025-05-31 22:56:38,651 - etl_pipeline - INFO - Staging stg_dim_novedad completado (2 filas)
+2025-05-31 22:56:38,652 - etl_pipeline - INFO - Transformando... dim_novedad
+2025-05-31 22:56:38,654 - etl_pipeline - INFO - Transformación completada (2 filas)
+2025-05-31 22:56:38,655 - etl_pipeline - INFO - Cargando a destino... dim_novedad
+2025-05-31 22:56:38,663 - etl_pipeline - INFO - Carga exitosa. Total registros: 2
+2025-05-31 22:56:38,663 - etl_pipeline - INFO - ETL completado. Filas cargadas: 2 en dim_novedad
+2025-05-31 22:56:38,667 - etl_pipeline - INFO - SUCCESS DIM_NOVEDAD
+2025-05-31 22:56:38,672 - etl_pipeline - INFO - Extrayendo datos... dim_estado_servicio
+2025-05-31 22:56:38,729 - etl_pipeline - INFO - Cargando a staging ... dim_estado_servicio
+2025-05-31 22:56:38,915 - etl_pipeline - INFO - Staging stg_dim_estado_servicio completado (6 filas)
+2025-05-31 22:56:38,916 - etl_pipeline - INFO - Transformando... dim_estado_servicio
+2025-05-31 22:56:38,918 - etl_pipeline - INFO - Transformación completada (6 filas)
+2025-05-31 22:56:38,918 - etl_pipeline - INFO - Cargando a destino... dim_estado_servicio
+2025-05-31 22:56:38,930 - etl_pipeline - INFO - Carga exitosa. Total registros: 6
+2025-05-31 22:56:38,930 - etl_pipeline - INFO - ETL completado. Filas cargadas: 6 en dim_estado_servicio
+2025-05-31 22:56:38,936 - etl_pipeline - INFO - SUCCESS DIM_ESTADO_SERVICIO
+2025-05-31 22:56:38,943 - etl_pipeline - INFO - Extrayendo datos... dim_tipo_servicio
+2025-05-31 22:56:39,002 - etl_pipeline - INFO - Cargando a staging ... dim_tipo_servicio
+2025-05-31 22:56:39,063 - etl_pipeline - INFO - Staging stg_dim_tipo_servicio completado (4 filas)
+2025-05-31 22:56:39,064 - etl_pipeline - INFO - Transformando... dim_tipo_servicio
+2025-05-31 22:56:39,066 - etl_pipeline - INFO - Transformación completada (4 filas)
+2025-05-31 22:56:39,066 - etl_pipeline - INFO - Cargando a destino... dim_tipo_servicio
+2025-05-31 22:56:39,076 - etl_pipeline - INFO - Carga exitosa. Total registros: 4
+2025-05-31 22:56:39,076 - etl_pipeline - INFO - ETL completado. Filas cargadas: 4 en dim_tipo_servicio
+2025-05-31 22:56:39,081 - etl_pipeline - INFO - SUCCESS DIM_TIPO_SERVICIO
+2025-05-31 22:56:39,082 - etl_pipeline - INFO - Resumen de ejecución:
+2025-05-31 22:56:39,082 - etl_pipeline - INFO -   - DIM_CLIENTE    : FALLÓ
+2025-05-31 22:56:39,082 - etl_pipeline - INFO -   - DIM_MENSAJERO  : ÉXITO
+2025-05-31 22:56:39,083 - etl_pipeline - INFO -   - DIM_NOVEDAD    : ÉXITO
+2025-05-31 22:56:39,083 - etl_pipeline - INFO -   - DIM_ESTADO_SERVICIO: ÉXITO
+2025-05-31 22:56:39,083 - etl_pipeline - INFO -   - DIM_TIPO_SERVICIO: ÉXITO
+2025-05-31 22:56:39,083 - etl_pipeline - ERROR - Algunos pipelines fallaron. Ver logs.
+2025-05-31 22:57:51,116 - etl_pipeline - INFO - Iniciando ETL Master
+2025-05-31 22:57:51,926 - etl_pipeline - INFO - Extrayendo datos... dim_cliente
+2025-05-31 22:57:52,043 - etl_pipeline - INFO - Cargando a staging ... dim_cliente
+2025-05-31 22:57:52,113 - etl_pipeline - INFO - Staging stg_dim_cliente completado (27 filas)
+2025-05-31 22:57:52,113 - etl_pipeline - INFO - Transformando... dim_cliente
+2025-05-31 22:57:52,116 - etl_pipeline - INFO - Transformación completada (27 filas)
+2025-05-31 22:57:52,116 - etl_pipeline - INFO - Cargando a destino... dim_cliente
+2025-05-31 22:57:52,145 - etl_pipeline - INFO - Carga exitosa. Total registros: 27
+2025-05-31 22:57:52,145 - etl_pipeline - INFO - ETL completado. Filas cargadas: 27 en dim_cliente
+2025-05-31 22:57:52,146 - etl_pipeline - INFO - SUCCESS DIM_CLIENTE
+2025-05-31 22:57:52,151 - etl_pipeline - INFO - Extrayendo datos... dim_mensajero
+2025-05-31 22:57:52,207 - etl_pipeline - INFO - Extraídos 50 registros de mensajeros
+2025-05-31 22:57:52,210 - etl_pipeline - INFO - Cargando a staging ... dim_mensajero
+2025-05-31 22:57:52,269 - etl_pipeline - INFO - Staging stg_dim_mensajero completado (50 filas)
+2025-05-31 22:57:52,270 - etl_pipeline - INFO - Transformando... dim_mensajero
+2025-05-31 22:57:52,272 - etl_pipeline - INFO - Transformación completada (50 filas)
+2025-05-31 22:57:52,272 - etl_pipeline - INFO - Cargando a destino... dim_mensajero
+2025-05-31 22:57:52,283 - etl_pipeline - INFO - Carga exitosa. Total registros: 50
+2025-05-31 22:57:52,283 - etl_pipeline - INFO - ETL completado. Filas cargadas: 50 en dim_mensajero
+2025-05-31 22:57:52,286 - etl_pipeline - INFO - SUCCESS DIM_MENSAJERO
+2025-05-31 22:57:52,289 - etl_pipeline - INFO - Extrayendo datos... dim_novedad
+2025-05-31 22:57:52,334 - etl_pipeline - INFO - Cargando a staging ... dim_novedad
+2025-05-31 22:57:52,377 - etl_pipeline - INFO - Staging stg_dim_novedad completado (2 filas)
+2025-05-31 22:57:52,377 - etl_pipeline - INFO - Transformando... dim_novedad
+2025-05-31 22:57:52,379 - etl_pipeline - INFO - Transformación completada (2 filas)
+2025-05-31 22:57:52,379 - etl_pipeline - INFO - Cargando a destino... dim_novedad
+2025-05-31 22:57:52,385 - etl_pipeline - INFO - Carga exitosa. Total registros: 2
+2025-05-31 22:57:52,385 - etl_pipeline - INFO - ETL completado. Filas cargadas: 2 en dim_novedad
+2025-05-31 22:57:52,388 - etl_pipeline - INFO - SUCCESS DIM_NOVEDAD
+2025-05-31 22:57:52,390 - etl_pipeline - INFO - Extrayendo datos... dim_estado_servicio
+2025-05-31 22:57:52,440 - etl_pipeline - INFO - Cargando a staging ... dim_estado_servicio
+2025-05-31 22:57:52,491 - etl_pipeline - INFO - Staging stg_dim_estado_servicio completado (6 filas)
+2025-05-31 22:57:52,491 - etl_pipeline - INFO - Transformando... dim_estado_servicio
+2025-05-31 22:57:52,493 - etl_pipeline - INFO - Transformación completada (6 filas)
+2025-05-31 22:57:52,493 - etl_pipeline - INFO - Cargando a destino... dim_estado_servicio
+2025-05-31 22:57:52,499 - etl_pipeline - INFO - Carga exitosa. Total registros: 6
+2025-05-31 22:57:52,500 - etl_pipeline - INFO - ETL completado. Filas cargadas: 6 en dim_estado_servicio
+2025-05-31 22:57:52,502 - etl_pipeline - INFO - SUCCESS DIM_ESTADO_SERVICIO
+2025-05-31 22:57:52,504 - etl_pipeline - INFO - Extrayendo datos... dim_tipo_servicio
+2025-05-31 22:57:52,550 - etl_pipeline - INFO - Cargando a staging ... dim_tipo_servicio
+2025-05-31 22:57:52,597 - etl_pipeline - INFO - Staging stg_dim_tipo_servicio completado (4 filas)
+2025-05-31 22:57:52,597 - etl_pipeline - INFO - Transformando... dim_tipo_servicio
+2025-05-31 22:57:52,599 - etl_pipeline - INFO - Transformación completada (4 filas)
+2025-05-31 22:57:52,599 - etl_pipeline - INFO - Cargando a destino... dim_tipo_servicio
+2025-05-31 22:57:52,606 - etl_pipeline - INFO - Carga exitosa. Total registros: 4
+2025-05-31 22:57:52,606 - etl_pipeline - INFO - ETL completado. Filas cargadas: 4 en dim_tipo_servicio
+2025-05-31 22:57:52,610 - etl_pipeline - INFO - SUCCESS DIM_TIPO_SERVICIO
+2025-05-31 22:57:52,611 - etl_pipeline - INFO - Resumen de ejecución:
+2025-05-31 22:57:52,611 - etl_pipeline - INFO -   - DIM_CLIENTE    : ÉXITO
+2025-05-31 22:57:52,611 - etl_pipeline - INFO -   - DIM_MENSAJERO  : ÉXITO
+2025-05-31 22:57:52,611 - etl_pipeline - INFO -   - DIM_NOVEDAD    : ÉXITO
+2025-05-31 22:57:52,612 - etl_pipeline - INFO -   - DIM_ESTADO_SERVICIO: ÉXITO
+2025-05-31 22:57:52,612 - etl_pipeline - INFO -   - DIM_TIPO_SERVICIO: ÉXITO
+2025-05-31 22:57:52,612 - etl_pipeline - INFO - ¡Todos los pipelines completados con éxito!
+2025-05-31 23:00:36,749 - etl_pipeline - INFO - Iniciando ETL Master
+2025-05-31 23:00:37,584 - etl_pipeline - INFO - Extrayendo datos... dim_cliente
+2025-05-31 23:00:37,695 - etl_pipeline - INFO - Cargando a staging ... dim_cliente
+2025-05-31 23:00:37,756 - etl_pipeline - INFO - Staging stg_dim_cliente completado (27 filas)
+2025-05-31 23:00:37,757 - etl_pipeline - INFO - Transformando... dim_cliente
+2025-05-31 23:00:37,759 - etl_pipeline - INFO - Transformación completada (27 filas)
+2025-05-31 23:00:37,759 - etl_pipeline - INFO - Cargando a destino... dim_cliente
+2025-05-31 23:00:37,775 - etl_pipeline - INFO - Carga exitosa. Total registros: 27
+2025-05-31 23:00:37,775 - etl_pipeline - INFO - ETL completado. Filas cargadas: 27 en dim_cliente
+2025-05-31 23:00:37,779 - etl_pipeline - INFO - SUCCESS DIM_CLIENTE
+2025-05-31 23:00:37,843 - etl_pipeline - INFO - Extrayendo datos... dim_mensajero
+2025-05-31 23:00:37,887 - etl_pipeline - INFO - Extraídos 50 registros de mensajeros
+2025-05-31 23:00:37,889 - etl_pipeline - INFO - Cargando a staging ... dim_mensajero
+2025-05-31 23:00:37,949 - etl_pipeline - INFO - Staging stg_dim_mensajero completado (50 filas)
+2025-05-31 23:00:37,950 - etl_pipeline - INFO - Transformando... dim_mensajero
+2025-05-31 23:00:37,952 - etl_pipeline - INFO - Transformación completada (50 filas)
+2025-05-31 23:00:37,952 - etl_pipeline - INFO - Cargando a destino... dim_mensajero
+2025-05-31 23:00:37,977 - etl_pipeline - INFO - Carga exitosa. Total registros: 50
+2025-05-31 23:00:37,978 - etl_pipeline - INFO - ETL completado. Filas cargadas: 50 en dim_mensajero
+2025-05-31 23:00:37,979 - etl_pipeline - INFO - SUCCESS DIM_MENSAJERO
+2025-05-31 23:00:37,982 - etl_pipeline - INFO - Extrayendo datos... dim_novedad
+2025-05-31 23:00:38,034 - etl_pipeline - INFO - Cargando a staging ... dim_novedad
+2025-05-31 23:00:38,220 - etl_pipeline - INFO - Staging stg_dim_novedad completado (2 filas)
+2025-05-31 23:00:38,221 - etl_pipeline - INFO - Transformando... dim_novedad
+2025-05-31 23:00:38,223 - etl_pipeline - INFO - Transformación completada (2 filas)
+2025-05-31 23:00:38,223 - etl_pipeline - INFO - Cargando a destino... dim_novedad
+2025-05-31 23:00:38,232 - etl_pipeline - INFO - Carga exitosa. Total registros: 2
+2025-05-31 23:00:38,232 - etl_pipeline - INFO - ETL completado. Filas cargadas: 2 en dim_novedad
+2025-05-31 23:00:38,237 - etl_pipeline - INFO - SUCCESS DIM_NOVEDAD
+2025-05-31 23:00:38,242 - etl_pipeline - INFO - Extrayendo datos... dim_estado_servicio
+2025-05-31 23:00:38,298 - etl_pipeline - INFO - Cargando a staging ... dim_estado_servicio
+2025-05-31 23:00:38,353 - etl_pipeline - INFO - Staging stg_dim_estado_servicio completado (6 filas)
+2025-05-31 23:00:38,353 - etl_pipeline - INFO - Transformando... dim_estado_servicio
+2025-05-31 23:00:38,355 - etl_pipeline - INFO - Transformación completada (6 filas)
+2025-05-31 23:00:38,355 - etl_pipeline - INFO - Cargando a destino... dim_estado_servicio
+2025-05-31 23:00:38,364 - etl_pipeline - INFO - Carga exitosa. Total registros: 6
+2025-05-31 23:00:38,365 - etl_pipeline - INFO - ETL completado. Filas cargadas: 6 en dim_estado_servicio
+2025-05-31 23:00:38,368 - etl_pipeline - INFO - SUCCESS DIM_ESTADO_SERVICIO
+2025-05-31 23:00:38,372 - etl_pipeline - INFO - Extrayendo datos... dim_tipo_servicio
+2025-05-31 23:00:38,427 - etl_pipeline - INFO - Cargando a staging ... dim_tipo_servicio
+2025-05-31 23:00:38,486 - etl_pipeline - INFO - Staging stg_dim_tipo_servicio completado (4 filas)
+2025-05-31 23:00:38,487 - etl_pipeline - INFO - Transformando... dim_tipo_servicio
+2025-05-31 23:00:38,488 - etl_pipeline - INFO - Transformación completada (4 filas)
+2025-05-31 23:00:38,489 - etl_pipeline - INFO - Cargando a destino... dim_tipo_servicio
+2025-05-31 23:00:38,498 - etl_pipeline - INFO - Carga exitosa. Total registros: 4
+2025-05-31 23:00:38,499 - etl_pipeline - INFO - ETL completado. Filas cargadas: 4 en dim_tipo_servicio
+2025-05-31 23:00:38,503 - etl_pipeline - INFO - SUCCESS DIM_TIPO_SERVICIO
+2025-05-31 23:00:38,503 - etl_pipeline - INFO - Resumen de ejecución:
+2025-05-31 23:00:38,504 - etl_pipeline - INFO -   - DIM_CLIENTE    : ÉXITO
+2025-05-31 23:00:38,504 - etl_pipeline - INFO -   - DIM_MENSAJERO  : ÉXITO
+2025-05-31 23:00:38,504 - etl_pipeline - INFO -   - DIM_NOVEDAD    : ÉXITO
+2025-05-31 23:00:38,504 - etl_pipeline - INFO -   - DIM_ESTADO_SERVICIO: ÉXITO
+2025-05-31 23:00:38,505 - etl_pipeline - INFO -   - DIM_TIPO_SERVICIO: ÉXITO
+2025-05-31 23:00:38,505 - etl_pipeline - INFO - ¡Todos los pipelines completados con éxito!
+2025-05-31 23:02:23,902 - etl_pipeline - INFO - Iniciando ETL Master
+2025-05-31 23:02:24,758 - etl_pipeline - INFO - Extrayendo datos... dim_cliente
+2025-05-31 23:02:24,869 - etl_pipeline - INFO - Cargando a staging ... dim_cliente
+2025-05-31 23:02:24,933 - etl_pipeline - INFO - Staging stg_dim_cliente completado (27 filas)
+2025-05-31 23:02:24,934 - etl_pipeline - INFO - Transformando... dim_cliente
+2025-05-31 23:02:24,936 - etl_pipeline - INFO - Transformación completada (27 filas)
+2025-05-31 23:02:24,936 - etl_pipeline - INFO - Cargando a destino... dim_cliente
+2025-05-31 23:02:24,953 - etl_pipeline - INFO - Carga exitosa. Total registros: 27
+2025-05-31 23:02:24,953 - etl_pipeline - INFO - ETL completado. Filas cargadas: 27 en dim_cliente
+2025-05-31 23:02:24,959 - etl_pipeline - INFO - SUCCESS DIM_CLIENTE
+2025-05-31 23:02:24,962 - etl_pipeline - INFO - Extrayendo datos... dim_mensajero
+2025-05-31 23:02:25,019 - etl_pipeline - INFO - Extraídos 50 registros de mensajeros
+2025-05-31 23:02:25,021 - etl_pipeline - INFO - Cargando a staging ... dim_mensajero
+2025-05-31 23:02:25,086 - etl_pipeline - INFO - Staging stg_dim_mensajero completado (50 filas)
+2025-05-31 23:02:25,086 - etl_pipeline - INFO - Transformando... dim_mensajero
+2025-05-31 23:02:25,088 - etl_pipeline - INFO - Transformación completada (50 filas)
+2025-05-31 23:02:25,088 - etl_pipeline - INFO - Cargando a destino... dim_mensajero
+2025-05-31 23:02:25,103 - etl_pipeline - INFO - Carga exitosa. Total registros: 50
+2025-05-31 23:02:25,103 - etl_pipeline - INFO - ETL completado. Filas cargadas: 50 en dim_mensajero
+2025-05-31 23:02:25,107 - etl_pipeline - INFO - SUCCESS DIM_MENSAJERO
+2025-05-31 23:02:25,136 - etl_pipeline - INFO - Extrayendo datos... dim_novedad
+2025-05-31 23:02:25,189 - etl_pipeline - INFO - Cargando a staging ... dim_novedad
+2025-05-31 23:02:25,240 - etl_pipeline - INFO - Staging stg_dim_novedad completado (2 filas)
+2025-05-31 23:02:25,240 - etl_pipeline - INFO - Transformando... dim_novedad
+2025-05-31 23:02:25,242 - etl_pipeline - INFO - Transformación completada (2 filas)
+2025-05-31 23:02:25,242 - etl_pipeline - INFO - Cargando a destino... dim_novedad
+2025-05-31 23:02:25,264 - etl_pipeline - INFO - Carga exitosa. Total registros: 2
+2025-05-31 23:02:25,265 - etl_pipeline - INFO - ETL completado. Filas cargadas: 2 en dim_novedad
+2025-05-31 23:02:25,266 - etl_pipeline - INFO - SUCCESS DIM_NOVEDAD
+2025-05-31 23:02:25,270 - etl_pipeline - INFO - Extrayendo datos... dim_estado_servicio
+2025-05-31 23:02:25,322 - etl_pipeline - INFO - Cargando a staging ... dim_estado_servicio
+2025-05-31 23:02:25,367 - etl_pipeline - INFO - Staging stg_dim_estado_servicio completado (6 filas)
+2025-05-31 23:02:25,368 - etl_pipeline - INFO - Transformando... dim_estado_servicio
+2025-05-31 23:02:25,369 - etl_pipeline - INFO - Transformación completada (6 filas)
+2025-05-31 23:02:25,369 - etl_pipeline - INFO - Cargando a destino... dim_estado_servicio
+2025-05-31 23:02:25,376 - etl_pipeline - INFO - Carga exitosa. Total registros: 6
+2025-05-31 23:02:25,376 - etl_pipeline - INFO - ETL completado. Filas cargadas: 6 en dim_estado_servicio
+2025-05-31 23:02:25,380 - etl_pipeline - INFO - SUCCESS DIM_ESTADO_SERVICIO
+2025-05-31 23:02:25,383 - etl_pipeline - INFO - Extrayendo datos... dim_tipo_servicio
+2025-05-31 23:02:25,431 - etl_pipeline - INFO - Cargando a staging ... dim_tipo_servicio
+2025-05-31 23:02:25,484 - etl_pipeline - INFO - Staging stg_dim_tipo_servicio completado (4 filas)
+2025-05-31 23:02:25,484 - etl_pipeline - INFO - Transformando... dim_tipo_servicio
+2025-05-31 23:02:25,485 - etl_pipeline - INFO - Transformación completada (4 filas)
+2025-05-31 23:02:25,486 - etl_pipeline - INFO - Cargando a destino... dim_tipo_servicio
+2025-05-31 23:02:25,494 - etl_pipeline - INFO - Carga exitosa. Total registros: 4
+2025-05-31 23:02:25,495 - etl_pipeline - INFO - ETL completado. Filas cargadas: 4 en dim_tipo_servicio
+2025-05-31 23:02:25,497 - etl_pipeline - INFO - SUCCESS DIM_TIPO_SERVICIO
+2025-05-31 23:02:25,498 - etl_pipeline - INFO - Resumen de ejecución:
+2025-05-31 23:02:25,498 - etl_pipeline - INFO -   - DIM_CLIENTE    : ÉXITO
+2025-05-31 23:02:25,498 - etl_pipeline - INFO -   - DIM_MENSAJERO  : ÉXITO
+2025-05-31 23:02:25,498 - etl_pipeline - INFO -   - DIM_NOVEDAD    : ÉXITO
+2025-05-31 23:02:25,498 - etl_pipeline - INFO -   - DIM_ESTADO_SERVICIO: ÉXITO
+2025-05-31 23:02:25,498 - etl_pipeline - INFO -   - DIM_TIPO_SERVICIO: ÉXITO
+2025-05-31 23:02:25,499 - etl_pipeline - INFO - ¡Todos los pipelines completados con éxito!
+2025-05-31 23:04:36,623 - etl_pipeline - INFO - Iniciando ETL Master
+2025-05-31 23:04:37,420 - etl_pipeline - INFO - Extrayendo datos... dim_cliente
+2025-05-31 23:04:37,531 - etl_pipeline - INFO - Cargando a staging ... dim_cliente
+2025-05-31 23:04:37,596 - etl_pipeline - INFO - Staging stg_dim_cliente completado (27 filas)
+2025-05-31 23:04:37,596 - etl_pipeline - INFO - Transformando... dim_cliente
+2025-05-31 23:04:37,598 - etl_pipeline - INFO - Transformación completada (27 filas)
+2025-05-31 23:04:37,598 - etl_pipeline - INFO - Cargando a destino... dim_cliente
+2025-05-31 23:04:37,617 - etl_pipeline - INFO - Carga exitosa. Total registros: 27
+2025-05-31 23:04:37,617 - etl_pipeline - INFO - ETL completado. Filas cargadas: 27 en dim_cliente
+2025-05-31 23:04:37,621 - etl_pipeline - INFO - SUCCESS DIM_CLIENTE
+2025-05-31 23:04:37,626 - etl_pipeline - INFO - Extrayendo datos... dim_mensajero
+2025-05-31 23:04:37,683 - etl_pipeline - INFO - Extraídos 50 registros de mensajeros
+2025-05-31 23:04:37,685 - etl_pipeline - INFO - Cargando a staging ... dim_mensajero
+2025-05-31 23:04:37,752 - etl_pipeline - INFO - Staging stg_dim_mensajero completado (50 filas)
+2025-05-31 23:04:37,753 - etl_pipeline - INFO - Transformando... dim_mensajero
+2025-05-31 23:04:37,755 - etl_pipeline - INFO - Transformación completada (50 filas)
+2025-05-31 23:04:37,755 - etl_pipeline - INFO - Cargando a destino... dim_mensajero
+2025-05-31 23:04:37,769 - etl_pipeline - INFO - Carga exitosa. Total registros: 50
+2025-05-31 23:04:37,769 - etl_pipeline - INFO - ETL completado. Filas cargadas: 50 en dim_mensajero
+2025-05-31 23:04:37,773 - etl_pipeline - INFO - SUCCESS DIM_MENSAJERO
+2025-05-31 23:04:37,779 - etl_pipeline - INFO - Extrayendo datos... dim_novedad
+2025-05-31 23:04:37,831 - etl_pipeline - INFO - Cargando a staging ... dim_novedad
+2025-05-31 23:04:37,880 - etl_pipeline - INFO - Staging stg_dim_novedad completado (2 filas)
+2025-05-31 23:04:37,880 - etl_pipeline - INFO - Transformando... dim_novedad
+2025-05-31 23:04:37,881 - etl_pipeline - INFO - Transformación completada (2 filas)
+2025-05-31 23:04:37,882 - etl_pipeline - INFO - Cargando a destino... dim_novedad
+2025-05-31 23:04:37,900 - etl_pipeline - INFO - Carga exitosa. Total registros: 2
+2025-05-31 23:04:37,900 - etl_pipeline - INFO - ETL completado. Filas cargadas: 2 en dim_novedad
+2025-05-31 23:04:37,901 - etl_pipeline - INFO - SUCCESS DIM_NOVEDAD
+2025-05-31 23:04:37,920 - etl_pipeline - INFO - Extrayendo datos... dim_estado_servicio
+2025-05-31 23:04:37,972 - etl_pipeline - INFO - Cargando a staging ... dim_estado_servicio
+2025-05-31 23:04:38,032 - etl_pipeline - INFO - Staging stg_dim_estado_servicio completado (6 filas)
+2025-05-31 23:04:38,032 - etl_pipeline - INFO - Transformando... dim_estado_servicio
+2025-05-31 23:04:38,035 - etl_pipeline - INFO - Transformación completada (6 filas)
+2025-05-31 23:04:38,035 - etl_pipeline - INFO - Cargando a destino... dim_estado_servicio
+2025-05-31 23:04:38,065 - etl_pipeline - INFO - Carga exitosa. Total registros: 6
+2025-05-31 23:04:38,065 - etl_pipeline - INFO - ETL completado. Filas cargadas: 6 en dim_estado_servicio
+2025-05-31 23:04:38,067 - etl_pipeline - INFO - SUCCESS DIM_ESTADO_SERVICIO
+2025-05-31 23:04:38,072 - etl_pipeline - INFO - Extrayendo datos... dim_tipo_servicio
+2025-05-31 23:04:38,127 - etl_pipeline - INFO - Cargando a staging ... dim_tipo_servicio
+2025-05-31 23:04:38,186 - etl_pipeline - INFO - Staging stg_dim_tipo_servicio completado (4 filas)
+2025-05-31 23:04:38,186 - etl_pipeline - INFO - Transformando... dim_tipo_servicio
+2025-05-31 23:04:38,188 - etl_pipeline - INFO - Transformación completada (4 filas)
+2025-05-31 23:04:38,188 - etl_pipeline - INFO - Cargando a destino... dim_tipo_servicio
+2025-05-31 23:04:38,199 - etl_pipeline - INFO - Carga exitosa. Total registros: 4
+2025-05-31 23:04:38,199 - etl_pipeline - INFO - ETL completado. Filas cargadas: 4 en dim_tipo_servicio
+2025-05-31 23:04:38,203 - etl_pipeline - INFO - SUCCESS DIM_TIPO_SERVICIO
+2025-05-31 23:04:38,203 - etl_pipeline - INFO - Resumen de ejecución:
+2025-05-31 23:04:38,204 - etl_pipeline - INFO -   - DIM_CLIENTE    : ÉXITO
+2025-05-31 23:04:38,204 - etl_pipeline - INFO -   - DIM_MENSAJERO  : ÉXITO
+2025-05-31 23:04:38,204 - etl_pipeline - INFO -   - DIM_NOVEDAD    : ÉXITO
+2025-05-31 23:04:38,204 - etl_pipeline - INFO -   - DIM_ESTADO_SERVICIO: ÉXITO
+2025-05-31 23:04:38,204 - etl_pipeline - INFO -   - DIM_TIPO_SERVICIO: ÉXITO
+2025-05-31 23:04:38,204 - etl_pipeline - INFO - ¡Todos los pipelines completados con éxito!
+2025-05-31 23:05:44,662 - etl_pipeline - INFO - Iniciando ETL Master
+2025-05-31 23:05:45,504 - etl_pipeline - INFO - Extrayendo datos... dim_cliente
+2025-05-31 23:05:45,745 - etl_pipeline - INFO - Cargando a staging ... dim_cliente
+2025-05-31 23:05:45,815 - etl_pipeline - INFO - Staging stg_dim_cliente completado (27 filas)
+2025-05-31 23:05:45,815 - etl_pipeline - INFO - Transformando... dim_cliente
+2025-05-31 23:05:45,817 - etl_pipeline - INFO - Transformación completada (27 filas)
+2025-05-31 23:05:45,818 - etl_pipeline - INFO - Cargando a destino... dim_cliente
+2025-05-31 23:05:45,835 - etl_pipeline - INFO - Carga exitosa. Total registros: 27
+2025-05-31 23:05:45,835 - etl_pipeline - INFO - ETL completado. Filas cargadas: 27 en dim_cliente
+2025-05-31 23:05:45,840 - etl_pipeline - INFO - SUCCESS DIM_CLIENTE
+2025-05-31 23:05:45,843 - etl_pipeline - INFO - Extrayendo datos... dim_mensajero
+2025-05-31 23:05:46,016 - etl_pipeline - INFO - Extraídos 50 registros de mensajeros
+2025-05-31 23:05:46,019 - etl_pipeline - INFO - Cargando a staging ... dim_mensajero
+2025-05-31 23:05:46,092 - etl_pipeline - INFO - Staging stg_dim_mensajero completado (50 filas)
+2025-05-31 23:05:46,092 - etl_pipeline - INFO - Transformando... dim_mensajero
+2025-05-31 23:05:46,095 - etl_pipeline - INFO - Transformación completada (50 filas)
+2025-05-31 23:05:46,095 - etl_pipeline - INFO - Cargando a destino... dim_mensajero
+2025-05-31 23:05:46,108 - etl_pipeline - INFO - Carga exitosa. Total registros: 50
+2025-05-31 23:05:46,108 - etl_pipeline - INFO - ETL completado. Filas cargadas: 50 en dim_mensajero
+2025-05-31 23:05:46,113 - etl_pipeline - INFO - SUCCESS DIM_MENSAJERO
+2025-05-31 23:05:46,116 - etl_pipeline - INFO - Extrayendo datos... dim_novedad
+2025-05-31 23:05:46,277 - etl_pipeline - INFO - Cargando a staging ... dim_novedad
+2025-05-31 23:05:46,331 - etl_pipeline - INFO - Staging stg_dim_novedad completado (2 filas)
+2025-05-31 23:05:46,332 - etl_pipeline - INFO - Transformando... dim_novedad
+2025-05-31 23:05:46,333 - etl_pipeline - INFO - Transformación completada (2 filas)
+2025-05-31 23:05:46,334 - etl_pipeline - INFO - Cargando a destino... dim_novedad
+2025-05-31 23:05:46,341 - etl_pipeline - INFO - Carga exitosa. Total registros: 2
+2025-05-31 23:05:46,342 - etl_pipeline - INFO - ETL completado. Filas cargadas: 2 en dim_novedad
+2025-05-31 23:05:46,344 - etl_pipeline - INFO - SUCCESS DIM_NOVEDAD
+2025-05-31 23:05:46,347 - etl_pipeline - INFO - Extrayendo datos... dim_estado_servicio
+2025-05-31 23:05:46,399 - etl_pipeline - INFO - Cargando a staging ... dim_estado_servicio
+2025-05-31 23:05:46,452 - etl_pipeline - INFO - Staging stg_dim_estado_servicio completado (6 filas)
+2025-05-31 23:05:46,452 - etl_pipeline - INFO - Transformando... dim_estado_servicio
+2025-05-31 23:05:46,454 - etl_pipeline - INFO - Transformación completada (6 filas)
+2025-05-31 23:05:46,454 - etl_pipeline - INFO - Cargando a destino... dim_estado_servicio
+2025-05-31 23:05:46,464 - etl_pipeline - INFO - Carga exitosa. Total registros: 6
+2025-05-31 23:05:46,464 - etl_pipeline - INFO - ETL completado. Filas cargadas: 6 en dim_estado_servicio
+2025-05-31 23:05:46,468 - etl_pipeline - INFO - SUCCESS DIM_ESTADO_SERVICIO
+2025-05-31 23:05:46,498 - etl_pipeline - INFO - Extrayendo datos... dim_tipo_servicio
+2025-05-31 23:05:46,548 - etl_pipeline - INFO - Cargando a staging ... dim_tipo_servicio
+2025-05-31 23:05:46,604 - etl_pipeline - INFO - Staging stg_dim_tipo_servicio completado (4 filas)
+2025-05-31 23:05:46,604 - etl_pipeline - INFO - Transformando... dim_tipo_servicio
+2025-05-31 23:05:46,606 - etl_pipeline - INFO - Transformación completada (4 filas)
+2025-05-31 23:05:46,606 - etl_pipeline - INFO - Cargando a destino... dim_tipo_servicio
+2025-05-31 23:05:46,617 - etl_pipeline - ERROR - Error en carga: (psycopg2.errors.UndefinedColumn) no existe la columna «tipo_servicio_id» en la relación «dim_tipo_servicio»
+LINE 1: INSERT INTO dim_tipo_servicio (tipo_servicio_key, tipo_servi...
+                                                          ^
+
+[SQL: INSERT INTO dim_tipo_servicio (tipo_servicio_key, tipo_servicio_id, nombre, descripcion) VALUES (%(tipo_servicio_key__0)s, %(tipo_servicio_id__0)s, %(nombre__0)s, %(descripcion__0)s), (%(tipo_servicio_key__1)s, %(tipo_servicio_id__1)s, %(nombre__1)s, %(descripcion__1)s), (%(tipo_servicio_key__2)s, %(tipo_servicio_id__2)s, %(nombre__2)s, %(descripcion__2)s), (%(tipo_servicio_key__3)s, %(tipo_servicio_id__3)s, %(nombre__3)s, %(descripcion__3)s)]
+[parameters: {'tipo_servicio_id__0': 1, 'descripcion__0': 'Administrativo', 'tipo_servicio_key__0': 1, 'nombre__0': 'ADMINISTRATIVO', 'tipo_servicio_id__1': 2, 'descripcion__1': 'Comercial', 'tipo_servicio_key__1': 2, 'nombre__1': 'COMERCIAL', 'tipo_servicio_id__2': 3, 'descripcion__2': 'Clínico', 'tipo_servicio_key__2': 3, 'nombre__2': 'CLÍNICO', 'tipo_servicio_id__3': 4, 'descripcion__3': 'Urgencia Vital', 'tipo_servicio_key__3': 4, 'nombre__3': 'URGENCIA VITAL'}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+Traceback (most recent call last):
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2114, in _exec_insertmany_context
+    dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~^
+        cursor,
+        ^^^^^^^
+    ...<2 lines>...
+        context,
+        ^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UndefinedColumn: no existe la columna «tipo_servicio_id» en la relación «dim_tipo_servicio»
+LINE 1: INSERT INTO dim_tipo_servicio (tipo_servicio_key, tipo_servi...
+                                                          ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\src\load\load_dim_tipo_servicio.py", line 27, in run_load
+    df.to_sql(
+    ~~~~~~~~~^
+        'dim_tipo_servicio',
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        chunksize=1000
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\core\generic.py", line 3087, in to_sql
+    return sql.to_sql(
+           ~~~~~~~~~~^
+        self,
+        ^^^^^
+    ...<8 lines>...
+        method=method,
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 842, in to_sql
+    return pandas_sql.to_sql(
+           ~~~~~~~~~~~~~~~~~^
+        frame,
+        ^^^^^^
+    ...<9 lines>...
+        **engine_kwargs,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 2018, in to_sql
+    total_inserted = sql_engine.insert_records(
+        table=table,
+    ...<7 lines>...
+        **engine_kwargs,
+    )
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 1567, in insert_records
+    raise err
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 1558, in insert_records
+    return table.insert(chunksize=chunksize, method=method)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 1119, in insert
+    num_inserted = exec_insert(conn, keys, chunk_iter)
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 1010, in _execute_insert
+    result = conn.execute(self.table.insert(), data)
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1415, in execute
+    return meth(
+        self,
+        distilled_parameters,
+        execution_options or NO_OPTIONS,
+    )
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self, distilled_params, execution_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1637, in _execute_clauseelement
+    ret = self._execute_context(
+        dialect,
+    ...<8 lines>...
+        cache_hit=cache_hit,
+    )
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1840, in _execute_context
+    return self._exec_insertmany_context(dialect, context)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2122, in _exec_insertmany_context
+    self._handle_dbapi_exception(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        e,
+        ^^
+    ...<4 lines>...
+        is_sub_exec=True,
+        ^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2351, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2114, in _exec_insertmany_context
+    dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~^
+        cursor,
+        ^^^^^^^
+    ...<2 lines>...
+        context,
+        ^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedColumn) no existe la columna «tipo_servicio_id» en la relación «dim_tipo_servicio»
+LINE 1: INSERT INTO dim_tipo_servicio (tipo_servicio_key, tipo_servi...
+                                                          ^
+
+[SQL: INSERT INTO dim_tipo_servicio (tipo_servicio_key, tipo_servicio_id, nombre, descripcion) VALUES (%(tipo_servicio_key__0)s, %(tipo_servicio_id__0)s, %(nombre__0)s, %(descripcion__0)s), (%(tipo_servicio_key__1)s, %(tipo_servicio_id__1)s, %(nombre__1)s, %(descripcion__1)s), (%(tipo_servicio_key__2)s, %(tipo_servicio_id__2)s, %(nombre__2)s, %(descripcion__2)s), (%(tipo_servicio_key__3)s, %(tipo_servicio_id__3)s, %(nombre__3)s, %(descripcion__3)s)]
+[parameters: {'tipo_servicio_id__0': 1, 'descripcion__0': 'Administrativo', 'tipo_servicio_key__0': 1, 'nombre__0': 'ADMINISTRATIVO', 'tipo_servicio_id__1': 2, 'descripcion__1': 'Comercial', 'tipo_servicio_key__1': 2, 'nombre__1': 'COMERCIAL', 'tipo_servicio_id__2': 3, 'descripcion__2': 'Clínico', 'tipo_servicio_key__2': 3, 'nombre__2': 'CLÍNICO', 'tipo_servicio_id__3': 4, 'descripcion__3': 'Urgencia Vital', 'tipo_servicio_key__3': 4, 'nombre__3': 'URGENCIA VITAL'}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-05-31 23:05:46,627 - etl_pipeline - INFO - ERROR DIM_TIPO_SERVICIO
+2025-05-31 23:05:46,627 - etl_pipeline - INFO - Resumen de ejecución:
+2025-05-31 23:05:46,627 - etl_pipeline - INFO -   - DIM_CLIENTE    : ÉXITO
+2025-05-31 23:05:46,628 - etl_pipeline - INFO -   - DIM_MENSAJERO  : ÉXITO
+2025-05-31 23:05:46,628 - etl_pipeline - INFO -   - DIM_NOVEDAD    : ÉXITO
+2025-05-31 23:05:46,628 - etl_pipeline - INFO -   - DIM_ESTADO_SERVICIO: ÉXITO
+2025-05-31 23:05:46,628 - etl_pipeline - INFO -   - DIM_TIPO_SERVICIO: FALLÓ
+2025-05-31 23:05:46,628 - etl_pipeline - ERROR - Algunos pipelines fallaron. Ver logs.
+2025-05-31 23:05:56,734 - etl_pipeline - INFO - Iniciando ETL Master
+2025-05-31 23:05:57,470 - etl_pipeline - INFO - Extrayendo datos... dim_cliente
+2025-05-31 23:05:57,576 - etl_pipeline - INFO - Cargando a staging ... dim_cliente
+2025-05-31 23:05:57,757 - etl_pipeline - INFO - Staging stg_dim_cliente completado (27 filas)
+2025-05-31 23:05:57,758 - etl_pipeline - INFO - Transformando... dim_cliente
+2025-05-31 23:05:57,759 - etl_pipeline - INFO - Transformación completada (27 filas)
+2025-05-31 23:05:57,760 - etl_pipeline - INFO - Cargando a destino... dim_cliente
+2025-05-31 23:05:57,777 - etl_pipeline - INFO - Carga exitosa. Total registros: 27
+2025-05-31 23:05:57,778 - etl_pipeline - INFO - ETL completado. Filas cargadas: 27 en dim_cliente
+2025-05-31 23:05:57,782 - etl_pipeline - INFO - SUCCESS DIM_CLIENTE
+2025-05-31 23:05:57,785 - etl_pipeline - INFO - Extrayendo datos... dim_mensajero
+2025-05-31 23:05:57,848 - etl_pipeline - INFO - Extraídos 50 registros de mensajeros
+2025-05-31 23:05:57,850 - etl_pipeline - INFO - Cargando a staging ... dim_mensajero
+2025-05-31 23:05:58,044 - etl_pipeline - INFO - Staging stg_dim_mensajero completado (50 filas)
+2025-05-31 23:05:58,044 - etl_pipeline - INFO - Transformando... dim_mensajero
+2025-05-31 23:05:58,047 - etl_pipeline - INFO - Transformación completada (50 filas)
+2025-05-31 23:05:58,047 - etl_pipeline - INFO - Cargando a destino... dim_mensajero
+2025-05-31 23:05:58,065 - etl_pipeline - INFO - Carga exitosa. Total registros: 50
+2025-05-31 23:05:58,066 - etl_pipeline - INFO - ETL completado. Filas cargadas: 50 en dim_mensajero
+2025-05-31 23:05:58,070 - etl_pipeline - INFO - SUCCESS DIM_MENSAJERO
+2025-05-31 23:05:58,075 - etl_pipeline - INFO - Extrayendo datos... dim_novedad
+2025-05-31 23:05:58,123 - etl_pipeline - INFO - Cargando a staging ... dim_novedad
+2025-05-31 23:05:58,172 - etl_pipeline - INFO - Staging stg_dim_novedad completado (2 filas)
+2025-05-31 23:05:58,173 - etl_pipeline - INFO - Transformando... dim_novedad
+2025-05-31 23:05:58,174 - etl_pipeline - INFO - Transformación completada (2 filas)
+2025-05-31 23:05:58,174 - etl_pipeline - INFO - Cargando a destino... dim_novedad
+2025-05-31 23:05:58,183 - etl_pipeline - INFO - Carga exitosa. Total registros: 2
+2025-05-31 23:05:58,183 - etl_pipeline - INFO - ETL completado. Filas cargadas: 2 en dim_novedad
+2025-05-31 23:05:58,186 - etl_pipeline - INFO - SUCCESS DIM_NOVEDAD
+2025-05-31 23:05:58,189 - etl_pipeline - INFO - Extrayendo datos... dim_estado_servicio
+2025-05-31 23:05:58,240 - etl_pipeline - INFO - Cargando a staging ... dim_estado_servicio
+2025-05-31 23:05:58,291 - etl_pipeline - INFO - Staging stg_dim_estado_servicio completado (6 filas)
+2025-05-31 23:05:58,292 - etl_pipeline - INFO - Transformando... dim_estado_servicio
+2025-05-31 23:05:58,293 - etl_pipeline - INFO - Transformación completada (6 filas)
+2025-05-31 23:05:58,294 - etl_pipeline - INFO - Cargando a destino... dim_estado_servicio
+2025-05-31 23:05:58,304 - etl_pipeline - INFO - Carga exitosa. Total registros: 6
+2025-05-31 23:05:58,304 - etl_pipeline - INFO - ETL completado. Filas cargadas: 6 en dim_estado_servicio
+2025-05-31 23:05:58,308 - etl_pipeline - INFO - SUCCESS DIM_ESTADO_SERVICIO
+2025-05-31 23:05:58,312 - etl_pipeline - INFO - Extrayendo datos... dim_tipo_servicio
+2025-05-31 23:05:58,488 - etl_pipeline - INFO - Cargando a staging ... dim_tipo_servicio
+2025-05-31 23:05:58,550 - etl_pipeline - INFO - Staging stg_dim_tipo_servicio completado (4 filas)
+2025-05-31 23:05:58,550 - etl_pipeline - INFO - Transformando... dim_tipo_servicio
+2025-05-31 23:05:58,553 - etl_pipeline - INFO - Transformación completada (4 filas)
+2025-05-31 23:05:58,553 - etl_pipeline - INFO - Cargando a destino... dim_tipo_servicio
+2025-05-31 23:05:58,575 - etl_pipeline - INFO - Carga exitosa. Total registros: 4
+2025-05-31 23:05:58,575 - etl_pipeline - INFO - ETL completado. Filas cargadas: 4 en dim_tipo_servicio
+2025-05-31 23:05:58,576 - etl_pipeline - INFO - SUCCESS DIM_TIPO_SERVICIO
+2025-05-31 23:05:58,577 - etl_pipeline - INFO - Resumen de ejecución:
+2025-05-31 23:05:58,577 - etl_pipeline - INFO -   - DIM_CLIENTE    : ÉXITO
+2025-05-31 23:05:58,577 - etl_pipeline - INFO -   - DIM_MENSAJERO  : ÉXITO
+2025-05-31 23:05:58,577 - etl_pipeline - INFO -   - DIM_NOVEDAD    : ÉXITO
+2025-05-31 23:05:58,578 - etl_pipeline - INFO -   - DIM_ESTADO_SERVICIO: ÉXITO
+2025-05-31 23:05:58,578 - etl_pipeline - INFO -   - DIM_TIPO_SERVICIO: ÉXITO
+2025-05-31 23:05:58,578 - etl_pipeline - INFO - ¡Todos los pipelines completados con éxito!
+2025-05-31 23:48:39,865 - etl_pipeline - INFO - Iniciando ETL Master
+2025-05-31 23:48:40,446 - etl_pipeline - INFO - Extrayendo datos... dim_cliente
+2025-05-31 23:48:40,651 - etl_pipeline - INFO - Cargando a staging ... dim_cliente
+2025-05-31 23:48:40,687 - etl_pipeline - INFO - Staging stg_dim_cliente completado (27 filas)
+2025-05-31 23:48:40,687 - etl_pipeline - INFO - Transformando... dim_cliente
+2025-05-31 23:48:40,688 - etl_pipeline - INFO - Transformación completada (27 filas)
+2025-05-31 23:48:40,689 - etl_pipeline - INFO - Cargando a destino... dim_cliente
+2025-05-31 23:48:40,701 - etl_pipeline - INFO - Carga exitosa. Total registros: 27
+2025-05-31 23:48:40,701 - etl_pipeline - INFO - ETL completado. Filas cargadas: 27 en dim_cliente
+2025-05-31 23:48:40,703 - etl_pipeline - INFO - SUCCESS DIM_CLIENTE
+2025-05-31 23:48:40,706 - etl_pipeline - INFO - Extrayendo datos... dim_mensajero
+2025-05-31 23:48:40,740 - etl_pipeline - INFO - Extraídos 50 registros de mensajeros
+2025-05-31 23:48:40,742 - etl_pipeline - INFO - Cargando a staging ... dim_mensajero
+2025-05-31 23:48:40,778 - etl_pipeline - INFO - Staging stg_dim_mensajero completado (50 filas)
+2025-05-31 23:48:40,778 - etl_pipeline - INFO - Transformando... dim_mensajero
+2025-05-31 23:48:40,780 - etl_pipeline - INFO - Transformación completada (50 filas)
+2025-05-31 23:48:40,780 - etl_pipeline - INFO - Cargando a destino... dim_mensajero
+2025-05-31 23:48:40,790 - etl_pipeline - INFO - Carga exitosa. Total registros: 50
+2025-05-31 23:48:40,791 - etl_pipeline - INFO - ETL completado. Filas cargadas: 50 en dim_mensajero
+2025-05-31 23:48:40,793 - etl_pipeline - INFO - SUCCESS DIM_MENSAJERO
+2025-05-31 23:48:40,796 - etl_pipeline - INFO - Extrayendo datos... dim_novedad
+2025-05-31 23:48:40,832 - etl_pipeline - INFO - Cargando a staging ... dim_novedad
+2025-05-31 23:48:40,987 - etl_pipeline - INFO - Staging stg_dim_novedad completado (2 filas)
+2025-05-31 23:48:40,987 - etl_pipeline - INFO - Transformando... dim_novedad
+2025-05-31 23:48:40,988 - etl_pipeline - INFO - Transformación completada (2 filas)
+2025-05-31 23:48:40,988 - etl_pipeline - INFO - Cargando a destino... dim_novedad
+2025-05-31 23:48:40,995 - etl_pipeline - INFO - Carga exitosa. Total registros: 2
+2025-05-31 23:48:40,996 - etl_pipeline - INFO - ETL completado. Filas cargadas: 2 en dim_novedad
+2025-05-31 23:48:40,998 - etl_pipeline - INFO - SUCCESS DIM_NOVEDAD
+2025-05-31 23:48:41,000 - etl_pipeline - INFO - Extrayendo datos... dim_estado_servicio
+2025-05-31 23:48:41,030 - etl_pipeline - INFO - Cargando a staging ... dim_estado_servicio
+2025-05-31 23:48:41,062 - etl_pipeline - INFO - Staging stg_dim_estado_servicio completado (6 filas)
+2025-05-31 23:48:41,063 - etl_pipeline - INFO - Transformando... dim_estado_servicio
+2025-05-31 23:48:41,064 - etl_pipeline - INFO - Transformación completada (6 filas)
+2025-05-31 23:48:41,064 - etl_pipeline - INFO - Cargando a destino... dim_estado_servicio
+2025-05-31 23:48:41,069 - etl_pipeline - INFO - Carga exitosa. Total registros: 6
+2025-05-31 23:48:41,069 - etl_pipeline - INFO - ETL completado. Filas cargadas: 6 en dim_estado_servicio
+2025-05-31 23:48:41,072 - etl_pipeline - INFO - SUCCESS DIM_ESTADO_SERVICIO
+2025-05-31 23:48:41,074 - etl_pipeline - INFO - Extrayendo datos... dim_tipo_servicio
+2025-05-31 23:48:41,109 - etl_pipeline - INFO - Cargando a staging ... dim_tipo_servicio
+2025-05-31 23:48:41,150 - etl_pipeline - INFO - Staging stg_dim_tipo_servicio completado (4 filas)
+2025-05-31 23:48:41,151 - etl_pipeline - INFO - Transformando... dim_tipo_servicio
+2025-05-31 23:48:41,152 - etl_pipeline - INFO - Transformación completada (4 filas)
+2025-05-31 23:48:41,152 - etl_pipeline - INFO - Cargando a destino... dim_tipo_servicio
+2025-05-31 23:48:41,160 - etl_pipeline - INFO - Carga exitosa. Total registros: 4
+2025-05-31 23:48:41,160 - etl_pipeline - INFO - ETL completado. Filas cargadas: 4 en dim_tipo_servicio
+2025-05-31 23:48:41,162 - etl_pipeline - INFO - SUCCESS DIM_TIPO_SERVICIO
+2025-05-31 23:48:41,183 - etl_pipeline - INFO - Extrayendo datos... dim_sede
+2025-05-31 23:48:41,216 - etl_pipeline - INFO - Cargando a staging ... dim_sede
+2025-05-31 23:48:41,254 - etl_pipeline - INFO - Staging stg_dim_sede completado (52 filas)
+2025-05-31 23:48:41,255 - etl_pipeline - INFO - Transformando... dim_sede
+2025-05-31 23:48:41,256 - etl_pipeline - INFO - Transformación completada (52 filas)
+2025-05-31 23:48:41,257 - etl_pipeline - INFO - Cargando a destino... dim_sede
+2025-05-31 23:48:41,258 - etl_pipeline - ERROR - Error en carga: (psycopg2.errors.SyntaxError) error de sintaxis en o cerca de «created_at»
+LINE 12:             created_at        TIMESTAMP DEFAULT CURRENT_TIME...
+                     ^
+
+[SQL: 
+        CREATE TABLE IF NOT EXISTS dim_sede (
+            sede_key          INTEGER PRIMARY KEY,
+            sede_id           INTEGER NOT NULL,
+            nombre            VARCHAR(120) NOT NULL,
+            direccion         VARCHAR(250),
+            ciudad            VARCHAR(120) NOT NULL,
+            departamento      VARCHAR(120) NOT NULL,
+            cliente_id        INTEGER NOT NULL,                 
+            nit_cliente       VARCHAR(50) NOT NULL,
+            nombre_cliente    VARCHAR(120) NOT NULL
+            created_at        TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            CONSTRAINT uk_sede_id UNIQUE (sede_id)
+        )
+        ]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+Traceback (most recent call last):
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.SyntaxError: error de sintaxis en o cerca de «created_at»
+LINE 12:             created_at        TIMESTAMP DEFAULT CURRENT_TIME...
+                     ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\src\load\load_dim_sede.py", line 11, in run_load
+    session.execute(text("""
+    ~~~~~~~~~~~~~~~^^^^^^^^^
+    CREATE TABLE IF NOT EXISTS dim_sede (
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<11 lines>...
+    )
+    ^
+    """))
+    ^^^^^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2365, in execute
+    return self._execute_internal(
+           ~~~~~~~~~~~~~~~~~~~~~~^
+        statement,
+        ^^^^^^^^^^
+    ...<4 lines>...
+        _add_event=_add_event,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2260, in _execute_internal
+    result = conn.execute(
+        statement, params or {}, execution_options=execution_options
+    )
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1415, in execute
+    return meth(
+        self,
+        distilled_parameters,
+        execution_options or NO_OPTIONS,
+    )
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self, distilled_params, execution_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1637, in _execute_clauseelement
+    ret = self._execute_context(
+        dialect,
+    ...<8 lines>...
+        cache_hit=cache_hit,
+    )
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1842, in _execute_context
+    return self._exec_single_context(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        dialect, context, statement, parameters
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1982, in _exec_single_context
+    self._handle_dbapi_exception(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        e, str_statement, effective_parameters, cursor, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2351, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.SyntaxError) error de sintaxis en o cerca de «created_at»
+LINE 12:             created_at        TIMESTAMP DEFAULT CURRENT_TIME...
+                     ^
+
+[SQL: 
+        CREATE TABLE IF NOT EXISTS dim_sede (
+            sede_key          INTEGER PRIMARY KEY,
+            sede_id           INTEGER NOT NULL,
+            nombre            VARCHAR(120) NOT NULL,
+            direccion         VARCHAR(250),
+            ciudad            VARCHAR(120) NOT NULL,
+            departamento      VARCHAR(120) NOT NULL,
+            cliente_id        INTEGER NOT NULL,                 
+            nit_cliente       VARCHAR(50) NOT NULL,
+            nombre_cliente    VARCHAR(120) NOT NULL
+            created_at        TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            CONSTRAINT uk_sede_id UNIQUE (sede_id)
+        )
+        ]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-05-31 23:48:41,262 - etl_pipeline - INFO - ERROR DIM_SEDE
+2025-05-31 23:48:41,263 - etl_pipeline - INFO - Resumen de ejecución:
+2025-05-31 23:48:41,263 - etl_pipeline - INFO -   - DIM_CLIENTE    : ÉXITO
+2025-05-31 23:48:41,263 - etl_pipeline - INFO -   - DIM_MENSAJERO  : ÉXITO
+2025-05-31 23:48:41,263 - etl_pipeline - INFO -   - DIM_NOVEDAD    : ÉXITO
+2025-05-31 23:48:41,263 - etl_pipeline - INFO -   - DIM_ESTADO_SERVICIO: ÉXITO
+2025-05-31 23:48:41,263 - etl_pipeline - INFO -   - DIM_TIPO_SERVICIO: ÉXITO
+2025-05-31 23:48:41,263 - etl_pipeline - INFO -   - DIM_SEDE       : FALLÓ
+2025-05-31 23:48:41,263 - etl_pipeline - ERROR - Algunos pipelines fallaron. Ver logs.
+2025-05-31 23:49:14,466 - etl_pipeline - INFO - Iniciando ETL Master
+2025-05-31 23:49:14,931 - etl_pipeline - INFO - Extrayendo datos... dim_cliente
+2025-05-31 23:49:15,008 - etl_pipeline - INFO - Cargando a staging ... dim_cliente
+2025-05-31 23:49:15,053 - etl_pipeline - INFO - Staging stg_dim_cliente completado (27 filas)
+2025-05-31 23:49:15,053 - etl_pipeline - INFO - Transformando... dim_cliente
+2025-05-31 23:49:15,054 - etl_pipeline - INFO - Transformación completada (27 filas)
+2025-05-31 23:49:15,054 - etl_pipeline - INFO - Cargando a destino... dim_cliente
+2025-05-31 23:49:15,066 - etl_pipeline - INFO - Carga exitosa. Total registros: 27
+2025-05-31 23:49:15,066 - etl_pipeline - INFO - ETL completado. Filas cargadas: 27 en dim_cliente
+2025-05-31 23:49:15,068 - etl_pipeline - INFO - SUCCESS DIM_CLIENTE
+2025-05-31 23:49:15,069 - etl_pipeline - INFO - Extrayendo datos... dim_mensajero
+2025-05-31 23:49:15,102 - etl_pipeline - INFO - Extraídos 50 registros de mensajeros
+2025-05-31 23:49:15,104 - etl_pipeline - INFO - Cargando a staging ... dim_mensajero
+2025-05-31 23:49:15,141 - etl_pipeline - INFO - Staging stg_dim_mensajero completado (50 filas)
+2025-05-31 23:49:15,142 - etl_pipeline - INFO - Transformando... dim_mensajero
+2025-05-31 23:49:15,143 - etl_pipeline - INFO - Transformación completada (50 filas)
+2025-05-31 23:49:15,143 - etl_pipeline - INFO - Cargando a destino... dim_mensajero
+2025-05-31 23:49:15,153 - etl_pipeline - INFO - Carga exitosa. Total registros: 50
+2025-05-31 23:49:15,153 - etl_pipeline - INFO - ETL completado. Filas cargadas: 50 en dim_mensajero
+2025-05-31 23:49:15,156 - etl_pipeline - INFO - SUCCESS DIM_MENSAJERO
+2025-05-31 23:49:15,158 - etl_pipeline - INFO - Extrayendo datos... dim_novedad
+2025-05-31 23:49:15,222 - etl_pipeline - INFO - Cargando a staging ... dim_novedad
+2025-05-31 23:49:15,265 - etl_pipeline - INFO - Staging stg_dim_novedad completado (2 filas)
+2025-05-31 23:49:15,265 - etl_pipeline - INFO - Transformando... dim_novedad
+2025-05-31 23:49:15,266 - etl_pipeline - INFO - Transformación completada (2 filas)
+2025-05-31 23:49:15,266 - etl_pipeline - INFO - Cargando a destino... dim_novedad
+2025-05-31 23:49:15,271 - etl_pipeline - INFO - Carga exitosa. Total registros: 2
+2025-05-31 23:49:15,271 - etl_pipeline - INFO - ETL completado. Filas cargadas: 2 en dim_novedad
+2025-05-31 23:49:15,273 - etl_pipeline - INFO - SUCCESS DIM_NOVEDAD
+2025-05-31 23:49:15,274 - etl_pipeline - INFO - Extrayendo datos... dim_estado_servicio
+2025-05-31 23:49:15,306 - etl_pipeline - INFO - Cargando a staging ... dim_estado_servicio
+2025-05-31 23:49:15,337 - etl_pipeline - INFO - Staging stg_dim_estado_servicio completado (6 filas)
+2025-05-31 23:49:15,338 - etl_pipeline - INFO - Transformando... dim_estado_servicio
+2025-05-31 23:49:15,339 - etl_pipeline - INFO - Transformación completada (6 filas)
+2025-05-31 23:49:15,339 - etl_pipeline - INFO - Cargando a destino... dim_estado_servicio
+2025-05-31 23:49:15,344 - etl_pipeline - INFO - Carga exitosa. Total registros: 6
+2025-05-31 23:49:15,344 - etl_pipeline - INFO - ETL completado. Filas cargadas: 6 en dim_estado_servicio
+2025-05-31 23:49:15,346 - etl_pipeline - INFO - SUCCESS DIM_ESTADO_SERVICIO
+2025-05-31 23:49:15,347 - etl_pipeline - INFO - Extrayendo datos... dim_tipo_servicio
+2025-05-31 23:49:15,381 - etl_pipeline - INFO - Cargando a staging ... dim_tipo_servicio
+2025-05-31 23:49:15,417 - etl_pipeline - INFO - Staging stg_dim_tipo_servicio completado (4 filas)
+2025-05-31 23:49:15,418 - etl_pipeline - INFO - Transformando... dim_tipo_servicio
+2025-05-31 23:49:15,419 - etl_pipeline - INFO - Transformación completada (4 filas)
+2025-05-31 23:49:15,420 - etl_pipeline - INFO - Cargando a destino... dim_tipo_servicio
+2025-05-31 23:49:15,426 - etl_pipeline - INFO - Carga exitosa. Total registros: 4
+2025-05-31 23:49:15,427 - etl_pipeline - INFO - ETL completado. Filas cargadas: 4 en dim_tipo_servicio
+2025-05-31 23:49:15,428 - etl_pipeline - INFO - SUCCESS DIM_TIPO_SERVICIO
+2025-05-31 23:49:15,441 - etl_pipeline - INFO - Extrayendo datos... dim_sede
+2025-05-31 23:49:15,478 - etl_pipeline - INFO - Cargando a staging ... dim_sede
+2025-05-31 23:49:15,516 - etl_pipeline - INFO - Staging stg_dim_sede completado (52 filas)
+2025-05-31 23:49:15,517 - etl_pipeline - INFO - Transformando... dim_sede
+2025-05-31 23:49:15,518 - etl_pipeline - INFO - Transformación completada (52 filas)
+2025-05-31 23:49:15,518 - etl_pipeline - INFO - Cargando a destino... dim_sede
+2025-05-31 23:49:15,530 - etl_pipeline - INFO - Carga exitosa. Total registros: 52
+2025-05-31 23:49:15,530 - etl_pipeline - INFO - ETL completado. Filas cargadas: 52 en dim_sede
+2025-05-31 23:49:15,531 - etl_pipeline - INFO - SUCCESS DIM_SEDE
+2025-05-31 23:49:15,531 - etl_pipeline - INFO - Resumen de ejecución:
+2025-05-31 23:49:15,531 - etl_pipeline - INFO -   - DIM_CLIENTE    : ÉXITO
+2025-05-31 23:49:15,531 - etl_pipeline - INFO -   - DIM_MENSAJERO  : ÉXITO
+2025-05-31 23:49:15,531 - etl_pipeline - INFO -   - DIM_NOVEDAD    : ÉXITO
+2025-05-31 23:49:15,531 - etl_pipeline - INFO -   - DIM_ESTADO_SERVICIO: ÉXITO
+2025-05-31 23:49:15,531 - etl_pipeline - INFO -   - DIM_TIPO_SERVICIO: ÉXITO
+2025-05-31 23:49:15,531 - etl_pipeline - INFO -   - DIM_SEDE       : ÉXITO
+2025-05-31 23:49:15,531 - etl_pipeline - INFO - ¡Todos los pipelines completados con éxito!

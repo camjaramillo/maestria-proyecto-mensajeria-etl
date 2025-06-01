@@ -8,7 +8,7 @@ def run_extract() -> Tuple[pd.DataFrame, bool]:
     try:
         query = """
         SELECT 
-            m.id AS cliente_mensajero_id,
+            m.id AS mensajero_id,
             u.username AS nombre_usuario,
             u.first_name AS nombre,
             u.last_name AS apellido,

@@ -11,9 +11,11 @@ def run_load(df: pd.DataFrame, session, truncate: bool = False) -> Tuple[bool, i
         session.execute(text("""
         CREATE TABLE IF NOT EXISTS dim_estado_servicio (
             estado_servicio_key     INTEGER PRIMARY KEY,
+            estado_servicio_id      INTEGER,
             nombre                  VARCHAR(75) NOT NULL,
             descripcion             VARCHAR(500) NOT NULL,
-            created_at              TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            created_at              TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            CONSTRAINT uk_estado_servicio_id UNIQUE (estado_servicio_id)
         )
         """))
         

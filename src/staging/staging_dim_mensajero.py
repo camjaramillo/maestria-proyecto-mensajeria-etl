@@ -13,7 +13,7 @@ def run_staging(df: pd.DataFrame, session) -> bool:
         # 2. Crear tabla temporal
         session.execute(text("""
         CREATE TEMP TABLE IF NOT EXISTS stg_dim_mensajero (
-            cliente_mensajero_id INT,
+            mensajero_id INT,
             nombre_usuario VARCHAR(150),
             nombre VARCHAR(120),
             apellido VARCHAR(120),

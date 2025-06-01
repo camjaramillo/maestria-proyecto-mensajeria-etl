@@ -8,11 +8,16 @@ def run_transform(session) -> Tuple[pd.DataFrame, bool]:
     try:
         query = text("""
         SELECT 
-            ROW_NUMBER() OVER (ORDER BY estado_servicio_id) AS estado_servicio_key,
-            estado_servicio_id,
+            ROW_NUMBER() OVER (ORDER BY sede_id) AS sede_key,
+            sede_id,
             UPPER(TRIM(nombre)) AS nombre,
-            TRIM(descripcion) AS descripcion       
-        FROM pg_temp.stg_dim_estado_servicio
+            direccion,
+            UPPER(TRIM(ciudad)) AS ciudad,
+            UPPER(TRIM(departamento)) AS departamento,
+            cliente_id,                 
+            nit_cliente,
+            UPPER(TRIM(nombre_cliente)) AS nombre_cliente
+        FROM pg_temp.stg_dim_sede
         """)
         
         df = pd.read_sql(query, session.connection())

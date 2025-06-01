@@ -9,6 +9,7 @@ def run_transform(session) -> Tuple[pd.DataFrame, bool]:
         query = text("""
         SELECT 
             ROW_NUMBER() OVER (ORDER BY novedad_id) AS novedad_key,
+            novedad_id,
             UPPER(TRIM(nombre)) AS nombre
         FROM pg_temp.stg_dim_novedad
         """)

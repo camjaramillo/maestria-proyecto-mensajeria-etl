@@ -8,7 +8,8 @@ def run_transform(session) -> Tuple[pd.DataFrame, bool]:
     try:
         query = text("""
         SELECT 
-            ROW_NUMBER() OVER (ORDER BY cliente_mensajero_id) AS mensajero_key,
+            ROW_NUMBER() OVER (ORDER BY mensajero_id) AS mensajero_key,
+            mensajero_id,
             nombre_usuario,
             UPPER(TRIM(nombre)) AS nombre,
             UPPER(TRIM(apellido)) AS apellido,

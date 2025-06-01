@@ -39,7 +39,8 @@ def run_transform(session) -> Tuple[pd.DataFrame, bool]:
     try:
         query = text("""
         SELECT 
-            ROW_NUMBER() OVER (ORDER BY cliente_id) AS cliente_key, -- SKU secuencial
+            ROW_NUMBER() OVER (ORDER BY cliente_id) AS cliente_key,
+            cliente_id,        
             nit,
             UPPER(TRIM(nombre)) AS nombre,
             email,

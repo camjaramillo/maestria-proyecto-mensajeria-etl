@@ -11,6 +11,7 @@ def run_load(df: pd.DataFrame, session, truncate: bool = False) -> Tuple[bool, i
         session.execute(text("""
         CREATE TABLE IF NOT EXISTS dim_cliente (
             cliente_key     INTEGER PRIMARY KEY,
+            cliente_id      INTEGER NOT NULL,
             nit             VARCHAR(20),
             nombre          VARCHAR(120) NOT NULL,
             email           VARCHAR(120),
@@ -20,7 +21,8 @@ def run_load(df: pd.DataFrame, session, truncate: bool = False) -> Tuple[bool, i
             departamento    VARCHAR(120),
             sector          VARCHAR(50),
             activo          BOOLEAN,
-            created_at      TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            created_at      TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            CONSTRAINT uk_cliente_id UNIQUE (cliente_id)
         )
         """))
         
