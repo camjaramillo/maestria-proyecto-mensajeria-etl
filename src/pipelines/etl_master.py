@@ -19,6 +19,10 @@ PIPELINES = {
     'dim_estado_servicio': {
         'module': 'pipelines.etl_dim_estado_servicio',
         'dependencies': []  # No depende de otras dimensiones
+    },
+    'dim_tipo_servicio': {
+        'module': 'pipelines.etl_dim_tipo_servicio',
+        'dependencies': []  # No depende de otras dimensiones
     }
     ##'dim_fecha': {
     ##    'module': 'pipelines.etl_dim_fecha',

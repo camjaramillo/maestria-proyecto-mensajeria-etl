@@ -1454,3 +1454,111 @@ LINE 5:         FROM pg_temp.stg_dim_cliente
 2025-05-31 21:05:46,820 - etl_pipeline - INFO -   - DIM_NOVEDAD    : ÉXITO
 2025-05-31 21:05:46,820 - etl_pipeline - INFO -   - DIM_ESTADO_SERVICIO: ÉXITO
 2025-05-31 21:05:46,821 - etl_pipeline - INFO - ¡Todos los pipelines completados con éxito!
+2025-05-31 21:22:56,840 - etl_pipeline - INFO - Iniciando ETL Master
+2025-05-31 21:22:57,712 - etl_pipeline - INFO - Extrayendo datos... dim_cliente
+2025-05-31 21:22:57,812 - etl_pipeline - INFO - Cargando a staging ... dim_cliente
+2025-05-31 21:22:57,862 - etl_pipeline - INFO - Staging stg_dim_cliente completado (27 filas)
+2025-05-31 21:22:57,862 - etl_pipeline - INFO - Transformando... dim_cliente
+2025-05-31 21:22:57,864 - etl_pipeline - INFO - Transformación completada (27 filas)
+2025-05-31 21:22:57,864 - etl_pipeline - INFO - Cargando a destino... dim_cliente
+2025-05-31 21:22:57,874 - etl_pipeline - INFO - Carga exitosa. Total registros: 27
+2025-05-31 21:22:57,874 - etl_pipeline - INFO - ETL completado. Filas cargadas: 27 en dim_cliente
+2025-05-31 21:22:57,876 - etl_pipeline - INFO - SUCCESS DIM_CLIENTE
+2025-05-31 21:22:57,878 - etl_pipeline - INFO - Extrayendo datos... dim_mensajero
+2025-05-31 21:22:57,930 - etl_pipeline - INFO - Extraídos 50 registros de mensajeros
+2025-05-31 21:22:57,932 - etl_pipeline - INFO - Cargando a staging ... dim_mensajero
+2025-05-31 21:22:57,985 - etl_pipeline - INFO - Staging stg_dim_mensajero completado (50 filas)
+2025-05-31 21:22:57,986 - etl_pipeline - INFO - Transformando... dim_mensajero
+2025-05-31 21:22:57,988 - etl_pipeline - INFO - Transformación completada (50 filas)
+2025-05-31 21:22:57,988 - etl_pipeline - INFO - Cargando a destino... dim_mensajero
+2025-05-31 21:22:58,000 - etl_pipeline - INFO - Carga exitosa. Total registros: 50
+2025-05-31 21:22:58,000 - etl_pipeline - INFO - ETL completado. Filas cargadas: 50 en dim_mensajero
+2025-05-31 21:22:58,003 - etl_pipeline - INFO - SUCCESS DIM_MENSAJERO
+2025-05-31 21:22:58,006 - etl_pipeline - INFO - Extrayendo datos... dim_novedad
+2025-05-31 21:22:58,056 - etl_pipeline - INFO - Cargando a staging ... dim_novedad
+2025-05-31 21:22:58,107 - etl_pipeline - INFO - Staging stg_dim_novedad completado (2 filas)
+2025-05-31 21:22:58,107 - etl_pipeline - INFO - Transformando... dim_novedad
+2025-05-31 21:22:58,109 - etl_pipeline - INFO - Transformación completada (2 filas)
+2025-05-31 21:22:58,109 - etl_pipeline - INFO - Cargando a destino... dim_novedad
+2025-05-31 21:22:58,117 - etl_pipeline - INFO - Carga exitosa. Total registros: 2
+2025-05-31 21:22:58,117 - etl_pipeline - INFO - ETL completado. Filas cargadas: 2 en dim_novedad
+2025-05-31 21:22:58,122 - etl_pipeline - INFO - SUCCESS DIM_NOVEDAD
+2025-05-31 21:22:58,139 - etl_pipeline - INFO - Extrayendo datos... dim_estado_servicio
+2025-05-31 21:22:58,187 - etl_pipeline - INFO - Cargando a staging ... dim_estado_servicio
+2025-05-31 21:22:58,246 - etl_pipeline - INFO - Staging stg_dim_estado_servicio completado (6 filas)
+2025-05-31 21:22:58,246 - etl_pipeline - INFO - Transformando... dim_estado_servicio
+2025-05-31 21:22:58,248 - etl_pipeline - INFO - Transformación completada (6 filas)
+2025-05-31 21:22:58,248 - etl_pipeline - INFO - Cargando a destino... dim_estado_servicio
+2025-05-31 21:22:58,255 - etl_pipeline - INFO - Carga exitosa. Total registros: 6
+2025-05-31 21:22:58,255 - etl_pipeline - INFO - ETL completado. Filas cargadas: 6 en dim_estado_servicio
+2025-05-31 21:22:58,259 - etl_pipeline - INFO - SUCCESS DIM_ESTADO_SERVICIO
+2025-05-31 21:22:58,290 - etl_pipeline - INFO - Extrayendo datos... dim_tipo_servicio
+2025-05-31 21:22:58,338 - etl_pipeline - INFO - Cargando a staging ... dim_tipo_servicio
+2025-05-31 21:22:58,392 - etl_pipeline - INFO - Staging stg_dim_tipo_servicio completado (6 filas)
+2025-05-31 21:22:58,392 - etl_pipeline - INFO - Transformando... dim_tipo_servicio
+2025-05-31 21:22:58,394 - etl_pipeline - INFO - Transformación completada (6 filas)
+2025-05-31 21:22:58,394 - etl_pipeline - INFO - Cargando a destino... dim_tipo_servicio
+2025-05-31 21:22:58,410 - etl_pipeline - INFO - Carga exitosa. Total registros: 6
+2025-05-31 21:22:58,410 - etl_pipeline - INFO - ETL completado. Filas cargadas: 6 en dim_tipo_servicio
+2025-05-31 21:22:58,412 - etl_pipeline - INFO - SUCCESS DIM_TIPO_SERVICIO
+2025-05-31 21:22:58,412 - etl_pipeline - INFO - Resumen de ejecución:
+2025-05-31 21:22:58,412 - etl_pipeline - INFO -   - DIM_CLIENTE    : ÉXITO
+2025-05-31 21:22:58,412 - etl_pipeline - INFO -   - DIM_MENSAJERO  : ÉXITO
+2025-05-31 21:22:58,412 - etl_pipeline - INFO -   - DIM_NOVEDAD    : ÉXITO
+2025-05-31 21:22:58,412 - etl_pipeline - INFO -   - DIM_ESTADO_SERVICIO: ÉXITO
+2025-05-31 21:22:58,413 - etl_pipeline - INFO -   - DIM_TIPO_SERVICIO: ÉXITO
+2025-05-31 21:22:58,413 - etl_pipeline - INFO - ¡Todos los pipelines completados con éxito!
+2025-05-31 21:24:06,734 - etl_pipeline - INFO - Iniciando ETL Master
+2025-05-31 21:24:07,505 - etl_pipeline - INFO - Extrayendo datos... dim_cliente
+2025-05-31 21:24:07,606 - etl_pipeline - INFO - Cargando a staging ... dim_cliente
+2025-05-31 21:24:07,659 - etl_pipeline - INFO - Staging stg_dim_cliente completado (27 filas)
+2025-05-31 21:24:07,659 - etl_pipeline - INFO - Transformando... dim_cliente
+2025-05-31 21:24:07,662 - etl_pipeline - INFO - Transformación completada (27 filas)
+2025-05-31 21:24:07,662 - etl_pipeline - INFO - Cargando a destino... dim_cliente
+2025-05-31 21:24:07,673 - etl_pipeline - INFO - Carga exitosa. Total registros: 27
+2025-05-31 21:24:07,674 - etl_pipeline - INFO - ETL completado. Filas cargadas: 27 en dim_cliente
+2025-05-31 21:24:07,676 - etl_pipeline - INFO - SUCCESS DIM_CLIENTE
+2025-05-31 21:24:07,679 - etl_pipeline - INFO - Extrayendo datos... dim_mensajero
+2025-05-31 21:24:07,727 - etl_pipeline - INFO - Extraídos 50 registros de mensajeros
+2025-05-31 21:24:07,730 - etl_pipeline - INFO - Cargando a staging ... dim_mensajero
+2025-05-31 21:24:07,787 - etl_pipeline - INFO - Staging stg_dim_mensajero completado (50 filas)
+2025-05-31 21:24:07,788 - etl_pipeline - INFO - Transformando... dim_mensajero
+2025-05-31 21:24:07,790 - etl_pipeline - INFO - Transformación completada (50 filas)
+2025-05-31 21:24:07,790 - etl_pipeline - INFO - Cargando a destino... dim_mensajero
+2025-05-31 21:24:07,800 - etl_pipeline - INFO - Carga exitosa. Total registros: 50
+2025-05-31 21:24:07,801 - etl_pipeline - INFO - ETL completado. Filas cargadas: 50 en dim_mensajero
+2025-05-31 21:24:07,803 - etl_pipeline - INFO - SUCCESS DIM_MENSAJERO
+2025-05-31 21:24:07,805 - etl_pipeline - INFO - Extrayendo datos... dim_novedad
+2025-05-31 21:24:07,979 - etl_pipeline - INFO - Cargando a staging ... dim_novedad
+2025-05-31 21:24:08,036 - etl_pipeline - INFO - Staging stg_dim_novedad completado (2 filas)
+2025-05-31 21:24:08,036 - etl_pipeline - INFO - Transformando... dim_novedad
+2025-05-31 21:24:08,038 - etl_pipeline - INFO - Transformación completada (2 filas)
+2025-05-31 21:24:08,038 - etl_pipeline - INFO - Cargando a destino... dim_novedad
+2025-05-31 21:24:08,048 - etl_pipeline - INFO - Carga exitosa. Total registros: 2
+2025-05-31 21:24:08,048 - etl_pipeline - INFO - ETL completado. Filas cargadas: 2 en dim_novedad
+2025-05-31 21:24:08,052 - etl_pipeline - INFO - SUCCESS DIM_NOVEDAD
+2025-05-31 21:24:08,057 - etl_pipeline - INFO - Extrayendo datos... dim_estado_servicio
+2025-05-31 21:24:08,109 - etl_pipeline - INFO - Cargando a staging ... dim_estado_servicio
+2025-05-31 21:24:08,298 - etl_pipeline - INFO - Staging stg_dim_estado_servicio completado (6 filas)
+2025-05-31 21:24:08,298 - etl_pipeline - INFO - Transformando... dim_estado_servicio
+2025-05-31 21:24:08,300 - etl_pipeline - INFO - Transformación completada (6 filas)
+2025-05-31 21:24:08,300 - etl_pipeline - INFO - Cargando a destino... dim_estado_servicio
+2025-05-31 21:24:08,309 - etl_pipeline - INFO - Carga exitosa. Total registros: 6
+2025-05-31 21:24:08,309 - etl_pipeline - INFO - ETL completado. Filas cargadas: 6 en dim_estado_servicio
+2025-05-31 21:24:08,313 - etl_pipeline - INFO - SUCCESS DIM_ESTADO_SERVICIO
+2025-05-31 21:24:08,328 - etl_pipeline - INFO - Extrayendo datos... dim_tipo_servicio
+2025-05-31 21:24:08,386 - etl_pipeline - INFO - Cargando a staging ... dim_tipo_servicio
+2025-05-31 21:24:08,568 - etl_pipeline - INFO - Staging stg_dim_tipo_servicio completado (4 filas)
+2025-05-31 21:24:08,568 - etl_pipeline - INFO - Transformando... dim_tipo_servicio
+2025-05-31 21:24:08,570 - etl_pipeline - INFO - Transformación completada (4 filas)
+2025-05-31 21:24:08,570 - etl_pipeline - INFO - Cargando a destino... dim_tipo_servicio
+2025-05-31 21:24:08,582 - etl_pipeline - INFO - Carga exitosa. Total registros: 4
+2025-05-31 21:24:08,583 - etl_pipeline - INFO - ETL completado. Filas cargadas: 4 en dim_tipo_servicio
+2025-05-31 21:24:08,588 - etl_pipeline - INFO - SUCCESS DIM_TIPO_SERVICIO
+2025-05-31 21:24:08,589 - etl_pipeline - INFO - Resumen de ejecución:
+2025-05-31 21:24:08,589 - etl_pipeline - INFO -   - DIM_CLIENTE    : ÉXITO
+2025-05-31 21:24:08,589 - etl_pipeline - INFO -   - DIM_MENSAJERO  : ÉXITO
+2025-05-31 21:24:08,590 - etl_pipeline - INFO -   - DIM_NOVEDAD    : ÉXITO
+2025-05-31 21:24:08,590 - etl_pipeline - INFO -   - DIM_ESTADO_SERVICIO: ÉXITO
+2025-05-31 21:24:08,590 - etl_pipeline - INFO -   - DIM_TIPO_SERVICIO: ÉXITO
+2025-05-31 21:24:08,590 - etl_pipeline - INFO - ¡Todos los pipelines completados con éxito!
