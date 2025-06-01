@@ -10,21 +10,10 @@ sys.path.append(str(Path(__file__).resolve().parent / "src"))
 from utils.logger import logger
 from pipelines.etl_master import execute as run_etl_master
 
-'''
-def test_connection(env_name: str):
-    print(f"Probando conexión a '{env_name}'...")
-    try:
-        engine = get_engine(env_name)
-        with engine.connect() as conn:
-            result = conn.execute(text("SELECT 1;"))
-            if result.fetchone()[0] == 1:
-                print(f"Conexión exitosa a '{env_name}'")
-            else:
-                print(f"Respuesta inesperada de '{env_name}':", result.fetchone())
-    except Exception as e:
-        print(f"Error al conectar a '{env_name}': {e}")
-        sys.exit(1)
-'''
+import pandas as pd
+import holidays
+
+
 
 def main():
     try:

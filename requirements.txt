@@ -3,3 +3,4 @@ sqlalchemy
 numpy
 pandas
 psycopg2-binary
+holidays

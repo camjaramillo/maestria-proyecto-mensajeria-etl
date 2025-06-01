@@ -27,11 +27,15 @@ PIPELINES = {
     'dim_sede': {
         'module': 'pipelines.etl_dim_sede',
         'dependencies': []  # No depende de otras dimensiones
+    },
+    'dim_fecha': {
+        'module': 'pipelines.etl_dim_fecha',
+        'dependencies': []
+    },
+    'dim_hora': {
+        'module': 'pipelines.etl_dim_hora',
+        'dependencies': []
     }
-    ##'dim_fecha': {
-    ##    'module': 'pipelines.etl_dim_fecha',
-    ##    'dependencies': []
-    ##},
     ##'fact_servicio': {
     ##    'module': 'pipelines.etl_fact_servicio',
     ##    'dependencies': ['dim_cliente', 'dim_fecha']  # Depende de estas dimensiones
