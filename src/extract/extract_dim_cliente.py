@@ -22,9 +22,12 @@ def run_extract() -> Tuple[pd.DataFrame, bool]:
             d.nombre AS departamento,
             c.sector,
             c.activo
-        FROM public.cliente c
-        JOIN public.ciudad ci ON c.ciudad_id = ci.ciudad_id
-        JOIN public.departamento d ON ci.departamento_id = d.departamento_id
+        FROM 
+            public.cliente c
+            JOIN public.ciudad ci ON c.ciudad_id = ci.ciudad_id
+            JOIN public.departamento d ON ci.departamento_id = d.departamento_id
+        ORDER BY
+            c.cliente_id
         """
 
         with db_session(DBConnection.SOURCE) as session:

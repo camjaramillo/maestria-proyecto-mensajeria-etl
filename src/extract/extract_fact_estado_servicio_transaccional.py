@@ -5,7 +5,9 @@ from typing import Tuple
 from utils.database import db_session, DBConnection
 
 def run_extract() -> Tuple[pd.DataFrame, bool]:
-    """Extrae datos para la tabla FactServicio"""
+    """
+    Extrae los datos necesarios desde la base de datos de origen y retorna un DataFrame.
+    """
     try:
         query = text("""
         SELECT

@@ -5,6 +5,10 @@ from typing import Tuple
 
 def run_load(df: pd.DataFrame, session, truncate: bool = False) -> Tuple[bool, int]:
     try:
+        # Eliminar tabla
+        session.execute(text("DROP TABLE IF EXISTS dim_hora"))
+        session.commit()
+
         session.execute(text("""
             CREATE TABLE IF NOT EXISTS dim_hora (
                 hora_key         INTEGER PRIMARY KEY,

@@ -16,10 +16,13 @@ def run_extract() -> Tuple[pd.DataFrame, bool]:
             c.nombre AS ciudad_operacion,
             d.nombre AS departamento_operacion,
             m.activo
-        FROM clientes_mensajeroaquitoy m
-        JOIN auth_user u ON m.user_id = u.id
-        LEFT JOIN ciudad c ON m.ciudad_operacion_id = c.ciudad_id
-        LEFT JOIN departamento d ON c.departamento_id = d.departamento_id
+        FROM 
+            clientes_mensajeroaquitoy m
+            JOIN auth_user u ON m.user_id = u.id
+            LEFT JOIN ciudad c ON m.ciudad_operacion_id = c.ciudad_id
+            LEFT JOIN departamento d ON c.departamento_id = d.departamento_id
+        ORDER BY
+            mensajero_id
         """
         
         with db_session(DBConnection.SOURCE) as session:

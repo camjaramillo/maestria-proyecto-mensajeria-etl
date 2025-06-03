@@ -20,10 +20,13 @@ def run_extract() -> Tuple[pd.DataFrame, bool]:
 			cl.cliente_id,
 			cl.nit_cliente,
 			cl.nombre AS nombre_cliente
-        FROM public.sede s
-        JOIN public.ciudad ci ON s.ciudad_id = ci.ciudad_id
-        JOIN public.departamento d ON ci.departamento_id = d.departamento_id
-		JOIN public.cliente cl ON s.cliente_id = cl.cliente_id
+        FROM 
+            public.sede s
+            JOIN public.ciudad ci ON s.ciudad_id = ci.ciudad_id
+            JOIN public.departamento d ON ci.departamento_id = d.departamento_id
+            JOIN public.cliente cl ON s.cliente_id = cl.cliente_id
+        ORDER BY
+            s.sede_id
         """
 
         with db_session(DBConnection.SOURCE) as session:

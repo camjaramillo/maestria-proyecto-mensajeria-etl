@@ -6,6 +6,10 @@ from utils.logger import logger
 def run_load(df: pd.DataFrame, session, truncate: bool = False) -> Tuple[bool, int]:
     """Carga datos a la tabla dimensional final"""
     try:
+        # Eliminar tabla
+        session.execute(text("DROP TABLE IF EXISTS dim_mensajero"))
+        session.commit()
+
         # Crear tabla si no existe
         session.execute(text("""
         CREATE TABLE IF NOT EXISTS dim_mensajero (

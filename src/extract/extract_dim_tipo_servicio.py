@@ -13,7 +13,10 @@ def run_extract() -> Tuple[pd.DataFrame, bool]:
             ts.id AS tipo_servicio_id,
             ts.nombre,
             ts.descripcion
-        FROM public.mensajeria_tiposervicio ts
+        FROM 
+            public.mensajeria_tiposervicio ts
+        ORDER BY
+            tipo_servicio_id
         """
 
         with db_session(DBConnection.SOURCE) as session:

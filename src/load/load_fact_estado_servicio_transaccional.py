@@ -6,6 +6,11 @@ from typing import Tuple
 def run_load(df: pd.DataFrame, session, truncate: bool = False) -> Tuple[bool, int]:
     """Carga datos a la tabla de hechos final"""
     try:
+        # Eliminar tabla
+        session.execute(text("DROP TABLE IF EXISTS fact_estado_servicio_transaccional"))
+        session.commit()
+
+        # Crear tabla si no existe
         session.execute(text("""
         CREATE TABLE IF NOT EXISTS fact_estado_servicio_transaccional (
             estado_transaccional_key INTEGER PRIMARY KEY,

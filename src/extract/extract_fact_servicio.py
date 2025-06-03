@@ -5,7 +5,9 @@ from typing import Tuple
 from utils.database import db_session, DBConnection
 
 def run_extract() -> Tuple[pd.DataFrame, bool]:
-    """Extrae datos para la tabla FactServicio"""
+    """
+    Extrae los datos necesarios desde la base de datos de origen y retorna un DataFrame.
+    """
     try:
         query = text("""
         WITH 
@@ -91,19 +93,21 @@ def run_extract() -> Tuple[pd.DataFrame, bool]:
             LEFT JOIN clientes_usuarioaquitoy cu ON s.usuario_id = cu.id
         WHERE 1=1
             AND s.es_prueba = false -- Excluir servicios de prueba
-        GROUP BY s.id, 
-                s.cliente_id,
-                cu.sede_id,
-                s.tipo_servicio_id,
-                s.prioridad,
-                s.fecha_solicitud,
-                s.hora_solicitud,
-                os.ciudad,
-                os.departamento,
-                ds.ciudad,
-                ds.departamento,
-                ef.estado_id
-        ORDER BY s.id;
+        GROUP BY 
+            s.id, 
+            s.cliente_id,
+            cu.sede_id,
+            s.tipo_servicio_id,
+            s.prioridad,
+            s.fecha_solicitud,
+            s.hora_solicitud,
+            os.ciudad,
+            os.departamento,
+            ds.ciudad,
+            ds.departamento,
+            ef.estado_id
+        ORDER BY 
+            s.id;
         """)
 
         with db_session(DBConnection.SOURCE) as session:

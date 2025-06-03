@@ -53,6 +53,15 @@ PIPELINES = {
                          'dim_fecha',
                          'dim_hora'
                          ]
+    },
+    'fact_novedad_servicio_transaccional': {
+        'module': 'pipelines.etl_fact_novedad_servicio_transaccional',
+        'dependencies': ['fact_servicio',
+                         'dim_novedad',
+                         'dim_mensajero',
+                         'dim_fecha',
+                         'dim_hora'
+                         ]
     }
 }
 
