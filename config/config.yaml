@@ -8,16 +8,6 @@ postgres_db_src:
   timeout: 120                              # Timeout en segundos
   pool_size: 5                              # Conexiones simultaneas a la BD
 
-postgres_db_stg:
-  drivername: postgresql
-  host: localhost
-  port: 5432
-  database: mensajeria_colombia_stg
-  user: postgres
-  password: root
-  timeout: 120
-  pool_size: 5
-
 postgres_db_tgt:
   drivername: postgresql
   host: localhost

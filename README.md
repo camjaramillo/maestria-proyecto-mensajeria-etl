@@ -38,6 +38,32 @@ pip install -r requirements.txt
 
 Esto instalará todas las dependencias listadas en el archivo requirements.txt, asegurando que el entorno esté configurado correctamente.
 
-<br>4. Desactivar el Entorno Virtual</br>
+<br>4. Configuración del archivo config.yaml</br>
+
+Ruta: /config/config.yaml
+
+Para establecer las conexiones con las bases de datos de origen y destino, es necesario configurar el archivo config.yaml con base en las configuraciones de tu postgreSQL.
+
+Ten en cuenta que el ambiente 'postgres_db_src' hace referencia a la base de datos fuente, mientras que 'postgres_db_tgt' indica la base de datos destino (Data Warehouse). Asegúrate de crear ambas bases de datos, pueden tener el nombre que prefieras (luego el nombre será configurado en el parámetro "database").
+
+Parámetros a configurar:
+
+- host: Dirección del servidor de la base de datos. Utiliza localhost si la base de datos está en el mismo servidor que la aplicación.
+
+- port: Puerto de conexión. El valor predeterminado de PostgreSQL es 5432.
+
+- database: Nombre de la base de datos a la que deseas conectarte.
+
+- user: Usuario con permisos adecuados para acceder a la base de datos.
+
+- password: Contraseña asociada al usuario especificado.
+
+- timeout: Tiempo máximo (en segundos) que la aplicación esperará para establecer una conexión antes de generar un error.
+
+- pool_size: Número máximo de conexiones simultáneas que la aplicación puede mantener con la base de datos.
+
+Asegúrate de ajustar estos valores según tu entorno específico.
+
+<br>Desactivar el Entorno Virtual</br>
 
 deactivate
