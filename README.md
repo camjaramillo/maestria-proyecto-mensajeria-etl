@@ -42,9 +42,9 @@ Esto instalará todas las dependencias listadas en el archivo requirements.txt, 
 
 Ruta: /config/config.yaml
 
-Para establecer las conexiones con las bases de datos de origen y destino, es necesario configurar el archivo config.yaml con base en las configuraciones de tu postgreSQL.
+Para establecer las conexiones con las bases de datos de origen y destino, es necesario configurar el archivo config.yaml, con base en las configuraciones de tu postgreSQL.
 
-Ten en cuenta que el ambiente 'postgres_db_src' hace referencia a la base de datos fuente, mientras que 'postgres_db_tgt' indica la base de datos destino (Data Warehouse). Asegúrate de crear ambas bases de datos, pueden tener el nombre que prefieras (luego el nombre será configurado en el parámetro "database").
+Ten en cuenta que el ambiente <i>'postgres_db_src'</i> hace referencia a la base de datos fuente, mientras que <i>'postgres_db_tgt'</i>  indica la base de datos destino (Data Warehouse). Asegúrate de crear ambas bases de datos, pueden tener el nombre que prefieras (luego el nombre será configurado en el parámetro "database").
 
 Parámetros a configurar:
 
@@ -64,6 +64,8 @@ Parámetros a configurar:
 
 Asegúrate de ajustar estos valores según tu entorno específico.
 
-<br>Desactivar el Entorno Virtual</br>
+<br>5. Desactivar el Entorno Virtual (opcional)</br>
+
+Para desactivar el entorno, en la consola debes escribir:
 
 deactivate
