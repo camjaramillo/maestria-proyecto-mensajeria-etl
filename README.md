@@ -66,6 +66,6 @@ Asegúrate de ajustar estos valores según tu entorno específico.
 
 <br>5. Desactivar el Entorno Virtual (opcional)</br>
 
-Para desactivar el entorno, en la consola debes escribir:
+Si necesitas desactivar el entorno, en la términal debes escribir:
 
 deactivate
