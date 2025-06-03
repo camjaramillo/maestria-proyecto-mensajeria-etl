@@ -5,8 +5,14 @@ from utils.logger import logger
 
 def run_extract() -> Tuple[pd.DataFrame, bool]:
     try:
-        horas = list(range(24))
+        # Generar una lista de tiempos para cada minuto del día
+        times = [time(hour=h, minute=m) for h in range(24) for m in range(60)]
         
+        # Extraer la hora y el minuto de cada tiempo
+        horas_enteras = [t.hour for t in times]
+        minutos = [t.minute for t in times]
+        
+        # Definir la franja horaria basada en la hora
         def obtener_franja(hora):
             if 0 <= hora <= 5:
                 return 'Madrugada'
@@ -17,11 +23,14 @@ def run_extract() -> Tuple[pd.DataFrame, bool]:
             else:
                 return 'Noche'
         
+        franjas = [obtener_franja(h) for h in horas_enteras]
+        
+        # Crear el DataFrame
         df = pd.DataFrame({
-            'hora': [time(h) for h in horas],
-            'hora_entera': horas,
-            'minuto': [0]*24,
-            'franja_horaria': [obtener_franja(h) for h in horas]
+            'hora': times,
+            'hora_entera': horas_enteras,
+            'minuto': minutos,
+            'franja_horaria': franjas
         })
         
         logger.info(f"Extracción de dim_hora completada: {len(df)} registros generados.")

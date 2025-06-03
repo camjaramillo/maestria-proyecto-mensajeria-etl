@@ -35,11 +35,25 @@ PIPELINES = {
     'dim_hora': {
         'module': 'pipelines.etl_dim_hora',
         'dependencies': []
+    },
+    'fact_servicio': {
+        'module': 'pipelines.etl_fact_servicio',
+        'dependencies': ['dim_cliente', 
+                         'dim_sede', 
+                         'dim_tipo_servicio', 
+                         'dim_estado_servicio',
+                         'dim_fecha',
+                         'dim_hora'
+                         ]
+    },
+    'fact_estado_servicio_transaccional': {
+        'module': 'pipelines.etl_fact_estado_servicio_transaccional',
+        'dependencies': ['fact_servicio',
+                         'dim_estado_servicio',
+                         'dim_fecha',
+                         'dim_hora'
+                         ]
     }
-    ##'fact_servicio': {
-    ##    'module': 'pipelines.etl_fact_servicio',
-    ##    'dependencies': ['dim_cliente', 'dim_fecha']  # Depende de estas dimensiones
-    ##}
 }
 
 def execute(pipelines_to_run: List[str] = None) -> Dict[str, bool]:
