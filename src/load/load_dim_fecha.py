@@ -12,19 +12,19 @@ def run_load(df: pd.DataFrame, session, truncate: bool = False) -> Tuple[bool, i
 
         # Crear tabla si no existe
         session.execute(text("""
-            CREATE TABLE IF NOT EXISTS dim_fecha (
-                fecha_key     INTEGER PRIMARY KEY,
-                fecha         DATE NOT NULL,
-                anio          INTEGER NOT NULL,
-                mes           INTEGER NOT NULL,
-                dia           INTEGER NOT NULL,
-                trimestre     INTEGER NOT NULL,
-                nombre_mes    VARCHAR(20) NOT NULL,
-                dia_semana    VARCHAR(20) NOT NULL,
-                es_festivo    BOOLEAN NOT NULL,
-                created_at    TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-                CONSTRAINT uk_fecha UNIQUE (fecha)
-            )
+        CREATE TABLE IF NOT EXISTS dim_fecha (
+            fecha_key     INTEGER PRIMARY KEY,
+            fecha         DATE NOT NULL,
+            anio          INTEGER NOT NULL,
+            mes           INTEGER NOT NULL,
+            dia           INTEGER NOT NULL,
+            trimestre     INTEGER NOT NULL,
+            nombre_mes    VARCHAR(20) NOT NULL,
+            dia_semana    VARCHAR(20) NOT NULL,
+            es_festivo    BOOLEAN NOT NULL,
+            created_at    TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            CONSTRAINT uk_fecha UNIQUE (fecha)
+        )
         """))
 
         # Vaciar tabla si es full refresh

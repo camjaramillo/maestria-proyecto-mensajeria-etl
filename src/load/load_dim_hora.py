@@ -10,15 +10,15 @@ def run_load(df: pd.DataFrame, session, truncate: bool = False) -> Tuple[bool, i
         session.commit()
 
         session.execute(text("""
-            CREATE TABLE IF NOT EXISTS dim_hora (
-                hora_key         INTEGER PRIMARY KEY,
-                hora             TIME NOT NULL,
-                hora_entera      INTEGER NOT NULL,
-                minuto           INTEGER NOT NULL,
-                franja_horaria   VARCHAR(20) NOT NULL,
-                created_at       TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-                CONSTRAINT uk_hora UNIQUE (hora)
-            )
+        CREATE TABLE IF NOT EXISTS dim_hora (
+            hora_key         INTEGER PRIMARY KEY,
+            hora             TIME NOT NULL,
+            hora_entera      INTEGER NOT NULL,
+            minuto           INTEGER NOT NULL,
+            franja_horaria   VARCHAR(20) NOT NULL,
+            created_at       TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            CONSTRAINT uk_hora UNIQUE (hora)
+        )
         """))
         
         if truncate:

@@ -1,0 +1,164 @@
+Table dim_cliente {
+  cliente_key integer [pk]
+  cliente_id integer [not null, unique]
+  nit varchar(20)
+  nombre varchar(120) [not null]
+  email varchar(120)
+  direccion varchar(250)
+  telefono varchar(100)
+  ciudad varchar(120)
+  departamento varchar(120)
+  sector varchar(50)
+  activo boolean
+  created_at timestamp [default: `CURRENT_TIMESTAMP`]
+}
+
+Table dim_estado_servicio {
+  estado_servicio_key integer [pk]
+  estado_servicio_id integer [unique]
+  nombre varchar(75) [not null]
+  descripcion varchar(500) [not null]
+  created_at timestamp [default: `CURRENT_TIMESTAMP`]
+}
+
+Table dim_fecha {
+  fecha_key integer [pk]
+  fecha date [not null, unique]
+  anio integer [not null]
+  mes integer [not null]
+  dia integer [not null]
+  trimestre integer [not null]
+  nombre_mes varchar(20) [not null]
+  dia_semana varchar(20) [not null]
+  es_festivo boolean [not null]
+  created_at timestamp [default: `CURRENT_TIMESTAMP`]
+}
+
+Table dim_hora {
+  hora_key integer [pk]
+  hora time [not null, unique]
+  hora_entera integer [not null]
+  minuto integer [not null]
+  franja_horaria varchar(20) [not null]
+  created_at timestamp [default: `CURRENT_TIMESTAMP`]
+}
+
+Table dim_mensajero {
+  mensajero_key integer [pk]
+  mensajero_id integer [unique]
+  nombre_usuario varchar(150)
+  nombre varchar(120)
+  apellido varchar(120)
+  telefono varchar(15)
+  ciudad_operacion varchar(120)
+  departamento_operacion varchar(120)
+  activo boolean
+  created_at timestamp [default: `CURRENT_TIMESTAMP`]
+}
+
+Table dim_novedad {
+  novedad_key integer [pk]
+  novedad_id integer [unique]
+  nombre varchar(30) [not null]
+  created_at timestamp [default: `CURRENT_TIMESTAMP`]
+}
+
+Table dim_sede {
+  sede_key integer [pk]
+  sede_id integer [not null, unique]
+  nombre varchar(120) [not null]
+  direccion varchar(250)
+  ciudad varchar(120) [not null]
+  departamento varchar(120) [not null]
+  cliente_id integer [not null]
+  nit_cliente varchar(50) [not null]
+  nombre_cliente varchar(120) [not null]
+  created_at timestamp [default: `CURRENT_TIMESTAMP`]
+}
+
+Table dim_tipo_servicio {
+  tipo_servicio_key integer [pk]
+  tipo_servicio_id integer [unique]
+  nombre varchar(75) [not null]
+  descripcion varchar(500) [not null]
+  created_at timestamp [default: `CURRENT_TIMESTAMP`]
+}
+
+Table fact_servicio {
+  servicio_key integer [pk]
+  servicio_id integer [unique]
+  cliente_key integer
+  mensajero_key integer
+  sede_key integer
+  tipo_servicio_key integer
+  estado_servicio_final_key integer
+  prioridad varchar(50)
+  ciudad_origen varchar(50)
+  departamento_origen varchar(50)
+  ciudad_destino varchar(50)
+  departamento_destino varchar(50)
+  fecha_solicitud_key integer
+  hora_solicitud_key integer
+  fecha_iniciado_key integer
+  hora_iniciado_key integer
+  fecha_asignacion_key integer
+  hora_asignacion_key integer
+  fecha_recogida_key integer
+  hora_recogida_key integer
+  fecha_entrega_key integer
+  hora_entrega_key integer
+  fecha_cierre_key integer
+  hora_cierre_key integer
+  tiempo_total_entrega integer
+  created_at timestamp [default: `CURRENT_TIMESTAMP`]
+}
+
+Table fact_estado_servicio_transaccional {
+  estado_transaccional_key integer [pk]
+  servicio_key integer [not null]
+  estado_anterior_key integer
+  estado_nuevo_key integer
+  fecha_cambio_key integer [not null]
+  hora_cambio_key integer [not null]
+  duracion_estado_minutos integer
+}
+
+Table fact_novedad_servicio_transaccional {
+  novedad_transaccional_key integer [pk]
+  servicio_key integer [not null]
+  novedad_key integer [not null]
+  mensajero_key integer
+  descripcion varchar(700)
+  fecha_novedad_key integer [not null]
+  hora_novedad_key integer [not null]
+}
+
+Ref: dim_cliente.cliente_key < fact_servicio.cliente_key
+Ref: dim_mensajero.mensajero_key < fact_servicio.mensajero_key
+Ref: dim_sede.sede_key < fact_servicio.sede_key
+Ref: dim_tipo_servicio.tipo_servicio_key < fact_servicio.tipo_servicio_key
+Ref: dim_estado_servicio.estado_servicio_key < fact_servicio.estado_servicio_final_key
+Ref: dim_fecha.fecha_key < fact_servicio.fecha_solicitud_key
+Ref: dim_fecha.fecha_key < fact_servicio.fecha_iniciado_key
+Ref: dim_fecha.fecha_key < fact_servicio.fecha_asignacion_key
+Ref: dim_fecha.fecha_key < fact_servicio.fecha_recogida_key
+Ref: dim_fecha.fecha_key < fact_servicio.fecha_entrega_key
+Ref: dim_fecha.fecha_key < fact_servicio.fecha_cierre_key
+Ref: dim_hora.hora_key < fact_servicio.hora_solicitud_key
+Ref: dim_hora.hora_key < fact_servicio.hora_iniciado_key
+Ref: dim_hora.hora_key < fact_servicio.hora_asignacion_key
+Ref: dim_hora.hora_key < fact_servicio.hora_recogida_key
+Ref: dim_hora.hora_key < fact_servicio.hora_entrega_key
+Ref: dim_hora.hora_key < fact_servicio.hora_cierre_key
+
+Ref: fact_servicio.servicio_key < fact_estado_servicio_transaccional.servicio_key
+Ref: dim_estado_servicio.estado_servicio_key < fact_estado_servicio_transaccional.estado_anterior_key
+Ref: dim_estado_servicio.estado_servicio_key < fact_estado_servicio_transaccional.estado_nuevo_key
+Ref: dim_fecha.fecha_key < fact_estado_servicio_transaccional.fecha_cambio_key
+Ref: dim_hora.hora_key < fact_estado_servicio_transaccional.hora_cambio_key
+
+Ref: fact_servicio.servicio_key < fact_novedad_servicio_transaccional.servicio_key
+Ref: dim_novedad.novedad_key < fact_novedad_servicio_transaccional.novedad_key
+Ref: dim_mensajero.mensajero_key < fact_novedad_servicio_transaccional.mensajero_key
+Ref: dim_fecha.fecha_key < fact_novedad_servicio_transaccional.fecha_novedad_key
+Ref: dim_hora.hora_key < fact_novedad_servicio_transaccional.hora_novedad_key
