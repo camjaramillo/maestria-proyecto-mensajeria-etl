@@ -7,7 +7,7 @@ def run_load(df: pd.DataFrame, session, truncate: bool = False) -> Tuple[bool, i
     """Carga datos a la tabla de hechos final"""
     try:
         # Eliminar tabla
-        session.execute(text("DROP TABLE IF EXISTS fact_servicio"))
+        session.execute(text("DROP TABLE IF EXISTS fact_servicio CASCADE"))
         session.commit()
 
         # Crear tabla si no existe
@@ -39,8 +39,25 @@ def run_load(df: pd.DataFrame, session, truncate: bool = False) -> Tuple[bool, i
             hora_cierre_key INTEGER,
             tiempo_total_entrega INTEGER,
             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-            CONSTRAINT uk_fact_servicio_id UNIQUE (servicio_id)
-        )
+            CONSTRAINT uk_fact_servicio_id UNIQUE (servicio_id),
+            CONSTRAINT fk_cliente FOREIGN KEY (cliente_key) REFERENCES dim_cliente(cliente_key),
+            CONSTRAINT fk_mensajero FOREIGN KEY (mensajero_key) REFERENCES dim_mensajero(mensajero_key),
+            CONSTRAINT fk_sede FOREIGN KEY (sede_key) REFERENCES dim_sede(sede_key),
+            CONSTRAINT fk_tipo_servicio FOREIGN KEY (tipo_servicio_key) REFERENCES dim_tipo_servicio(tipo_servicio_key),
+            CONSTRAINT fk_estado_servicio_final FOREIGN KEY (estado_servicio_final_key) REFERENCES dim_estado_servicio(estado_servicio_key),
+            CONSTRAINT fk_fecha_solicitud FOREIGN KEY (fecha_solicitud_key) REFERENCES dim_fecha(fecha_key),
+            CONSTRAINT fk_fecha_iniciado FOREIGN KEY (fecha_iniciado_key) REFERENCES dim_fecha(fecha_key),
+            CONSTRAINT fk_fecha_asignacion FOREIGN KEY (fecha_asignacion_key) REFERENCES dim_fecha(fecha_key),
+            CONSTRAINT fk_fecha_recogida FOREIGN KEY (fecha_recogida_key) REFERENCES dim_fecha(fecha_key),
+            CONSTRAINT fk_fecha_entrega FOREIGN KEY (fecha_entrega_key) REFERENCES dim_fecha(fecha_key),
+            CONSTRAINT fk_fecha_cierre FOREIGN KEY (fecha_cierre_key) REFERENCES dim_fecha(fecha_key),
+            CONSTRAINT fk_hora_solicitud FOREIGN KEY (hora_solicitud_key) REFERENCES dim_hora(hora_key),
+            CONSTRAINT fk_hora_iniciado FOREIGN KEY (hora_iniciado_key) REFERENCES dim_hora(hora_key),
+            CONSTRAINT fk_hora_asignacion FOREIGN KEY (hora_asignacion_key) REFERENCES dim_hora(hora_key),
+            CONSTRAINT fk_hora_recogida FOREIGN KEY (hora_recogida_key) REFERENCES dim_hora(hora_key),
+            CONSTRAINT fk_hora_entrega FOREIGN KEY (hora_entrega_key) REFERENCES dim_hora(hora_key),
+            CONSTRAINT fk_hora_cierre FOREIGN KEY (hora_cierre_key) REFERENCES dim_hora(hora_key)
+        );
         """))
         if truncate:
             session.execute(text("TRUNCATE TABLE fact_servicio"))

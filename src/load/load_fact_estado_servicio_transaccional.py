@@ -7,7 +7,7 @@ def run_load(df: pd.DataFrame, session, truncate: bool = False) -> Tuple[bool, i
     """Carga datos a la tabla de hechos final"""
     try:
         # Eliminar tabla
-        session.execute(text("DROP TABLE IF EXISTS fact_estado_servicio_transaccional"))
+        session.execute(text("DROP TABLE IF EXISTS fact_estado_servicio_transaccional CASCADE"))
         session.commit()
 
         # Crear tabla si no existe
@@ -19,8 +19,13 @@ def run_load(df: pd.DataFrame, session, truncate: bool = False) -> Tuple[bool, i
             estado_nuevo_key INTEGER,
             fecha_cambio_key INTEGER NOT NULL,
             hora_cambio_key INTEGER NOT NULL,
-            duracion_estado_minutos INTEGER
-        )
+            duracion_estado_minutos INTEGER,
+            CONSTRAINT fk_servicio FOREIGN KEY (servicio_key) REFERENCES fact_servicio(servicio_key),
+            CONSTRAINT fk_estado_anterior FOREIGN KEY (estado_anterior_key) REFERENCES dim_estado_servicio(estado_servicio_key),
+            CONSTRAINT fk_estado_nuevo FOREIGN KEY (estado_nuevo_key) REFERENCES dim_estado_servicio(estado_servicio_key),
+            CONSTRAINT fk_fecha_cambio FOREIGN KEY (fecha_cambio_key) REFERENCES dim_fecha(fecha_key),
+            CONSTRAINT fk_hora_cambio FOREIGN KEY (hora_cambio_key) REFERENCES dim_hora(hora_key)
+        );
         """))
         if truncate:
             session.execute(text("TRUNCATE TABLE fact_estado_servicio_transaccional"))
