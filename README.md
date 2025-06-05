@@ -64,7 +64,13 @@ Parámetros a configurar:
 
 Asegúrate de ajustar estos valores según tu entorno específico.
 
-<br>5. Desactivar el Entorno Virtual (opcional)</br>
+<br>5. Ejecutar el ETL</br>
+
+Para ejecutar el ETL completo, se debe escribir el comando:
+
+python main.py
+
+<br>6. Desactivar el Entorno Virtual (opcional)</br>
 
 Si necesitas desactivar el entorno, en la términal debes escribir:
 

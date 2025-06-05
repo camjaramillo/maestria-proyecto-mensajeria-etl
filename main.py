@@ -10,10 +10,6 @@ sys.path.append(str(Path(__file__).resolve().parent / "src"))
 from utils.logger import logger
 from pipelines.etl_master import execute as run_etl_master
 
-import pandas as pd
-import holidays
-
-
 
 def main():
     try:
