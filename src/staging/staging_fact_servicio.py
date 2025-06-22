@@ -34,9 +34,7 @@ def run_staging(df: pd.DataFrame, session) -> bool:
             fecha_recogida DATE,
             hora_recogida TIME,
             fecha_entrega DATE,
-            hora_entrega TIME,
-            fecha_cierre DATE,
-            hora_cierre TIME
+            hora_entrega TIME
         ) ON COMMIT PRESERVE ROWS;
         """))
 

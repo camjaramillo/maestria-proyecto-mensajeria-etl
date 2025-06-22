@@ -22,6 +22,7 @@ def run_extract() -> Tuple[pd.DataFrame, bool]:
         WHERE 1=1
             AND mes.servicio_id = ms.id
             AND ms.es_prueba = false
+            AND mes.estado_id IN (1, 2, 3, 4, 5)
         ORDER BY 
             servicio_id, fecha, hora;
         """)

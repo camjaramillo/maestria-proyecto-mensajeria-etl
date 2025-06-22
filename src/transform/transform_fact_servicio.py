@@ -43,8 +43,6 @@ def run_transform(session) -> Tuple[pd.DataFrame, bool]:
             tdh_recogida.hora_key AS hora_recogida_key,
             tdf_entrega.fecha_key AS fecha_entrega_key,
             tdh_entrega.hora_key AS hora_entrega_key,
-            tdf_cierre.fecha_key AS fecha_cierre_key,
-            tdh_cierre.hora_key AS hora_cierre_key,
             CASE
                 WHEN fecha_solicitud IS NOT NULL AND hora_solicitud IS NOT NULL
                     AND fecha_entrega IS NOT NULL AND hora_entrega IS NOT NULL THEN
@@ -52,7 +50,7 @@ def run_transform(session) -> Tuple[pd.DataFrame, bool]:
                         EXTRACT(EPOCH FROM( (fecha_entrega + hora_entrega) - (fecha_solicitud + hora_solicitud) )) / 60
                     )
                 ELSE NULL
-            END AS tiempo_total_entrega
+            END AS tiempo_total_entrega_min
             FROM 
                 pg_temp.stg_fact_servicio sfs
                 -- DimCliente
@@ -71,14 +69,12 @@ def run_transform(session) -> Tuple[pd.DataFrame, bool]:
                 LEFT JOIN tiempo_dim_fecha tdf_asignacion ON sfs.fecha_asignacion = tdf_asignacion.fecha
                 LEFT JOIN tiempo_dim_fecha tdf_recogida ON sfs.fecha_recogida = tdf_recogida.fecha
                 LEFT JOIN tiempo_dim_fecha tdf_entrega ON sfs.fecha_entrega = tdf_entrega.fecha
-                LEFT JOIN tiempo_dim_fecha tdf_cierre ON sfs.fecha_cierre = tdf_cierre.fecha
                 -- DimHora
                 LEFT JOIN tiempo_dim_hora tdh_solicitud ON sfs.hora_solicitud = tdh_solicitud.hora 
                 LEFT JOIN tiempo_dim_hora tdh_iniciado ON sfs.hora_iniciado = tdh_iniciado.hora
                 LEFT JOIN tiempo_dim_hora tdh_asignacion ON sfs.hora_asignacion = tdh_asignacion.hora
                 LEFT JOIN tiempo_dim_hora tdh_recogida ON sfs.hora_recogida = tdh_recogida.hora
                 LEFT JOIN tiempo_dim_hora tdh_entrega ON sfs.hora_entrega = tdh_entrega.hora
-                LEFT JOIN tiempo_dim_hora tdh_cierre ON sfs.hora_cierre = tdh_cierre.hora
         """)
         df = pd.read_sql(query, session.connection())
         logger.info(f"Transformación completada: {len(df)} filas")

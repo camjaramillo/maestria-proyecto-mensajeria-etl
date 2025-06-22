@@ -11,54 +11,79 @@ def run_extract() -> Tuple[pd.DataFrame, bool]:
     try:
         query = text("""
         WITH 
-        estado_servicios AS (
-            SELECT
-                servicio_id,
-                estado_id,
-                fecha,
-                DATE_TRUNC('minute', hora + INTERVAL '30 seconds')::TIME AS hora, -- Formato HH:MM (sin segundos)
-                ROW_NUMBER() OVER (PARTITION BY servicio_id, estado_id ORDER BY fecha, hora) AS rn
+        estado_iniciado AS (
+            SELECT servicio_id,
+                fecha AS fecha_iniciado,
+                DATE_TRUNC('minute', hora + INTERVAL '30 seconds')::TIME AS hora_iniciado
+            FROM (
+            SELECT servicio_id, fecha, hora,
+                    ROW_NUMBER() OVER (PARTITION BY servicio_id ORDER BY fecha, hora) AS rn
             FROM mensajeria_estadosservicio
-            WHERE estado_id IN (1, 2, 4, 5, 6)
+            WHERE estado_id = 1
+            ) t
+            WHERE t.rn = 1
+        ),
+        estado_asignacion AS (
+            SELECT servicio_id,
+                fecha AS fecha_asignacion,
+                DATE_TRUNC('minute', hora + INTERVAL '30 seconds')::TIME AS hora_asignacion
+            FROM (
+            SELECT servicio_id, fecha, hora,
+                    ROW_NUMBER() OVER (PARTITION BY servicio_id ORDER BY fecha, hora) AS rn
+            FROM mensajeria_estadosservicio
+            WHERE estado_id = 2
+            ) t
+            WHERE t.rn = 1
+        ),
+        estado_recogida AS (
+            SELECT servicio_id,
+                fecha AS fecha_recogida,
+                DATE_TRUNC('minute', hora + INTERVAL '30 seconds')::TIME AS hora_recogida
+            FROM (
+            SELECT servicio_id, fecha, hora,
+                    ROW_NUMBER() OVER (PARTITION BY servicio_id ORDER BY fecha, hora) AS rn
+            FROM mensajeria_estadosservicio
+            WHERE estado_id = 4
+            ) t
+            WHERE t.rn = 1
+        ),
+        estado_entrega AS (
+            SELECT servicio_id,
+                fecha AS fecha_entrega,
+                DATE_TRUNC('minute', hora + INTERVAL '30 seconds')::TIME AS hora_entrega
+            FROM (
+            SELECT servicio_id, fecha, hora,
+                    ROW_NUMBER() OVER (PARTITION BY servicio_id ORDER BY fecha, hora) AS rn
+            FROM mensajeria_estadosservicio
+            WHERE estado_id = 5
+            ) t
+            WHERE t.rn = 1
         ),
         estado_final AS (
-            SELECT
-                servicio_id,
-                estado_id
+            SELECT servicio_id,
+                estado_id AS estado_servicio_final_id
             FROM (
-                SELECT
-                    servicio_id,
-                    estado_id,
+            SELECT servicio_id, estado_id,
                     ROW_NUMBER() OVER (PARTITION BY servicio_id ORDER BY fecha DESC, hora DESC) AS rn
-                FROM mensajeria_estadosservicio
-            ) sub
-            WHERE rn = 1
+            FROM mensajeria_estadosservicio
+            ) t
+            WHERE t.rn = 1
         ),
         origen_servicio AS (
-            SELECT
-                mos.id AS origen_id,
-                ci.nombre AS ciudad,
-                d.nombre AS departamento
-            FROM
-                mensajeria_origenservicio mos,
-                ciudad ci,
-                departamento d
-            WHERE 1=1
-                AND mos.ciudad_id = ci.ciudad_id
-                AND ci.departamento_id = d.departamento_id
+            SELECT mos.id        AS origen_id,
+                ci.nombre     AS ciudad_origen,
+                d.nombre      AS departamento_origen
+            FROM mensajeria_origenservicio mos
+            JOIN ciudad ci ON mos.ciudad_id = ci.ciudad_id
+            JOIN departamento d ON ci.departamento_id = d.departamento_id
         ),
         destino_servicio AS (
-            SELECT
-                mds.id AS destino_id,
-                ci.nombre AS ciudad,
-                d.nombre AS departamento
-            FROM
-                mensajeria_destinoservicio mds,
-                ciudad ci,
-                departamento d
-            WHERE 1=1
-                AND mds.ciudad_id = ci.ciudad_id
-                AND ci.departamento_id = d.departamento_id
+            SELECT mds.id       AS destino_id,
+                ci.nombre    AS ciudad_destino,
+                d.nombre     AS departamento_destino
+            FROM mensajeria_destinoservicio mds
+            JOIN ciudad ci ON mds.ciudad_id = ci.ciudad_id
+            JOIN departamento d ON ci.departamento_id = d.departamento_id
         )
         SELECT
             s.id AS servicio_id,
@@ -66,48 +91,38 @@ def run_extract() -> Tuple[pd.DataFrame, bool]:
             s.mensajero_id,
             cu.sede_id,
             s.tipo_servicio_id,
-            ef.estado_id AS estado_servicio_final_id,
+            ef.estado_servicio_final_id,
             s.prioridad,
-            os.ciudad AS ciudad_origen,
-            os.departamento AS departamento_origen,
-            ds.ciudad AS ciudad_destino,
-            ds.departamento AS departamento_destino,
+            os.ciudad_origen,
+            os.departamento_origen,
+            ds.ciudad_destino,
+            ds.departamento_destino,
             s.fecha_solicitud,
             DATE_TRUNC('minute', s.hora_solicitud + INTERVAL '30 seconds')::TIME AS hora_solicitud,
-            MAX(CASE WHEN es.estado_id = 1 AND es.rn = 1 THEN es.fecha END) AS fecha_iniciado,
-            MAX(CASE WHEN es.estado_id = 1 AND es.rn = 1 THEN es.hora END) AS hora_iniciado,
-            MAX(CASE WHEN es.estado_id = 2 AND es.rn = 1 THEN es.fecha END) AS fecha_asignacion,
-            MAX(CASE WHEN es.estado_id = 2 AND es.rn = 1 THEN es.hora END) AS hora_asignacion,
-            MAX(CASE WHEN es.estado_id = 4 AND es.rn = 1 THEN es.fecha END) AS fecha_recogida,
-            MAX(CASE WHEN es.estado_id = 4 AND es.rn = 1 THEN es.hora END) AS hora_recogida,
-            MAX(CASE WHEN es.estado_id = 5 AND es.rn = 1 THEN es.fecha END) AS fecha_entrega,
-            MAX(CASE WHEN es.estado_id = 5 AND es.rn = 1 THEN es.hora END) AS hora_entrega,         
-            MAX(CASE WHEN es.estado_id = 6 AND es.rn = 1 THEN es.fecha END) AS fecha_cierre,
-            MAX(CASE WHEN es.estado_id = 6 AND es.rn = 1 THEN es.hora END) AS hora_cierre
-        FROM 
-            mensajeria_servicio s
-            LEFT JOIN estado_servicios es ON s.id = es.servicio_id
-            LEFT JOIN estado_final ef ON s.id = ef.servicio_id
-            LEFT JOIN origen_servicio os ON s.origen_id = os.origen_id
-            LEFT JOIN destino_servicio ds ON s.destino_id = ds.destino_id
-            LEFT JOIN clientes_usuarioaquitoy cu ON s.usuario_id = cu.id
-        WHERE 1=1
-            AND s.es_prueba = false -- Excluir servicios de prueba
-        GROUP BY 
-            s.id, 
-            s.cliente_id,
-            cu.sede_id,
-            s.tipo_servicio_id,
-            s.prioridad,
-            s.fecha_solicitud,
-            s.hora_solicitud,
-            os.ciudad,
-            os.departamento,
-            ds.ciudad,
-            ds.departamento,
-            ef.estado_id
-        ORDER BY 
-            s.id;
+            ei.fecha_iniciado,
+            ei.hora_iniciado,
+            ea.fecha_asignacion,
+            ea.hora_asignacion,
+            er.fecha_recogida,
+            er.hora_recogida,
+            et.fecha_entrega,
+            et.hora_entrega
+        FROM mensajeria_servicio s
+        -- solo se obtienen los servicios que tienen cada uno de estos cuatro estados (se evitan nulls)
+        INNER JOIN estado_iniciado   ei ON ei.servicio_id   = s.id
+        INNER JOIN estado_asignacion ea ON ea.servicio_id   = s.id
+        INNER JOIN estado_recogida   er ON er.servicio_id   = s.id
+        INNER JOIN estado_entrega    et ON et.servicio_id   = s.id
+        -- Left joins
+        LEFT  JOIN estado_final      ef ON ef.servicio_id   = s.id
+        LEFT  JOIN origen_servicio   os ON os.origen_id     = s.origen_id
+        LEFT  JOIN destino_servicio  ds ON ds.destino_id    = s.destino_id
+        LEFT  JOIN clientes_usuarioaquitoy cu ON cu.id       = s.usuario_id
+        WHERE
+            s.es_prueba = FALSE
+            AND s.fecha_solicitud IS NOT NULL
+            AND s.hora_solicitud IS NOT NULL
+        ORDER BY s.id;
         """)
 
         with db_session(DBConnection.SOURCE) as session:

@@ -23,7 +23,7 @@ def run_transform(session) -> Tuple[pd.DataFrame, bool]:
             ) AS duracion_estado_minutos
         FROM
             stg_fact_estado_servicio_transaccional sfest
-            LEFT JOIN fact_servicio fas ON sfest.servicio_id = fas.servicio_id
+            INNER JOIN fact_servicio fas ON sfest.servicio_id = fas.servicio_id
             LEFT JOIN dim_estado_servicio desa ON sfest.estado_anterior_id = desa.estado_servicio_id
             LEFT JOIN dim_estado_servicio desn ON sfest.estado_nuevo_id = desn.estado_servicio_id
             LEFT JOIN dim_fecha df ON sfest.fecha_cambio = df.fecha
