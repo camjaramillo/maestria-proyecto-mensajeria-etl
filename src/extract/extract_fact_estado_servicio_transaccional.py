@@ -10,21 +10,24 @@ def run_extract() -> Tuple[pd.DataFrame, bool]:
     """
     try:
         query = text("""
-        SELECT
-            mes.servicio_id,
-            LAG(estado_id) OVER (PARTITION BY mes.servicio_id ORDER BY fecha, hora) AS estado_anterior_id,
-            mes.estado_id AS estado_nuevo_id,
-            mes.fecha AS fecha_cambio,
-            DATE_TRUNC('minute', mes.hora + INTERVAL '30 seconds')::TIME AS hora_cambio
-        FROM 
-            mensajeria_estadosservicio mes,
-            mensajeria_servicio ms
-        WHERE 1=1
-            AND mes.servicio_id = ms.id
-            AND ms.es_prueba = false
-            AND mes.estado_id IN (1, 2, 3, 4, 5)
-        ORDER BY 
-            servicio_id, fecha, hora;
+        SELECT *
+        FROM (
+            SELECT
+                mes.servicio_id,
+                LAG(mes.estado_id) OVER (PARTITION BY mes.servicio_id ORDER BY fecha, hora) AS estado_anterior_id,
+                mes.estado_id AS estado_nuevo_id,
+                mes.fecha AS fecha_cambio,
+                DATE_TRUNC('minute', mes.hora + INTERVAL '30 seconds')::TIME AS hora_cambio
+            FROM 
+                mensajeria_estadosservicio mes
+            JOIN 
+                mensajeria_servicio ms ON mes.servicio_id = ms.id
+            WHERE 
+                ms.es_prueba = false
+                AND mes.estado_id IN (1, 2, 4, 5)
+        ) t
+        WHERE estado_anterior_id IS NULL OR estado_anterior_id != estado_nuevo_id
+        ORDER BY servicio_id, fecha_cambio, hora_cambio;
         """)
 
         with db_session(DBConnection.SOURCE) as session:

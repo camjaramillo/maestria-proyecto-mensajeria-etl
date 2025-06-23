@@ -100,3 +100,21 @@
             s.id;
 
 ------------------------------------------------------------------
+
+extract fact estado servicio transaccional
+
+SELECT
+            mes.servicio_id,
+            LAG(estado_id) OVER (PARTITION BY mes.servicio_id ORDER BY fecha, hora) AS estado_anterior_id,
+            mes.estado_id AS estado_nuevo_id,
+            mes.fecha AS fecha_cambio,
+            DATE_TRUNC('minute', mes.hora + INTERVAL '30 seconds')::TIME AS hora_cambio
+        FROM 
+            mensajeria_estadosservicio mes,
+            mensajeria_servicio ms
+        WHERE 1=1
+            AND mes.servicio_id = ms.id
+            AND ms.es_prueba = false
+            AND mes.estado_id IN (1, 2, 4, 5)
+        ORDER BY 
+            servicio_id, fecha, hora;
