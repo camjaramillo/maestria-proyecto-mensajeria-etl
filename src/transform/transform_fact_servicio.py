@@ -28,7 +28,11 @@ def run_transform(session) -> Tuple[pd.DataFrame, bool]:
             ds.sede_key,
             dts.tipo_servicio_key,
             des.estado_servicio_key AS estado_servicio_final_key,
-            UPPER(TRIM(sfs.prioridad)) AS prioridad,
+            CASE 
+                WHEN UPPER(prioridad) LIKE '%ALTA%' THEN 'ALTA'
+                WHEN UPPER(prioridad) LIKE '%MEDIA%' THEN 'MEDIA'
+                ELSE 'BAJA'
+            END AS prioridad,         
 			UPPER(TRIM(sfs.ciudad_origen)) AS ciudad_origen,
 			UPPER(TRIM(sfs.departamento_origen)) AS departamento_origen,
 			UPPER(TRIM(sfs.ciudad_destino)) AS ciudad_destino,

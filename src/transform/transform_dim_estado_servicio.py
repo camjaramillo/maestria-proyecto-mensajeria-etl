@@ -10,7 +10,14 @@ def run_transform(session) -> Tuple[pd.DataFrame, bool]:
         SELECT 
             ROW_NUMBER() OVER (ORDER BY estado_servicio_id) AS estado_servicio_key,
             estado_servicio_id,
-            UPPER(TRIM(nombre)) AS nombre,
+            CASE
+                WHEN UPPER(nombre) LIKE '%INICIADO%' THEN 'INICIADO'
+                WHEN UPPER(nombre) LIKE '%ASIGNADO%' THEN 'ASIGNADO'
+                WHEN UPPER(nombre) LIKE '%NOVEDAD%' THEN 'NOVEDAD'
+                WHEN UPPER(nombre) LIKE '%RECOGIDO%' THEN 'RECOGIDO'
+                WHEN UPPER(nombre) LIKE '%ENTREGADO%' THEN 'ENTREGADO'
+                ELSE 'TERMINADO'
+            END AS nombre,
             TRIM(descripcion) AS descripcion       
         FROM pg_temp.stg_dim_estado_servicio
         """)
