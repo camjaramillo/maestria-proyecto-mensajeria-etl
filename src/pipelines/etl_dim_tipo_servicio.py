@@ -1,4 +1,4 @@
-# src/pipelines/etl_dim_cliente.py
+# src/pipelines/etl_dim_tipo_servicio.py
 from typing import Tuple
 from pipelines.etl_base import run_etl_with_staging
 from extract.extract_dim_tipo_servicio import run_extract

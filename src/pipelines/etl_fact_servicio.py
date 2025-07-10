@@ -1,4 +1,3 @@
-# src/pipelines/etl_dim_cliente.py
 from typing import Tuple
 from pipelines.etl_base import run_etl_with_staging
 from extract.extract_fact_servicio import run_extract
@@ -7,7 +6,6 @@ from transform.transform_fact_servicio import run_transform
 from load.load_fact_servicio import run_load
 
 def run_etl(truncate: bool = True) -> Tuple[bool, int]:
-    """Orquesta el ETL completo para DimTipoServicio"""
     return run_etl_with_staging(
         extract_fn=run_extract,
         staging_fn=run_staging,

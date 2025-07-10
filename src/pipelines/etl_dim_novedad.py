@@ -1,4 +1,4 @@
-# src/pipelines/etl_dim_cliente.py
+# src/pipelines/etl_dim_novedad.py
 from typing import Tuple
 from pipelines.etl_base import run_etl_with_staging
 from extract.extract_dim_novedad import run_extract
