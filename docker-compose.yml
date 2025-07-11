@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  etl_app:
+    build: .
+    container_name: etl_mensajeria
+    environment:
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - .:/app
+    networks:
+      - etl_network
+    depends_on: []
+    stdin_open: true
+    tty: true
+
+networks:
+  etl_network:
+    driver: bridge
