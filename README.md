@@ -3,7 +3,7 @@
 
 ### Proyecto Mensajería - ETL
 
-🐍 Configuración del Entorno Virtual
+## 🐍 Configuración del Entorno Virtual
 Para garantizar que las dependencias de este proyecto no interfieran con otras instalaciones de Python en tu sistema, es recomendable crear un entorno virtual. Sigue estos pasos según tu sistema operativo:
 
 <br>1. Crear el Entorno Virtual</br>
@@ -34,6 +34,7 @@ Una vez activado, el prompt de tu terminal debería mostrar el nombre del entorn
 
 Con el entorno virtual activado, instala las bibliotecas necesarias para el proyecto ejecutando:
 
+python.exe -m pip install --upgrade pip
 pip install -r requirements.txt
 
 Esto instalará todas las dependencias listadas en el archivo requirements.txt, asegurando que el entorno esté configurado correctamente.
@@ -75,3 +76,37 @@ python main.py
 Si necesitas desactivar el entorno, en la términal debes escribir:
 
 deactivate
+
+<hr>
+
+## Despliegue del proyecto con Docker
+
+<br>1. Ejecutar el Dockerfile</br>
+
+docker build -t mensajeria-python-image .
+
+Al hacer esto, se creara la imagen mensajeria-python-image en Docker.
+
+
+<br>2. Iniciar la base de datos de Airflow (una sola vez)</br>
+
+docker compose up airflow-init
+
+<br>3. Iniciar todos los contenedores para ejecutar Airflow</br>
+
+docker-compose up
+
+
+<br>(opc) Iniciar los servicios principales de AirFlow</br>
+
+docker compose up -d airflow-webserver airflow-scheduler
+
+<br>4. Detener todos los contenedores de Airflow</br>
+
+Para detener el despliegue del proyecto, ejecutar:
+
+docker-compose stop
+
+O para eliminar los contenedores
+
+docker-composer down

@@ -13,7 +13,9 @@ class DBConnection(Enum):
 
 # Cargar la configuración desde config.yaml
 def load_db_config():
-    config_path = "config/config.yaml"
+    #config_path = "config/config.yaml"
+    config_path = Path(__file__).resolve().parent.parent.parent / "config" / "config.yaml"
+    
     with open(config_path) as f:
         return yaml.safe_load(f)
 

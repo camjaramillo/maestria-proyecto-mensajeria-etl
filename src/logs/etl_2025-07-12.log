@@ -1,0 +1,1011 @@
+2025-07-12 15:44:12,203 - etl_pipeline - INFO - Iniciando ETL Master
+2025-07-12 15:44:16,080 - etl_pipeline - INFO - Extrayendo datos... dim_cliente
+2025-07-12 15:44:16,588 - etl_pipeline - INFO - Cargando a staging ... dim_cliente
+2025-07-12 15:44:16,663 - etl_pipeline - INFO - Staging stg_dim_cliente completado (27 filas)
+2025-07-12 15:44:16,664 - etl_pipeline - INFO - Transformando... dim_cliente
+2025-07-12 15:44:16,666 - etl_pipeline - INFO - Transformación completada (27 filas)
+2025-07-12 15:44:16,666 - etl_pipeline - INFO - Cargando a destino... dim_cliente
+2025-07-12 15:44:16,702 - etl_pipeline - INFO - Carga exitosa. Total registros: 27
+2025-07-12 15:44:16,703 - etl_pipeline - INFO - ETL completado. Filas cargadas: 27 en dim_cliente
+2025-07-12 15:44:16,704 - etl_pipeline - INFO - SUCCESS DIM_CLIENTE
+2025-07-12 15:44:16,709 - etl_pipeline - INFO - Extrayendo datos... dim_mensajero
+2025-07-12 15:44:16,767 - etl_pipeline - INFO - Extraídos 50 registros de mensajeros
+2025-07-12 15:44:16,769 - etl_pipeline - INFO - Cargando a staging ... dim_mensajero
+2025-07-12 15:44:16,834 - etl_pipeline - INFO - Staging stg_dim_mensajero completado (50 filas)
+2025-07-12 15:44:16,834 - etl_pipeline - INFO - Transformando... dim_mensajero
+2025-07-12 15:44:16,837 - etl_pipeline - INFO - Transformación completada (50 filas)
+2025-07-12 15:44:16,837 - etl_pipeline - INFO - Cargando a destino... dim_mensajero
+2025-07-12 15:44:16,865 - etl_pipeline - INFO - Carga exitosa. Total registros: 50
+2025-07-12 15:44:16,866 - etl_pipeline - INFO - ETL completado. Filas cargadas: 50 en dim_mensajero
+2025-07-12 15:44:16,867 - etl_pipeline - INFO - SUCCESS DIM_MENSAJERO
+2025-07-12 15:44:16,874 - etl_pipeline - INFO - Extrayendo datos... dim_novedad
+2025-07-12 15:44:16,930 - etl_pipeline - INFO - Cargando a staging ... dim_novedad
+2025-07-12 15:44:16,982 - etl_pipeline - INFO - Staging stg_dim_novedad completado (2 filas)
+2025-07-12 15:44:16,982 - etl_pipeline - INFO - Transformando... dim_novedad
+2025-07-12 15:44:16,984 - etl_pipeline - INFO - Transformación completada (2 filas)
+2025-07-12 15:44:16,985 - etl_pipeline - INFO - Cargando a destino... dim_novedad
+2025-07-12 15:44:17,010 - etl_pipeline - INFO - Carga exitosa. Total registros: 2
+2025-07-12 15:44:17,011 - etl_pipeline - INFO - ETL completado. Filas cargadas: 2 en dim_novedad
+2025-07-12 15:44:17,011 - etl_pipeline - INFO - SUCCESS DIM_NOVEDAD
+2025-07-12 15:44:17,019 - etl_pipeline - INFO - Extrayendo datos... dim_estado_servicio
+2025-07-12 15:44:17,075 - etl_pipeline - INFO - Cargando a staging ... dim_estado_servicio
+2025-07-12 15:44:17,141 - etl_pipeline - INFO - Staging stg_dim_estado_servicio completado (6 filas)
+2025-07-12 15:44:17,141 - etl_pipeline - INFO - Transformando... dim_estado_servicio
+2025-07-12 15:44:17,143 - etl_pipeline - INFO - Transformación completada (6 filas)
+2025-07-12 15:44:17,143 - etl_pipeline - INFO - Cargando a destino... dim_estado_servicio
+2025-07-12 15:44:17,174 - etl_pipeline - INFO - Carga exitosa. Total registros: 6
+2025-07-12 15:44:17,174 - etl_pipeline - INFO - ETL completado. Filas cargadas: 6 en dim_estado_servicio
+2025-07-12 15:44:17,175 - etl_pipeline - INFO - SUCCESS DIM_ESTADO_SERVICIO
+2025-07-12 15:44:17,181 - etl_pipeline - INFO - Extrayendo datos... dim_tipo_servicio
+2025-07-12 15:44:17,242 - etl_pipeline - INFO - Cargando a staging ... dim_tipo_servicio
+2025-07-12 15:44:17,305 - etl_pipeline - INFO - Staging stg_dim_tipo_servicio completado (4 filas)
+2025-07-12 15:44:17,305 - etl_pipeline - INFO - Transformando... dim_tipo_servicio
+2025-07-12 15:44:17,307 - etl_pipeline - INFO - Transformación completada (4 filas)
+2025-07-12 15:44:17,307 - etl_pipeline - INFO - Cargando a destino... dim_tipo_servicio
+2025-07-12 15:44:17,334 - etl_pipeline - INFO - Carga exitosa. Total registros: 4
+2025-07-12 15:44:17,335 - etl_pipeline - INFO - ETL completado. Filas cargadas: 4 en dim_tipo_servicio
+2025-07-12 15:44:17,336 - etl_pipeline - INFO - SUCCESS DIM_TIPO_SERVICIO
+2025-07-12 15:44:17,342 - etl_pipeline - INFO - Extrayendo datos... dim_sede
+2025-07-12 15:44:17,400 - etl_pipeline - INFO - Cargando a staging ... dim_sede
+2025-07-12 15:44:17,467 - etl_pipeline - INFO - Staging stg_dim_sede completado (52 filas)
+2025-07-12 15:44:17,467 - etl_pipeline - INFO - Transformando... dim_sede
+2025-07-12 15:44:17,470 - etl_pipeline - INFO - Transformación completada (52 filas)
+2025-07-12 15:44:17,470 - etl_pipeline - INFO - Cargando a destino... dim_sede
+2025-07-12 15:44:17,507 - etl_pipeline - INFO - Carga exitosa. Total registros: 52
+2025-07-12 15:44:17,507 - etl_pipeline - INFO - ETL completado. Filas cargadas: 52 en dim_sede
+2025-07-12 15:44:17,508 - etl_pipeline - INFO - SUCCESS DIM_SEDE
+2025-07-12 15:44:17,554 - etl_pipeline - INFO - Extrayendo datos... dim_fecha
+2025-07-12 15:44:17,951 - etl_pipeline - INFO - Extracción de fechas completada: 731 registros generados.
+2025-07-12 15:44:17,954 - etl_pipeline - INFO - Cargando a staging ... dim_fecha
+2025-07-12 15:44:18,094 - etl_pipeline - INFO - Staging stg_dim_fecha completado (731 filas)
+2025-07-12 15:44:18,094 - etl_pipeline - INFO - Transformando... dim_fecha
+2025-07-12 15:44:18,098 - etl_pipeline - INFO - Transformación completada (731 filas)
+2025-07-12 15:44:18,098 - etl_pipeline - INFO - Cargando a destino... dim_fecha
+2025-07-12 15:44:18,162 - etl_pipeline - INFO - Carga exitosa. Total registros: 731
+2025-07-12 15:44:18,162 - etl_pipeline - INFO - ETL completado. Filas cargadas: 731 en dim_fecha
+2025-07-12 15:44:18,163 - etl_pipeline - INFO - SUCCESS DIM_FECHA
+2025-07-12 15:44:18,170 - etl_pipeline - INFO - Extrayendo datos... dim_hora
+2025-07-12 15:44:18,172 - etl_pipeline - INFO - Extracción de dim_hora completada: 1440 registros generados.
+2025-07-12 15:44:18,174 - etl_pipeline - INFO - Cargando a staging ... dim_hora
+2025-07-12 15:44:18,309 - etl_pipeline - INFO - Staging stg_dim_hora completado (1440 filas)
+2025-07-12 15:44:18,309 - etl_pipeline - INFO - Transformando... dim_hora
+2025-07-12 15:44:18,314 - etl_pipeline - INFO - Transformación de dim_hora completada (1440 filas)
+2025-07-12 15:44:18,314 - etl_pipeline - INFO - Cargando a destino... dim_hora
+2025-07-12 15:44:18,371 - etl_pipeline - INFO - Carga de dim_hora exitosa. Total registros: 1440
+2025-07-12 15:44:18,371 - etl_pipeline - INFO - ETL completado. Filas cargadas: 1440 en dim_hora
+2025-07-12 15:44:18,372 - etl_pipeline - INFO - SUCCESS DIM_HORA
+2025-07-12 15:44:18,377 - etl_pipeline - INFO - Extrayendo datos... fact_servicio
+2025-07-12 15:44:19,107 - etl_pipeline - INFO - Cargando a staging ... fact_servicio
+2025-07-12 15:44:27,103 - etl_pipeline - INFO - Staging stg_fact_servicio completado (26873 filas)
+2025-07-12 15:44:27,103 - etl_pipeline - INFO - Transformando... fact_servicio
+2025-07-12 15:44:27,508 - etl_pipeline - INFO - Transformación completada: 26873 filas
+2025-07-12 15:44:27,508 - etl_pipeline - INFO - Cargando a destino... fact_servicio
+2025-07-12 15:44:31,651 - etl_pipeline - INFO - Carga completada: 26873 registros en fact_servicio
+2025-07-12 15:44:31,652 - etl_pipeline - INFO - ETL completado. Filas cargadas: 26873 en fact_servicio
+2025-07-12 15:44:31,664 - etl_pipeline - INFO - SUCCESS FACT_SERVICIO
+2025-07-12 15:44:31,671 - etl_pipeline - INFO - Extrayendo datos... fact_estado_servicio_transaccional
+2025-07-12 15:44:32,109 - etl_pipeline - INFO - Cargando a staging ... fact_estado_servicio_transaccional
+2025-07-12 15:44:40,031 - etl_pipeline - INFO - Staging fact_estado_servicio_transaccional completado (112601 filas)
+2025-07-12 15:44:40,032 - etl_pipeline - INFO - Transformando... fact_estado_servicio_transaccional
+2025-07-12 15:44:40,605 - etl_pipeline - INFO - Transformación completada: 110255 filas
+2025-07-12 15:44:40,606 - etl_pipeline - INFO - Cargando a destino... fact_estado_servicio_transaccional
+2025-07-12 15:44:45,764 - etl_pipeline - INFO - Carga completada: 110255 registros en fact_estado_servicio_transaccional
+2025-07-12 15:44:45,764 - etl_pipeline - INFO - ETL completado. Filas cargadas: 110255 en fact_estado_servicio_transaccional
+2025-07-12 15:44:45,772 - etl_pipeline - INFO - SUCCESS FACT_ESTADO_SERVICIO_TRANSACCIONAL
+2025-07-12 15:44:45,779 - etl_pipeline - INFO - Extrayendo datos... fact_novedad_servicio_transaccional
+2025-07-12 15:44:45,841 - etl_pipeline - INFO - Cargando a staging ... fact_novedad_servicio_transaccional
+2025-07-12 15:44:45,901 - etl_pipeline - INFO - Staging fact_novedad_servicio_transaccional completado (8 filas)
+2025-07-12 15:44:45,901 - etl_pipeline - INFO - Transformando... fact_novedad_servicio_transaccional
+2025-07-12 15:44:45,914 - etl_pipeline - INFO - Transformación completada: 7 filas
+2025-07-12 15:44:45,915 - etl_pipeline - INFO - Cargando a destino... fact_novedad_servicio_transaccional
+2025-07-12 15:44:45,945 - etl_pipeline - INFO - Carga completada: 7 registros en fact_novedad_servicio_transaccional
+2025-07-12 15:44:45,946 - etl_pipeline - INFO - ETL completado. Filas cargadas: 7 en fact_novedad_servicio_transaccional
+2025-07-12 15:44:45,947 - etl_pipeline - INFO - SUCCESS FACT_NOVEDAD_SERVICIO_TRANSACCIONAL
+2025-07-12 15:44:45,947 - etl_pipeline - INFO - Resumen de ejecución:
+2025-07-12 15:44:45,947 - etl_pipeline - INFO -   - DIM_CLIENTE    : ÉXITO
+2025-07-12 15:44:45,948 - etl_pipeline - INFO -   - DIM_MENSAJERO  : ÉXITO
+2025-07-12 15:44:45,948 - etl_pipeline - INFO -   - DIM_NOVEDAD    : ÉXITO
+2025-07-12 15:44:45,948 - etl_pipeline - INFO -   - DIM_ESTADO_SERVICIO: ÉXITO
+2025-07-12 15:44:45,948 - etl_pipeline - INFO -   - DIM_TIPO_SERVICIO: ÉXITO
+2025-07-12 15:44:45,949 - etl_pipeline - INFO -   - DIM_SEDE       : ÉXITO
+2025-07-12 15:44:45,949 - etl_pipeline - INFO -   - DIM_FECHA      : ÉXITO
+2025-07-12 15:44:45,949 - etl_pipeline - INFO -   - DIM_HORA       : ÉXITO
+2025-07-12 15:44:45,949 - etl_pipeline - INFO -   - FACT_SERVICIO  : ÉXITO
+2025-07-12 15:44:45,949 - etl_pipeline - INFO -   - FACT_ESTADO_SERVICIO_TRANSACCIONAL: ÉXITO
+2025-07-12 15:44:45,950 - etl_pipeline - INFO -   - FACT_NOVEDAD_SERVICIO_TRANSACCIONAL: ÉXITO
+2025-07-12 15:44:45,950 - etl_pipeline - INFO - ¡Todos los pipelines completados con éxito!
+2025-07-12 16:06:39,101 - etl_pipeline - INFO - Iniciando ETL Master
+2025-07-12 16:06:41,968 - etl_pipeline - INFO - Extrayendo datos... dim_cliente
+2025-07-12 16:06:42,288 - etl_pipeline - ERROR - Error extrayendo los datos para dim_cliente
+Traceback (most recent call last):
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\src\extract\extract_dim_cliente.py", line 34, in run_extract
+    return pd.read_sql(query, session.connection()), True
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 708, in read_sql
+    return pandas_sql.read_query(
+           ~~~~~~~~~~~~~~~~~~~~~^
+        sql,
+        ^^^^
+    ...<6 lines>...
+        dtype=dtype,
+        ^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 2728, in read_query
+    cursor = self.execute(sql, params)
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 2662, in execute
+    cur = self.con.cursor()
+          ^^^^^^^^^^^^^^^
+AttributeError: 'Connection' object has no attribute 'cursor'
+2025-07-12 16:06:42,291 - etl_pipeline - ERROR - Falló la extracción o DataFrame vacío
+2025-07-12 16:06:42,292 - etl_pipeline - INFO - ERROR DIM_CLIENTE
+2025-07-12 16:06:42,297 - etl_pipeline - INFO - Extrayendo datos... dim_mensajero
+2025-07-12 16:06:42,346 - etl_pipeline - ERROR - Error en extracción: 'Connection' object has no attribute 'cursor'
+Traceback (most recent call last):
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\src\extract\extract_dim_mensajero.py", line 29, in run_extract
+    df = pd.read_sql(query, session.connection())
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 708, in read_sql
+    return pandas_sql.read_query(
+           ~~~~~~~~~~~~~~~~~~~~~^
+        sql,
+        ^^^^
+    ...<6 lines>...
+        dtype=dtype,
+        ^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 2728, in read_query
+    cursor = self.execute(sql, params)
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 2662, in execute
+    cur = self.con.cursor()
+          ^^^^^^^^^^^^^^^
+AttributeError: 'Connection' object has no attribute 'cursor'
+2025-07-12 16:06:42,348 - etl_pipeline - ERROR - Falló la extracción o DataFrame vacío
+2025-07-12 16:06:42,348 - etl_pipeline - INFO - ERROR DIM_MENSAJERO
+2025-07-12 16:06:42,354 - etl_pipeline - INFO - Extrayendo datos... dim_novedad
+2025-07-12 16:06:42,402 - etl_pipeline - ERROR - Error extrayendo los datos para dim_novedad
+Traceback (most recent call last):
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\src\extract\extract_dim_novedad.py", line 22, in run_extract
+    return pd.read_sql(query, session.connection()), True
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 708, in read_sql
+    return pandas_sql.read_query(
+           ~~~~~~~~~~~~~~~~~~~~~^
+        sql,
+        ^^^^
+    ...<6 lines>...
+        dtype=dtype,
+        ^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 2728, in read_query
+    cursor = self.execute(sql, params)
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 2662, in execute
+    cur = self.con.cursor()
+          ^^^^^^^^^^^^^^^
+AttributeError: 'Connection' object has no attribute 'cursor'
+2025-07-12 16:06:42,404 - etl_pipeline - ERROR - Falló la extracción o DataFrame vacío
+2025-07-12 16:06:42,404 - etl_pipeline - INFO - ERROR DIM_NOVEDAD
+2025-07-12 16:06:42,412 - etl_pipeline - INFO - Extrayendo datos... dim_estado_servicio
+2025-07-12 16:06:42,457 - etl_pipeline - ERROR - Error extrayendo los datos para dim_estado_servicio
+Traceback (most recent call last):
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\src\extract\extract_dim_estado_servicio.py", line 23, in run_extract
+    return pd.read_sql(query, session.connection()), True
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 708, in read_sql
+    return pandas_sql.read_query(
+           ~~~~~~~~~~~~~~~~~~~~~^
+        sql,
+        ^^^^
+    ...<6 lines>...
+        dtype=dtype,
+        ^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 2728, in read_query
+    cursor = self.execute(sql, params)
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 2662, in execute
+    cur = self.con.cursor()
+          ^^^^^^^^^^^^^^^
+AttributeError: 'Connection' object has no attribute 'cursor'
+2025-07-12 16:06:42,459 - etl_pipeline - ERROR - Falló la extracción o DataFrame vacío
+2025-07-12 16:06:42,459 - etl_pipeline - INFO - ERROR DIM_ESTADO_SERVICIO
+2025-07-12 16:06:42,465 - etl_pipeline - INFO - Extrayendo datos... dim_tipo_servicio
+2025-07-12 16:06:42,522 - etl_pipeline - ERROR - Error extrayendo los datos para dim_tipo_servicio
+Traceback (most recent call last):
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\src\extract\extract_dim_tipo_servicio.py", line 23, in run_extract
+    return pd.read_sql(query, session.connection()), True
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 708, in read_sql
+    return pandas_sql.read_query(
+           ~~~~~~~~~~~~~~~~~~~~~^
+        sql,
+        ^^^^
+    ...<6 lines>...
+        dtype=dtype,
+        ^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 2728, in read_query
+    cursor = self.execute(sql, params)
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 2662, in execute
+    cur = self.con.cursor()
+          ^^^^^^^^^^^^^^^
+AttributeError: 'Connection' object has no attribute 'cursor'
+2025-07-12 16:06:42,523 - etl_pipeline - ERROR - Falló la extracción o DataFrame vacío
+2025-07-12 16:06:42,524 - etl_pipeline - INFO - ERROR DIM_TIPO_SERVICIO
+2025-07-12 16:06:42,530 - etl_pipeline - INFO - Extrayendo datos... dim_sede
+2025-07-12 16:06:42,572 - etl_pipeline - ERROR - Error extrayendo los datos para dim_sede
+Traceback (most recent call last):
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\src\extract\extract_dim_sede.py", line 33, in run_extract
+    return pd.read_sql(query, session.connection()), True
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 708, in read_sql
+    return pandas_sql.read_query(
+           ~~~~~~~~~~~~~~~~~~~~~^
+        sql,
+        ^^^^
+    ...<6 lines>...
+        dtype=dtype,
+        ^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 2728, in read_query
+    cursor = self.execute(sql, params)
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 2662, in execute
+    cur = self.con.cursor()
+          ^^^^^^^^^^^^^^^
+AttributeError: 'Connection' object has no attribute 'cursor'
+2025-07-12 16:06:42,574 - etl_pipeline - ERROR - Falló la extracción o DataFrame vacío
+2025-07-12 16:06:42,574 - etl_pipeline - INFO - ERROR DIM_SEDE
+2025-07-12 16:06:42,605 - etl_pipeline - INFO - Extrayendo datos... dim_fecha
+2025-07-12 16:06:42,891 - etl_pipeline - INFO - Extracción de fechas completada: 731 registros generados.
+2025-07-12 16:06:42,893 - etl_pipeline - INFO - Cargando a staging ... dim_fecha
+2025-07-12 16:06:42,950 - etl_pipeline - ERROR - Error creando tabla stg_dim_fecha: 'Connection' object has no attribute 'cursor'
+Traceback (most recent call last):
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\src\staging\staging_dim_fecha.py", line 27, in run_staging
+    df.to_sql(
+    ~~~~~~~~~^
+        'stg_dim_fecha',
+        ^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        chunksize=1000
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\core\generic.py", line 3106, in to_sql
+    return sql.to_sql(
+           ~~~~~~~~~~^
+        self,
+        ^^^^^
+    ...<8 lines>...
+        method=method,
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 844, in to_sql
+    return pandas_sql.to_sql(
+           ~~~~~~~~~~~~~~~~~^
+        frame,
+        ^^^^^^
+    ...<9 lines>...
+        **engine_kwargs,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 2840, in to_sql
+    table.create()
+    ~~~~~~~~~~~~^^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 986, in create
+    if self.exists():
+       ~~~~~~~~~~~^^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 972, in exists
+    return self.pd_sql.has_table(self.name, self.schema)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 2855, in has_table
+    return len(self.execute(query, [name]).fetchall()) > 0
+               ~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 2662, in execute
+    cur = self.con.cursor()
+          ^^^^^^^^^^^^^^^
+AttributeError: 'Connection' object has no attribute 'cursor'
+2025-07-12 16:06:42,956 - etl_pipeline - INFO - ERROR DIM_FECHA
+2025-07-12 16:06:42,961 - etl_pipeline - INFO - Extrayendo datos... dim_hora
+2025-07-12 16:06:42,965 - etl_pipeline - INFO - Extracción de dim_hora completada: 1440 registros generados.
+2025-07-12 16:06:42,967 - etl_pipeline - INFO - Cargando a staging ... dim_hora
+2025-07-12 16:06:43,022 - etl_pipeline - ERROR - Error creando tabla stg_dim_hora: 'Connection' object has no attribute 'cursor'
+Traceback (most recent call last):
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\src\staging\staging_dim_hora.py", line 19, in run_staging
+    df.to_sql(
+    ~~~~~~~~~^
+        'stg_dim_hora',
+        ^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        chunksize=1000
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\core\generic.py", line 3106, in to_sql
+    return sql.to_sql(
+           ~~~~~~~~~~^
+        self,
+        ^^^^^
+    ...<8 lines>...
+        method=method,
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 844, in to_sql
+    return pandas_sql.to_sql(
+           ~~~~~~~~~~~~~~~~~^
+        frame,
+        ^^^^^^
+    ...<9 lines>...
+        **engine_kwargs,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 2840, in to_sql
+    table.create()
+    ~~~~~~~~~~~~^^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 986, in create
+    if self.exists():
+       ~~~~~~~~~~~^^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 972, in exists
+    return self.pd_sql.has_table(self.name, self.schema)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 2855, in has_table
+    return len(self.execute(query, [name]).fetchall()) > 0
+               ~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\pandas\io\sql.py", line 2662, in execute
+    cur = self.con.cursor()
+          ^^^^^^^^^^^^^^^
+AttributeError: 'Connection' object has no attribute 'cursor'
+2025-07-12 16:06:43,025 - etl_pipeline - INFO - ERROR DIM_HORA
+2025-07-12 16:06:43,058 - etl_pipeline - INFO - Resumen de ejecución:
+2025-07-12 16:06:43,058 - etl_pipeline - INFO -   - DIM_CLIENTE    : FALLÓ
+2025-07-12 16:06:43,059 - etl_pipeline - INFO -   - DIM_MENSAJERO  : FALLÓ
+2025-07-12 16:06:43,059 - etl_pipeline - INFO -   - DIM_NOVEDAD    : FALLÓ
+2025-07-12 16:06:43,059 - etl_pipeline - INFO -   - DIM_ESTADO_SERVICIO: FALLÓ
+2025-07-12 16:06:43,059 - etl_pipeline - INFO -   - DIM_TIPO_SERVICIO: FALLÓ
+2025-07-12 16:06:43,059 - etl_pipeline - INFO -   - DIM_SEDE       : FALLÓ
+2025-07-12 16:06:43,059 - etl_pipeline - INFO -   - DIM_FECHA      : FALLÓ
+2025-07-12 16:06:43,060 - etl_pipeline - INFO -   - DIM_HORA       : FALLÓ
+2025-07-12 16:06:43,060 - etl_pipeline - INFO -   - FACT_SERVICIO  : FALLÓ
+2025-07-12 16:06:43,060 - etl_pipeline - INFO -   - FACT_ESTADO_SERVICIO_TRANSACCIONAL: FALLÓ
+2025-07-12 16:06:43,060 - etl_pipeline - INFO -   - FACT_NOVEDAD_SERVICIO_TRANSACCIONAL: FALLÓ
+2025-07-12 16:06:43,060 - etl_pipeline - ERROR - Algunos pipelines fallaron. Ver logs.
+2025-07-12 16:09:13,404 - etl_pipeline - INFO - Iniciando ETL Master
+2025-07-12 16:09:13,648 - etl_pipeline - ERROR - Error en dim_cliente: Class <class 'sqlalchemy.sql.elements.SQLCoreOperations'> directly inherits TypingOnly but has additional attributes {'__static_attributes__', '__firstlineno__'}.
+Traceback (most recent call last):
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\src\pipelines\etl_master.py", line 94, in execute
+    module = __import__(
+        PIPELINES[name]['module'],
+        fromlist=['run_etl']
+    )
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\src\pipelines\etl_dim_cliente.py", line 3, in <module>
+    from pipelines.etl_base import run_etl_with_staging
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\src\pipelines\etl_base.py", line 3, in <module>
+    from utils.database import db_session, DBConnection
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\src\utils\database.py", line 3, in <module>
+    from sqlalchemy import create_engine
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\__init__.py", line 13, in <module>
+    from .engine import AdaptedConnection as AdaptedConnection
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\__init__.py", line 18, in <module>
+    from . import events as events
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\events.py", line 19, in <module>
+    from .base import Connection
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 30, in <module>
+    from .interfaces import BindTyping
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\interfaces.py", line 38, in <module>
+    from ..sql.compiler import Compiled as Compiled
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\sql\__init__.py", line 11, in <module>
+    from .compiler import COLLECT_CARTESIAN_PRODUCTS as COLLECT_CARTESIAN_PRODUCTS
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\sql\compiler.py", line 60, in <module>
+    from . import crud
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\sql\crud.py", line 34, in <module>
+    from . import dml
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\sql\dml.py", line 34, in <module>
+    from . import util as sql_util
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\sql\util.py", line 46, in <module>
+    from .ddl import sort_tables as sort_tables  # noqa: F401
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\sql\ddl.py", line 30, in <module>
+    from .elements import ClauseElement
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 755, in <module>
+    class SQLCoreOperations(Generic[_T], ColumnOperators, TypingOnly):
+    ...<387 lines>...
+                ...
+  File "C:\Users\Camilo\AppData\Local\Programs\Python\Python313\Lib\typing.py", line 1257, in _generic_init_subclass
+    super(Generic, cls).__init_subclass__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 1983, in __init_subclass__
+    raise AssertionError(
+    ...<2 lines>...
+    )
+AssertionError: Class <class 'sqlalchemy.sql.elements.SQLCoreOperations'> directly inherits TypingOnly but has additional attributes {'__static_attributes__', '__firstlineno__'}.
+2025-07-12 16:09:13,697 - etl_pipeline - ERROR - Error en dim_mensajero: Class <class 'sqlalchemy.sql.elements.SQLCoreOperations'> directly inherits TypingOnly but has additional attributes {'__static_attributes__', '__firstlineno__'}.
+Traceback (most recent call last):
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\src\pipelines\etl_master.py", line 94, in execute
+    module = __import__(
+        PIPELINES[name]['module'],
+        fromlist=['run_etl']
+    )
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\src\pipelines\etl_dim_mensajero.py", line 2, in <module>
+    from pipelines.etl_base import run_etl_with_staging
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\src\pipelines\etl_base.py", line 3, in <module>
+    from utils.database import db_session, DBConnection
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\src\utils\database.py", line 3, in <module>
+    from sqlalchemy import create_engine
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\__init__.py", line 13, in <module>
+    from .engine import AdaptedConnection as AdaptedConnection
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\__init__.py", line 18, in <module>
+    from . import events as events
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\events.py", line 19, in <module>
+    from .base import Connection
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 30, in <module>
+    from .interfaces import BindTyping
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\interfaces.py", line 38, in <module>
+    from ..sql.compiler import Compiled as Compiled
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\sql\__init__.py", line 11, in <module>
+    from .compiler import COLLECT_CARTESIAN_PRODUCTS as COLLECT_CARTESIAN_PRODUCTS
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\sql\compiler.py", line 60, in <module>
+    from . import crud
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\sql\crud.py", line 34, in <module>
+    from . import dml
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\sql\dml.py", line 34, in <module>
+    from . import util as sql_util
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\sql\util.py", line 46, in <module>
+    from .ddl import sort_tables as sort_tables  # noqa: F401
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\sql\ddl.py", line 30, in <module>
+    from .elements import ClauseElement
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 755, in <module>
+    class SQLCoreOperations(Generic[_T], ColumnOperators, TypingOnly):
+    ...<387 lines>...
+                ...
+  File "C:\Users\Camilo\AppData\Local\Programs\Python\Python313\Lib\typing.py", line 1257, in _generic_init_subclass
+    super(Generic, cls).__init_subclass__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 1983, in __init_subclass__
+    raise AssertionError(
+    ...<2 lines>...
+    )
+AssertionError: Class <class 'sqlalchemy.sql.elements.SQLCoreOperations'> directly inherits TypingOnly but has additional attributes {'__static_attributes__', '__firstlineno__'}.
+2025-07-12 16:09:13,722 - etl_pipeline - ERROR - Error en dim_novedad: Class <class 'sqlalchemy.sql.elements.SQLCoreOperations'> directly inherits TypingOnly but has additional attributes {'__static_attributes__', '__firstlineno__'}.
+Traceback (most recent call last):
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\src\pipelines\etl_master.py", line 94, in execute
+    module = __import__(
+        PIPELINES[name]['module'],
+        fromlist=['run_etl']
+    )
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\src\pipelines\etl_dim_novedad.py", line 3, in <module>
+    from pipelines.etl_base import run_etl_with_staging
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\src\pipelines\etl_base.py", line 3, in <module>
+    from utils.database import db_session, DBConnection
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\src\utils\database.py", line 3, in <module>
+    from sqlalchemy import create_engine
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\__init__.py", line 13, in <module>
+    from .engine import AdaptedConnection as AdaptedConnection
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\__init__.py", line 18, in <module>
+    from . import events as events
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\events.py", line 19, in <module>
+    from .base import Connection
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 30, in <module>
+    from .interfaces import BindTyping
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\interfaces.py", line 38, in <module>
+    from ..sql.compiler import Compiled as Compiled
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\sql\__init__.py", line 11, in <module>
+    from .compiler import COLLECT_CARTESIAN_PRODUCTS as COLLECT_CARTESIAN_PRODUCTS
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\sql\compiler.py", line 60, in <module>
+    from . import crud
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\sql\crud.py", line 34, in <module>
+    from . import dml
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\sql\dml.py", line 34, in <module>
+    from . import util as sql_util
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\sql\util.py", line 46, in <module>
+    from .ddl import sort_tables as sort_tables  # noqa: F401
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\sql\ddl.py", line 30, in <module>
+    from .elements import ClauseElement
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 755, in <module>
+    class SQLCoreOperations(Generic[_T], ColumnOperators, TypingOnly):
+    ...<387 lines>...
+                ...
+  File "C:\Users\Camilo\AppData\Local\Programs\Python\Python313\Lib\typing.py", line 1257, in _generic_init_subclass
+    super(Generic, cls).__init_subclass__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 1983, in __init_subclass__
+    raise AssertionError(
+    ...<2 lines>...
+    )
+AssertionError: Class <class 'sqlalchemy.sql.elements.SQLCoreOperations'> directly inherits TypingOnly but has additional attributes {'__static_attributes__', '__firstlineno__'}.
+2025-07-12 16:09:13,744 - etl_pipeline - ERROR - Error en dim_estado_servicio: Class <class 'sqlalchemy.sql.elements.SQLCoreOperations'> directly inherits TypingOnly but has additional attributes {'__static_attributes__', '__firstlineno__'}.
+Traceback (most recent call last):
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\src\pipelines\etl_master.py", line 94, in execute
+    module = __import__(
+        PIPELINES[name]['module'],
+        fromlist=['run_etl']
+    )
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\src\pipelines\etl_dim_estado_servicio.py", line 3, in <module>
+    from pipelines.etl_base import run_etl_with_staging
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\src\pipelines\etl_base.py", line 3, in <module>
+    from utils.database import db_session, DBConnection
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\src\utils\database.py", line 3, in <module>
+    from sqlalchemy import create_engine
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\__init__.py", line 13, in <module>
+    from .engine import AdaptedConnection as AdaptedConnection
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\__init__.py", line 18, in <module>
+    from . import events as events
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\events.py", line 19, in <module>
+    from .base import Connection
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 30, in <module>
+    from .interfaces import BindTyping
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\interfaces.py", line 38, in <module>
+    from ..sql.compiler import Compiled as Compiled
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\sql\__init__.py", line 11, in <module>
+    from .compiler import COLLECT_CARTESIAN_PRODUCTS as COLLECT_CARTESIAN_PRODUCTS
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\sql\compiler.py", line 60, in <module>
+    from . import crud
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\sql\crud.py", line 34, in <module>
+    from . import dml
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\sql\dml.py", line 34, in <module>
+    from . import util as sql_util
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\sql\util.py", line 46, in <module>
+    from .ddl import sort_tables as sort_tables  # noqa: F401
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\sql\ddl.py", line 30, in <module>
+    from .elements import ClauseElement
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 755, in <module>
+    class SQLCoreOperations(Generic[_T], ColumnOperators, TypingOnly):
+    ...<387 lines>...
+                ...
+  File "C:\Users\Camilo\AppData\Local\Programs\Python\Python313\Lib\typing.py", line 1257, in _generic_init_subclass
+    super(Generic, cls).__init_subclass__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 1983, in __init_subclass__
+    raise AssertionError(
+    ...<2 lines>...
+    )
+AssertionError: Class <class 'sqlalchemy.sql.elements.SQLCoreOperations'> directly inherits TypingOnly but has additional attributes {'__static_attributes__', '__firstlineno__'}.
+2025-07-12 16:09:13,766 - etl_pipeline - ERROR - Error en dim_tipo_servicio: Class <class 'sqlalchemy.sql.elements.SQLCoreOperations'> directly inherits TypingOnly but has additional attributes {'__static_attributes__', '__firstlineno__'}.
+Traceback (most recent call last):
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\src\pipelines\etl_master.py", line 94, in execute
+    module = __import__(
+        PIPELINES[name]['module'],
+        fromlist=['run_etl']
+    )
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\src\pipelines\etl_dim_tipo_servicio.py", line 3, in <module>
+    from pipelines.etl_base import run_etl_with_staging
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\src\pipelines\etl_base.py", line 3, in <module>
+    from utils.database import db_session, DBConnection
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\src\utils\database.py", line 3, in <module>
+    from sqlalchemy import create_engine
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\__init__.py", line 13, in <module>
+    from .engine import AdaptedConnection as AdaptedConnection
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\__init__.py", line 18, in <module>
+    from . import events as events
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\events.py", line 19, in <module>
+    from .base import Connection
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 30, in <module>
+    from .interfaces import BindTyping
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\interfaces.py", line 38, in <module>
+    from ..sql.compiler import Compiled as Compiled
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\sql\__init__.py", line 11, in <module>
+    from .compiler import COLLECT_CARTESIAN_PRODUCTS as COLLECT_CARTESIAN_PRODUCTS
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\sql\compiler.py", line 60, in <module>
+    from . import crud
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\sql\crud.py", line 34, in <module>
+    from . import dml
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\sql\dml.py", line 34, in <module>
+    from . import util as sql_util
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\sql\util.py", line 46, in <module>
+    from .ddl import sort_tables as sort_tables  # noqa: F401
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\sql\ddl.py", line 30, in <module>
+    from .elements import ClauseElement
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 755, in <module>
+    class SQLCoreOperations(Generic[_T], ColumnOperators, TypingOnly):
+    ...<387 lines>...
+                ...
+  File "C:\Users\Camilo\AppData\Local\Programs\Python\Python313\Lib\typing.py", line 1257, in _generic_init_subclass
+    super(Generic, cls).__init_subclass__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 1983, in __init_subclass__
+    raise AssertionError(
+    ...<2 lines>...
+    )
+AssertionError: Class <class 'sqlalchemy.sql.elements.SQLCoreOperations'> directly inherits TypingOnly but has additional attributes {'__static_attributes__', '__firstlineno__'}.
+2025-07-12 16:09:13,789 - etl_pipeline - ERROR - Error en dim_sede: Class <class 'sqlalchemy.sql.elements.SQLCoreOperations'> directly inherits TypingOnly but has additional attributes {'__static_attributes__', '__firstlineno__'}.
+Traceback (most recent call last):
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\src\pipelines\etl_master.py", line 94, in execute
+    module = __import__(
+        PIPELINES[name]['module'],
+        fromlist=['run_etl']
+    )
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\src\pipelines\etl_dim_sede.py", line 3, in <module>
+    from pipelines.etl_base import run_etl_with_staging
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\src\pipelines\etl_base.py", line 3, in <module>
+    from utils.database import db_session, DBConnection
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\src\utils\database.py", line 3, in <module>
+    from sqlalchemy import create_engine
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\__init__.py", line 13, in <module>
+    from .engine import AdaptedConnection as AdaptedConnection
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\__init__.py", line 18, in <module>
+    from . import events as events
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\events.py", line 19, in <module>
+    from .base import Connection
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 30, in <module>
+    from .interfaces import BindTyping
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\interfaces.py", line 38, in <module>
+    from ..sql.compiler import Compiled as Compiled
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\sql\__init__.py", line 11, in <module>
+    from .compiler import COLLECT_CARTESIAN_PRODUCTS as COLLECT_CARTESIAN_PRODUCTS
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\sql\compiler.py", line 60, in <module>
+    from . import crud
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\sql\crud.py", line 34, in <module>
+    from . import dml
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\sql\dml.py", line 34, in <module>
+    from . import util as sql_util
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\sql\util.py", line 46, in <module>
+    from .ddl import sort_tables as sort_tables  # noqa: F401
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\sql\ddl.py", line 30, in <module>
+    from .elements import ClauseElement
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 755, in <module>
+    class SQLCoreOperations(Generic[_T], ColumnOperators, TypingOnly):
+    ...<387 lines>...
+                ...
+  File "C:\Users\Camilo\AppData\Local\Programs\Python\Python313\Lib\typing.py", line 1257, in _generic_init_subclass
+    super(Generic, cls).__init_subclass__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 1983, in __init_subclass__
+    raise AssertionError(
+    ...<2 lines>...
+    )
+AssertionError: Class <class 'sqlalchemy.sql.elements.SQLCoreOperations'> directly inherits TypingOnly but has additional attributes {'__static_attributes__', '__firstlineno__'}.
+2025-07-12 16:09:13,811 - etl_pipeline - ERROR - Error en dim_fecha: Class <class 'sqlalchemy.sql.elements.SQLCoreOperations'> directly inherits TypingOnly but has additional attributes {'__static_attributes__', '__firstlineno__'}.
+Traceback (most recent call last):
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\src\pipelines\etl_master.py", line 94, in execute
+    module = __import__(
+        PIPELINES[name]['module'],
+        fromlist=['run_etl']
+    )
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\src\pipelines\etl_dim_fecha.py", line 2, in <module>
+    from pipelines.etl_base import run_etl_with_staging
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\src\pipelines\etl_base.py", line 3, in <module>
+    from utils.database import db_session, DBConnection
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\src\utils\database.py", line 3, in <module>
+    from sqlalchemy import create_engine
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\__init__.py", line 13, in <module>
+    from .engine import AdaptedConnection as AdaptedConnection
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\__init__.py", line 18, in <module>
+    from . import events as events
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\events.py", line 19, in <module>
+    from .base import Connection
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 30, in <module>
+    from .interfaces import BindTyping
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\interfaces.py", line 38, in <module>
+    from ..sql.compiler import Compiled as Compiled
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\sql\__init__.py", line 11, in <module>
+    from .compiler import COLLECT_CARTESIAN_PRODUCTS as COLLECT_CARTESIAN_PRODUCTS
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\sql\compiler.py", line 60, in <module>
+    from . import crud
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\sql\crud.py", line 34, in <module>
+    from . import dml
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\sql\dml.py", line 34, in <module>
+    from . import util as sql_util
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\sql\util.py", line 46, in <module>
+    from .ddl import sort_tables as sort_tables  # noqa: F401
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\sql\ddl.py", line 30, in <module>
+    from .elements import ClauseElement
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 755, in <module>
+    class SQLCoreOperations(Generic[_T], ColumnOperators, TypingOnly):
+    ...<387 lines>...
+                ...
+  File "C:\Users\Camilo\AppData\Local\Programs\Python\Python313\Lib\typing.py", line 1257, in _generic_init_subclass
+    super(Generic, cls).__init_subclass__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 1983, in __init_subclass__
+    raise AssertionError(
+    ...<2 lines>...
+    )
+AssertionError: Class <class 'sqlalchemy.sql.elements.SQLCoreOperations'> directly inherits TypingOnly but has additional attributes {'__static_attributes__', '__firstlineno__'}.
+2025-07-12 16:09:13,833 - etl_pipeline - ERROR - Error en dim_hora: Class <class 'sqlalchemy.sql.elements.SQLCoreOperations'> directly inherits TypingOnly but has additional attributes {'__static_attributes__', '__firstlineno__'}.
+Traceback (most recent call last):
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\src\pipelines\etl_master.py", line 94, in execute
+    module = __import__(
+        PIPELINES[name]['module'],
+        fromlist=['run_etl']
+    )
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\src\pipelines\etl_dim_hora.py", line 2, in <module>
+    from pipelines.etl_base import run_etl_with_staging
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\src\pipelines\etl_base.py", line 3, in <module>
+    from utils.database import db_session, DBConnection
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\src\utils\database.py", line 3, in <module>
+    from sqlalchemy import create_engine
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\__init__.py", line 13, in <module>
+    from .engine import AdaptedConnection as AdaptedConnection
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\__init__.py", line 18, in <module>
+    from . import events as events
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\events.py", line 19, in <module>
+    from .base import Connection
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 30, in <module>
+    from .interfaces import BindTyping
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\engine\interfaces.py", line 38, in <module>
+    from ..sql.compiler import Compiled as Compiled
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\sql\__init__.py", line 11, in <module>
+    from .compiler import COLLECT_CARTESIAN_PRODUCTS as COLLECT_CARTESIAN_PRODUCTS
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\sql\compiler.py", line 60, in <module>
+    from . import crud
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\sql\crud.py", line 34, in <module>
+    from . import dml
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\sql\dml.py", line 34, in <module>
+    from . import util as sql_util
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\sql\util.py", line 46, in <module>
+    from .ddl import sort_tables as sort_tables  # noqa: F401
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\sql\ddl.py", line 30, in <module>
+    from .elements import ClauseElement
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 755, in <module>
+    class SQLCoreOperations(Generic[_T], ColumnOperators, TypingOnly):
+    ...<387 lines>...
+                ...
+  File "C:\Users\Camilo\AppData\Local\Programs\Python\Python313\Lib\typing.py", line 1257, in _generic_init_subclass
+    super(Generic, cls).__init_subclass__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Camilo\Dev\maestria-proyecto-mensajeria-etl\.venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 1983, in __init_subclass__
+    raise AssertionError(
+    ...<2 lines>...
+    )
+AssertionError: Class <class 'sqlalchemy.sql.elements.SQLCoreOperations'> directly inherits TypingOnly but has additional attributes {'__static_attributes__', '__firstlineno__'}.
+2025-07-12 16:09:13,846 - etl_pipeline - INFO - Resumen de ejecución:
+2025-07-12 16:09:13,846 - etl_pipeline - INFO -   - DIM_CLIENTE    : FALLÓ
+2025-07-12 16:09:13,848 - etl_pipeline - INFO -   - DIM_MENSAJERO  : FALLÓ
+2025-07-12 16:09:13,848 - etl_pipeline - INFO -   - DIM_NOVEDAD    : FALLÓ
+2025-07-12 16:09:13,848 - etl_pipeline - INFO -   - DIM_ESTADO_SERVICIO: FALLÓ
+2025-07-12 16:09:13,849 - etl_pipeline - INFO -   - DIM_TIPO_SERVICIO: FALLÓ
+2025-07-12 16:09:13,849 - etl_pipeline - INFO -   - DIM_SEDE       : FALLÓ
+2025-07-12 16:09:13,849 - etl_pipeline - INFO -   - DIM_FECHA      : FALLÓ
+2025-07-12 16:09:13,849 - etl_pipeline - INFO -   - DIM_HORA       : FALLÓ
+2025-07-12 16:09:13,850 - etl_pipeline - INFO -   - FACT_SERVICIO  : FALLÓ
+2025-07-12 16:09:13,850 - etl_pipeline - INFO -   - FACT_ESTADO_SERVICIO_TRANSACCIONAL: FALLÓ
+2025-07-12 16:09:13,850 - etl_pipeline - INFO -   - FACT_NOVEDAD_SERVICIO_TRANSACCIONAL: FALLÓ
+2025-07-12 16:09:13,850 - etl_pipeline - ERROR - Algunos pipelines fallaron. Ver logs.
+2025-07-12 16:10:49,599 - etl_pipeline - INFO - Iniciando ETL Master
+2025-07-12 16:10:50,642 - etl_pipeline - INFO - Extrayendo datos... dim_cliente
+2025-07-12 16:10:50,882 - etl_pipeline - INFO - Cargando a staging ... dim_cliente
+2025-07-12 16:10:50,951 - etl_pipeline - INFO - Staging stg_dim_cliente completado (27 filas)
+2025-07-12 16:10:50,951 - etl_pipeline - INFO - Transformando... dim_cliente
+2025-07-12 16:10:50,956 - etl_pipeline - INFO - Transformación completada (27 filas)
+2025-07-12 16:10:50,956 - etl_pipeline - INFO - Cargando a destino... dim_cliente
+2025-07-12 16:10:50,997 - etl_pipeline - INFO - Carga exitosa. Total registros: 27
+2025-07-12 16:10:50,997 - etl_pipeline - INFO - ETL completado. Filas cargadas: 27 en dim_cliente
+2025-07-12 16:10:50,998 - etl_pipeline - INFO - SUCCESS DIM_CLIENTE
+2025-07-12 16:10:51,002 - etl_pipeline - INFO - Extrayendo datos... dim_mensajero
+2025-07-12 16:10:51,062 - etl_pipeline - INFO - Extraídos 50 registros de mensajeros
+2025-07-12 16:10:51,065 - etl_pipeline - INFO - Cargando a staging ... dim_mensajero
+2025-07-12 16:10:51,132 - etl_pipeline - INFO - Staging stg_dim_mensajero completado (50 filas)
+2025-07-12 16:10:51,132 - etl_pipeline - INFO - Transformando... dim_mensajero
+2025-07-12 16:10:51,134 - etl_pipeline - INFO - Transformación completada (50 filas)
+2025-07-12 16:10:51,135 - etl_pipeline - INFO - Cargando a destino... dim_mensajero
+2025-07-12 16:10:51,170 - etl_pipeline - INFO - Carga exitosa. Total registros: 50
+2025-07-12 16:10:51,170 - etl_pipeline - INFO - ETL completado. Filas cargadas: 50 en dim_mensajero
+2025-07-12 16:10:51,172 - etl_pipeline - INFO - SUCCESS DIM_MENSAJERO
+2025-07-12 16:10:51,176 - etl_pipeline - INFO - Extrayendo datos... dim_novedad
+2025-07-12 16:10:51,230 - etl_pipeline - INFO - Cargando a staging ... dim_novedad
+2025-07-12 16:10:51,289 - etl_pipeline - INFO - Staging stg_dim_novedad completado (2 filas)
+2025-07-12 16:10:51,289 - etl_pipeline - INFO - Transformando... dim_novedad
+2025-07-12 16:10:51,291 - etl_pipeline - INFO - Transformación completada (2 filas)
+2025-07-12 16:10:51,291 - etl_pipeline - INFO - Cargando a destino... dim_novedad
+2025-07-12 16:10:51,315 - etl_pipeline - INFO - Carga exitosa. Total registros: 2
+2025-07-12 16:10:51,315 - etl_pipeline - INFO - ETL completado. Filas cargadas: 2 en dim_novedad
+2025-07-12 16:10:51,316 - etl_pipeline - INFO - SUCCESS DIM_NOVEDAD
+2025-07-12 16:10:51,320 - etl_pipeline - INFO - Extrayendo datos... dim_estado_servicio
+2025-07-12 16:10:51,379 - etl_pipeline - INFO - Cargando a staging ... dim_estado_servicio
+2025-07-12 16:10:51,436 - etl_pipeline - INFO - Staging stg_dim_estado_servicio completado (6 filas)
+2025-07-12 16:10:51,437 - etl_pipeline - INFO - Transformando... dim_estado_servicio
+2025-07-12 16:10:51,439 - etl_pipeline - INFO - Transformación completada (6 filas)
+2025-07-12 16:10:51,439 - etl_pipeline - INFO - Cargando a destino... dim_estado_servicio
+2025-07-12 16:10:51,469 - etl_pipeline - INFO - Carga exitosa. Total registros: 6
+2025-07-12 16:10:51,469 - etl_pipeline - INFO - ETL completado. Filas cargadas: 6 en dim_estado_servicio
+2025-07-12 16:10:51,470 - etl_pipeline - INFO - SUCCESS DIM_ESTADO_SERVICIO
+2025-07-12 16:10:51,475 - etl_pipeline - INFO - Extrayendo datos... dim_tipo_servicio
+2025-07-12 16:10:51,527 - etl_pipeline - INFO - Cargando a staging ... dim_tipo_servicio
+2025-07-12 16:10:51,584 - etl_pipeline - INFO - Staging stg_dim_tipo_servicio completado (4 filas)
+2025-07-12 16:10:51,585 - etl_pipeline - INFO - Transformando... dim_tipo_servicio
+2025-07-12 16:10:51,586 - etl_pipeline - INFO - Transformación completada (4 filas)
+2025-07-12 16:10:51,587 - etl_pipeline - INFO - Cargando a destino... dim_tipo_servicio
+2025-07-12 16:10:51,616 - etl_pipeline - INFO - Carga exitosa. Total registros: 4
+2025-07-12 16:10:51,616 - etl_pipeline - INFO - ETL completado. Filas cargadas: 4 en dim_tipo_servicio
+2025-07-12 16:10:51,617 - etl_pipeline - INFO - SUCCESS DIM_TIPO_SERVICIO
+2025-07-12 16:10:51,621 - etl_pipeline - INFO - Extrayendo datos... dim_sede
+2025-07-12 16:10:51,681 - etl_pipeline - INFO - Cargando a staging ... dim_sede
+2025-07-12 16:10:51,744 - etl_pipeline - INFO - Staging stg_dim_sede completado (52 filas)
+2025-07-12 16:10:51,744 - etl_pipeline - INFO - Transformando... dim_sede
+2025-07-12 16:10:51,746 - etl_pipeline - INFO - Transformación completada (52 filas)
+2025-07-12 16:10:51,747 - etl_pipeline - INFO - Cargando a destino... dim_sede
+2025-07-12 16:10:51,777 - etl_pipeline - INFO - Carga exitosa. Total registros: 52
+2025-07-12 16:10:51,778 - etl_pipeline - INFO - ETL completado. Filas cargadas: 52 en dim_sede
+2025-07-12 16:10:51,778 - etl_pipeline - INFO - SUCCESS DIM_SEDE
+2025-07-12 16:10:51,805 - etl_pipeline - INFO - Extrayendo datos... dim_fecha
+2025-07-12 16:10:52,218 - etl_pipeline - INFO - Extracción de fechas completada: 731 registros generados.
+2025-07-12 16:10:52,221 - etl_pipeline - INFO - Cargando a staging ... dim_fecha
+2025-07-12 16:10:52,457 - etl_pipeline - INFO - Staging stg_dim_fecha completado (731 filas)
+2025-07-12 16:10:52,457 - etl_pipeline - INFO - Transformando... dim_fecha
+2025-07-12 16:10:52,461 - etl_pipeline - INFO - Transformación completada (731 filas)
+2025-07-12 16:10:52,462 - etl_pipeline - INFO - Cargando a destino... dim_fecha
+2025-07-12 16:10:52,513 - etl_pipeline - INFO - Carga exitosa. Total registros: 731
+2025-07-12 16:10:52,513 - etl_pipeline - INFO - ETL completado. Filas cargadas: 731 en dim_fecha
+2025-07-12 16:10:52,516 - etl_pipeline - INFO - SUCCESS DIM_FECHA
+2025-07-12 16:10:52,521 - etl_pipeline - INFO - Extrayendo datos... dim_hora
+2025-07-12 16:10:52,523 - etl_pipeline - INFO - Extracción de dim_hora completada: 1440 registros generados.
+2025-07-12 16:10:52,525 - etl_pipeline - INFO - Cargando a staging ... dim_hora
+2025-07-12 16:10:52,654 - etl_pipeline - INFO - Staging stg_dim_hora completado (1440 filas)
+2025-07-12 16:10:52,655 - etl_pipeline - INFO - Transformando... dim_hora
+2025-07-12 16:10:52,659 - etl_pipeline - INFO - Transformación de dim_hora completada (1440 filas)
+2025-07-12 16:10:52,659 - etl_pipeline - INFO - Cargando a destino... dim_hora
+2025-07-12 16:10:52,720 - etl_pipeline - INFO - Carga de dim_hora exitosa. Total registros: 1440
+2025-07-12 16:10:52,720 - etl_pipeline - INFO - ETL completado. Filas cargadas: 1440 en dim_hora
+2025-07-12 16:10:52,722 - etl_pipeline - INFO - SUCCESS DIM_HORA
+2025-07-12 16:10:52,729 - etl_pipeline - INFO - Extrayendo datos... fact_servicio
+2025-07-12 16:10:53,486 - etl_pipeline - INFO - Cargando a staging ... fact_servicio
+2025-07-12 16:11:01,307 - etl_pipeline - INFO - Staging stg_fact_servicio completado (26873 filas)
+2025-07-12 16:11:01,307 - etl_pipeline - INFO - Transformando... fact_servicio
+2025-07-12 16:11:01,787 - etl_pipeline - INFO - Transformación completada: 26873 filas
+2025-07-12 16:11:01,788 - etl_pipeline - INFO - Cargando a destino... fact_servicio
+2025-07-12 16:11:05,971 - etl_pipeline - INFO - Carga completada: 26873 registros en fact_servicio
+2025-07-12 16:11:05,971 - etl_pipeline - INFO - ETL completado. Filas cargadas: 26873 en fact_servicio
+2025-07-12 16:11:05,983 - etl_pipeline - INFO - SUCCESS FACT_SERVICIO
+2025-07-12 16:11:05,990 - etl_pipeline - INFO - Extrayendo datos... fact_estado_servicio_transaccional
+2025-07-12 16:11:06,476 - etl_pipeline - INFO - Cargando a staging ... fact_estado_servicio_transaccional
+2025-07-12 16:11:14,667 - etl_pipeline - INFO - Staging fact_estado_servicio_transaccional completado (112601 filas)
+2025-07-12 16:11:14,667 - etl_pipeline - INFO - Transformando... fact_estado_servicio_transaccional
+2025-07-12 16:11:15,337 - etl_pipeline - INFO - Transformación completada: 110255 filas
+2025-07-12 16:11:15,338 - etl_pipeline - INFO - Cargando a destino... fact_estado_servicio_transaccional
+2025-07-12 16:11:20,477 - etl_pipeline - INFO - Carga completada: 110255 registros en fact_estado_servicio_transaccional
+2025-07-12 16:11:20,478 - etl_pipeline - INFO - ETL completado. Filas cargadas: 110255 en fact_estado_servicio_transaccional
+2025-07-12 16:11:20,484 - etl_pipeline - INFO - SUCCESS FACT_ESTADO_SERVICIO_TRANSACCIONAL
+2025-07-12 16:11:20,490 - etl_pipeline - INFO - Extrayendo datos... fact_novedad_servicio_transaccional
+2025-07-12 16:11:20,545 - etl_pipeline - INFO - Cargando a staging ... fact_novedad_servicio_transaccional
+2025-07-12 16:11:20,605 - etl_pipeline - INFO - Staging fact_novedad_servicio_transaccional completado (8 filas)
+2025-07-12 16:11:20,605 - etl_pipeline - INFO - Transformando... fact_novedad_servicio_transaccional
+2025-07-12 16:11:20,615 - etl_pipeline - INFO - Transformación completada: 7 filas
+2025-07-12 16:11:20,616 - etl_pipeline - INFO - Cargando a destino... fact_novedad_servicio_transaccional
+2025-07-12 16:11:20,642 - etl_pipeline - INFO - Carga completada: 7 registros en fact_novedad_servicio_transaccional
+2025-07-12 16:11:20,642 - etl_pipeline - INFO - ETL completado. Filas cargadas: 7 en fact_novedad_servicio_transaccional
+2025-07-12 16:11:20,643 - etl_pipeline - INFO - SUCCESS FACT_NOVEDAD_SERVICIO_TRANSACCIONAL
+2025-07-12 16:11:20,643 - etl_pipeline - INFO - Resumen de ejecución:
+2025-07-12 16:11:20,643 - etl_pipeline - INFO -   - DIM_CLIENTE    : ÉXITO
+2025-07-12 16:11:20,643 - etl_pipeline - INFO -   - DIM_MENSAJERO  : ÉXITO
+2025-07-12 16:11:20,644 - etl_pipeline - INFO -   - DIM_NOVEDAD    : ÉXITO
+2025-07-12 16:11:20,644 - etl_pipeline - INFO -   - DIM_ESTADO_SERVICIO: ÉXITO
+2025-07-12 16:11:20,644 - etl_pipeline - INFO -   - DIM_TIPO_SERVICIO: ÉXITO
+2025-07-12 16:11:20,644 - etl_pipeline - INFO -   - DIM_SEDE       : ÉXITO
+2025-07-12 16:11:20,644 - etl_pipeline - INFO -   - DIM_FECHA      : ÉXITO
+2025-07-12 16:11:20,644 - etl_pipeline - INFO -   - DIM_HORA       : ÉXITO
+2025-07-12 16:11:20,644 - etl_pipeline - INFO -   - FACT_SERVICIO  : ÉXITO
+2025-07-12 16:11:20,645 - etl_pipeline - INFO -   - FACT_ESTADO_SERVICIO_TRANSACCIONAL: ÉXITO
+2025-07-12 16:11:20,645 - etl_pipeline - INFO -   - FACT_NOVEDAD_SERVICIO_TRANSACCIONAL: ÉXITO
+2025-07-12 16:11:20,645 - etl_pipeline - INFO - ¡Todos los pipelines completados con éxito!
+2025-07-12 23:08:15,866 - etl_pipeline - INFO - Iniciando ETL Master
+2025-07-12 23:08:16,460 - etl_pipeline - INFO - Extrayendo datos... dim_cliente
+2025-07-12 23:08:16,680 - etl_pipeline - INFO - Cargando a staging ... dim_cliente
+2025-07-12 23:08:16,754 - etl_pipeline - INFO - Staging stg_dim_cliente completado (27 filas)
+2025-07-12 23:08:16,754 - etl_pipeline - INFO - Transformando... dim_cliente
+2025-07-12 23:08:16,758 - etl_pipeline - INFO - TransformaciÃ³n completada (27 filas)
+2025-07-12 23:08:16,758 - etl_pipeline - INFO - Cargando a destino... dim_cliente
+2025-07-12 23:08:16,822 - etl_pipeline - INFO - Carga exitosa. Total registros: 27
+2025-07-12 23:08:16,823 - etl_pipeline - INFO - ETL completado. Filas cargadas: 27 en dim_cliente
+2025-07-12 23:08:16,826 - etl_pipeline - INFO - SUCCESS DIM_CLIENTE
+2025-07-12 23:08:16,930 - etl_pipeline - INFO - Extrayendo datos... dim_mensajero
+2025-07-12 23:08:16,988 - etl_pipeline - INFO - ExtraÃ­dos 50 registros de mensajeros
+2025-07-12 23:08:16,995 - etl_pipeline - INFO - Cargando a staging ... dim_mensajero
+2025-07-12 23:08:17,055 - etl_pipeline - INFO - Staging stg_dim_mensajero completado (50 filas)
+2025-07-12 23:08:17,055 - etl_pipeline - INFO - Transformando... dim_mensajero
+2025-07-12 23:08:17,060 - etl_pipeline - INFO - TransformaciÃ³n completada (50 filas)
+2025-07-12 23:08:17,060 - etl_pipeline - INFO - Cargando a destino... dim_mensajero
+2025-07-12 23:08:17,089 - etl_pipeline - INFO - Carga exitosa. Total registros: 50
+2025-07-12 23:08:17,089 - etl_pipeline - INFO - ETL completado. Filas cargadas: 50 en dim_mensajero
+2025-07-12 23:08:17,092 - etl_pipeline - INFO - SUCCESS DIM_MENSAJERO
+2025-07-12 23:08:17,194 - etl_pipeline - INFO - Extrayendo datos... dim_novedad
+2025-07-12 23:08:17,259 - etl_pipeline - INFO - Cargando a staging ... dim_novedad
+2025-07-12 23:08:17,317 - etl_pipeline - INFO - Staging stg_dim_novedad completado (2 filas)
+2025-07-12 23:08:17,318 - etl_pipeline - INFO - Transformando... dim_novedad
+2025-07-12 23:08:17,321 - etl_pipeline - INFO - TransformaciÃ³n completada (2 filas)
+2025-07-12 23:08:17,321 - etl_pipeline - INFO - Cargando a destino... dim_novedad
+2025-07-12 23:08:17,347 - etl_pipeline - INFO - Carga exitosa. Total registros: 2
+2025-07-12 23:08:17,347 - etl_pipeline - INFO - ETL completado. Filas cargadas: 2 en dim_novedad
+2025-07-12 23:08:17,348 - etl_pipeline - INFO - SUCCESS DIM_NOVEDAD
+2025-07-12 23:08:17,453 - etl_pipeline - INFO - Extrayendo datos... dim_estado_servicio
+2025-07-12 23:08:17,513 - etl_pipeline - INFO - Cargando a staging ... dim_estado_servicio
+2025-07-12 23:08:17,569 - etl_pipeline - INFO - Staging stg_dim_estado_servicio completado (6 filas)
+2025-07-12 23:08:17,570 - etl_pipeline - INFO - Transformando... dim_estado_servicio
+2025-07-12 23:08:17,573 - etl_pipeline - INFO - TransformaciÃ³n completada (6 filas)
+2025-07-12 23:08:17,574 - etl_pipeline - INFO - Cargando a destino... dim_estado_servicio
+2025-07-12 23:08:17,606 - etl_pipeline - INFO - Carga exitosa. Total registros: 6
+2025-07-12 23:08:17,607 - etl_pipeline - INFO - ETL completado. Filas cargadas: 6 en dim_estado_servicio
+2025-07-12 23:08:17,609 - etl_pipeline - INFO - SUCCESS DIM_ESTADO_SERVICIO
+2025-07-12 23:08:17,734 - etl_pipeline - INFO - Extrayendo datos... dim_tipo_servicio
+2025-07-12 23:08:17,794 - etl_pipeline - INFO - Cargando a staging ... dim_tipo_servicio
+2025-07-12 23:08:17,852 - etl_pipeline - INFO - Staging stg_dim_tipo_servicio completado (4 filas)
+2025-07-12 23:08:17,853 - etl_pipeline - INFO - Transformando... dim_tipo_servicio
+2025-07-12 23:08:17,855 - etl_pipeline - INFO - TransformaciÃ³n completada (4 filas)
+2025-07-12 23:08:17,855 - etl_pipeline - INFO - Cargando a destino... dim_tipo_servicio
+2025-07-12 23:08:17,888 - etl_pipeline - INFO - Carga exitosa. Total registros: 4
+2025-07-12 23:08:17,889 - etl_pipeline - INFO - ETL completado. Filas cargadas: 4 en dim_tipo_servicio
+2025-07-12 23:08:17,890 - etl_pipeline - INFO - SUCCESS DIM_TIPO_SERVICIO
+2025-07-12 23:08:17,988 - etl_pipeline - INFO - Extrayendo datos... dim_sede
+2025-07-12 23:08:18,052 - etl_pipeline - INFO - Cargando a staging ... dim_sede
+2025-07-12 23:08:18,114 - etl_pipeline - INFO - Staging stg_dim_sede completado (52 filas)
+2025-07-12 23:08:18,115 - etl_pipeline - INFO - Transformando... dim_sede
+2025-07-12 23:08:18,117 - etl_pipeline - INFO - TransformaciÃ³n completada (52 filas)
+2025-07-12 23:08:18,118 - etl_pipeline - INFO - Cargando a destino... dim_sede
+2025-07-12 23:08:18,147 - etl_pipeline - INFO - Carga exitosa. Total registros: 52
+2025-07-12 23:08:18,147 - etl_pipeline - INFO - ETL completado. Filas cargadas: 52 en dim_sede
+2025-07-12 23:08:18,148 - etl_pipeline - INFO - SUCCESS DIM_SEDE
+2025-07-12 23:08:18,300 - etl_pipeline - INFO - Extrayendo datos... dim_fecha
+2025-07-12 23:08:18,444 - etl_pipeline - INFO - ExtracciÃ³n de fechas completada: 731 registros generados.
+2025-07-12 23:08:18,453 - etl_pipeline - INFO - Cargando a staging ... dim_fecha
+2025-07-12 23:08:18,576 - etl_pipeline - INFO - Staging stg_dim_fecha completado (731 filas)
+2025-07-12 23:08:18,577 - etl_pipeline - INFO - Transformando... dim_fecha
+2025-07-12 23:08:18,582 - etl_pipeline - INFO - TransformaciÃ³n completada (731 filas)
+2025-07-12 23:08:18,583 - etl_pipeline - INFO - Cargando a destino... dim_fecha
+2025-07-12 23:08:18,631 - etl_pipeline - INFO - Carga exitosa. Total registros: 731
+2025-07-12 23:08:18,631 - etl_pipeline - INFO - ETL completado. Filas cargadas: 731 en dim_fecha
+2025-07-12 23:08:18,632 - etl_pipeline - INFO - SUCCESS DIM_FECHA
+2025-07-12 23:08:18,743 - etl_pipeline - INFO - Extrayendo datos... dim_hora
+2025-07-12 23:08:18,745 - etl_pipeline - INFO - ExtracciÃ³n de dim_hora completada: 1440 registros generados.
+2025-07-12 23:08:18,753 - etl_pipeline - INFO - Cargando a staging ... dim_hora
+2025-07-12 23:08:18,963 - etl_pipeline - INFO - Staging stg_dim_hora completado (1440 filas)
+2025-07-12 23:08:18,964 - etl_pipeline - INFO - Transformando... dim_hora
+2025-07-12 23:08:18,970 - etl_pipeline - INFO - TransformaciÃ³n de dim_hora completada (1440 filas)
+2025-07-12 23:08:18,970 - etl_pipeline - INFO - Cargando a destino... dim_hora
+2025-07-12 23:08:19,023 - etl_pipeline - INFO - Carga de dim_hora exitosa. Total registros: 1440
+2025-07-12 23:08:19,023 - etl_pipeline - INFO - ETL completado. Filas cargadas: 1440 en dim_hora
+2025-07-12 23:08:19,028 - etl_pipeline - INFO - SUCCESS DIM_HORA
+2025-07-12 23:08:19,161 - etl_pipeline - INFO - Extrayendo datos... fact_servicio
+2025-07-12 23:08:19,880 - etl_pipeline - INFO - Cargando a staging ... fact_servicio
+2025-07-12 23:08:25,947 - etl_pipeline - INFO - Staging stg_fact_servicio completado (26873 filas)
+2025-07-12 23:08:25,948 - etl_pipeline - INFO - Transformando... fact_servicio
+2025-07-12 23:08:26,323 - etl_pipeline - INFO - TransformaciÃ³n completada: 26873 filas
+2025-07-12 23:08:26,324 - etl_pipeline - INFO - Cargando a destino... fact_servicio
+2025-07-12 23:08:29,215 - etl_pipeline - INFO - Carga completada: 26873 registros en fact_servicio
+2025-07-12 23:08:29,216 - etl_pipeline - INFO - ETL completado. Filas cargadas: 26873 en fact_servicio
+2025-07-12 23:08:29,225 - etl_pipeline - INFO - SUCCESS FACT_SERVICIO
+2025-07-12 23:08:29,376 - etl_pipeline - INFO - Extrayendo datos... fact_estado_servicio_transaccional
+2025-07-12 23:08:29,751 - etl_pipeline - INFO - Cargando a staging ... fact_estado_servicio_transaccional
+2025-07-12 23:08:36,700 - etl_pipeline - INFO - Staging fact_estado_servicio_transaccional completado (112601 filas)
+2025-07-12 23:08:36,700 - etl_pipeline - INFO - Transformando... fact_estado_servicio_transaccional
+2025-07-12 23:08:37,180 - etl_pipeline - INFO - TransformaciÃ³n completada: 110255 filas
+2025-07-12 23:08:37,181 - etl_pipeline - INFO - Cargando a destino... fact_estado_servicio_transaccional
+2025-07-12 23:08:41,260 - etl_pipeline - INFO - Carga completada: 110255 registros en fact_estado_servicio_transaccional
+2025-07-12 23:08:41,261 - etl_pipeline - INFO - ETL completado. Filas cargadas: 110255 en fact_estado_servicio_transaccional
+2025-07-12 23:08:41,267 - etl_pipeline - INFO - SUCCESS FACT_ESTADO_SERVICIO_TRANSACCIONAL
+2025-07-12 23:08:41,417 - etl_pipeline - INFO - Extrayendo datos... fact_novedad_servicio_transaccional
+2025-07-12 23:08:41,480 - etl_pipeline - INFO - Cargando a staging ... fact_novedad_servicio_transaccional
+2025-07-12 23:08:41,543 - etl_pipeline - INFO - Staging fact_novedad_servicio_transaccional completado (8 filas)
+2025-07-12 23:08:41,544 - etl_pipeline - INFO - Transformando... fact_novedad_servicio_transaccional
+2025-07-12 23:08:41,556 - etl_pipeline - INFO - TransformaciÃ³n completada: 7 filas
+2025-07-12 23:08:41,556 - etl_pipeline - INFO - Cargando a destino... fact_novedad_servicio_transaccional
+2025-07-12 23:08:41,581 - etl_pipeline - INFO - Carga completada: 7 registros en fact_novedad_servicio_transaccional
+2025-07-12 23:08:41,581 - etl_pipeline - INFO - ETL completado. Filas cargadas: 7 en fact_novedad_servicio_transaccional
+2025-07-12 23:08:41,582 - etl_pipeline - INFO - SUCCESS FACT_NOVEDAD_SERVICIO_TRANSACCIONAL
+2025-07-12 23:08:41,583 - etl_pipeline - INFO - Resumen de ejecuciÃ³n:
+2025-07-12 23:08:41,583 - etl_pipeline - INFO -   - DIM_CLIENTE    : Ã‰XITO
+2025-07-12 23:08:41,583 - etl_pipeline - INFO -   - DIM_MENSAJERO  : Ã‰XITO
+2025-07-12 23:08:41,584 - etl_pipeline - INFO -   - DIM_NOVEDAD    : Ã‰XITO
+2025-07-12 23:08:41,584 - etl_pipeline - INFO -   - DIM_ESTADO_SERVICIO: Ã‰XITO
+2025-07-12 23:08:41,585 - etl_pipeline - INFO -   - DIM_TIPO_SERVICIO: Ã‰XITO
+2025-07-12 23:08:41,585 - etl_pipeline - INFO -   - DIM_SEDE       : Ã‰XITO
+2025-07-12 23:08:41,585 - etl_pipeline - INFO -   - DIM_FECHA      : Ã‰XITO
+2025-07-12 23:08:41,586 - etl_pipeline - INFO -   - DIM_HORA       : Ã‰XITO
+2025-07-12 23:08:41,586 - etl_pipeline - INFO -   - FACT_SERVICIO  : Ã‰XITO
+2025-07-12 23:08:41,586 - etl_pipeline - INFO -   - FACT_ESTADO_SERVICIO_TRANSACCIONAL: Ã‰XITO
+2025-07-12 23:08:41,586 - etl_pipeline - INFO -   - FACT_NOVEDAD_SERVICIO_TRANSACCIONAL: Ã‰XITO
+2025-07-12 23:08:41,586 - etl_pipeline - INFO - Â¡Todos los pipelines completados con Ã©xito!

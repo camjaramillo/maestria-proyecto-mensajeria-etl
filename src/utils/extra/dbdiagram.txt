@@ -1,3 +1,9 @@
+Project Dimensional_Model {
+  database_type: "PostgreSQL"
+}
+
+/* Dimensiones */
+
 Table dim_cliente {
   cliente_key integer [pk]
   cliente_id integer [not null, unique]
@@ -84,6 +90,8 @@ Table dim_tipo_servicio {
   created_at timestamp [default: `CURRENT_TIMESTAMP`]
 }
 
+/* Hechos */
+
 Table fact_servicio {
   servicio_key integer [pk]
   servicio_id integer [unique]
@@ -107,58 +115,59 @@ Table fact_servicio {
   hora_recogida_key integer
   fecha_entrega_key integer
   hora_entrega_key integer
-  fecha_cierre_key integer
-  hora_cierre_key integer
-  tiempo_total_entrega integer
+  tiempo_total_entrega_min integer
   created_at timestamp [default: `CURRENT_TIMESTAMP`]
 }
 
 Table fact_estado_servicio_transaccional {
   estado_transaccional_key integer [pk]
-  servicio_key integer [not null]
+  servicio_key integer
   estado_anterior_key integer
   estado_nuevo_key integer
-  fecha_cambio_key integer [not null]
-  hora_cambio_key integer [not null]
+  fecha_cambio_key integer
+  hora_cambio_key integer
   duracion_estado_minutos integer
 }
 
 Table fact_novedad_servicio_transaccional {
   novedad_transaccional_key integer [pk]
-  servicio_key integer [not null]
-  novedad_key integer [not null]
+  servicio_key integer
+  novedad_key integer
   mensajero_key integer
   descripcion varchar(700)
-  fecha_novedad_key integer [not null]
-  hora_novedad_key integer [not null]
+  fecha_novedad_key integer
+  hora_novedad_key integer
 }
 
-Ref: dim_cliente.cliente_key < fact_servicio.cliente_key
-Ref: dim_mensajero.mensajero_key < fact_servicio.mensajero_key
-Ref: dim_sede.sede_key < fact_servicio.sede_key
-Ref: dim_tipo_servicio.tipo_servicio_key < fact_servicio.tipo_servicio_key
-Ref: dim_estado_servicio.estado_servicio_key < fact_servicio.estado_servicio_final_key
-Ref: dim_fecha.fecha_key < fact_servicio.fecha_solicitud_key
-Ref: dim_fecha.fecha_key < fact_servicio.fecha_iniciado_key
-Ref: dim_fecha.fecha_key < fact_servicio.fecha_asignacion_key
-Ref: dim_fecha.fecha_key < fact_servicio.fecha_recogida_key
-Ref: dim_fecha.fecha_key < fact_servicio.fecha_entrega_key
-Ref: dim_fecha.fecha_key < fact_servicio.fecha_cierre_key
-Ref: dim_hora.hora_key < fact_servicio.hora_solicitud_key
-Ref: dim_hora.hora_key < fact_servicio.hora_iniciado_key
-Ref: dim_hora.hora_key < fact_servicio.hora_asignacion_key
-Ref: dim_hora.hora_key < fact_servicio.hora_recogida_key
-Ref: dim_hora.hora_key < fact_servicio.hora_entrega_key
-Ref: dim_hora.hora_key < fact_servicio.hora_cierre_key
+/* Relaciones */
 
-Ref: fact_servicio.servicio_key < fact_estado_servicio_transaccional.servicio_key
-Ref: dim_estado_servicio.estado_servicio_key < fact_estado_servicio_transaccional.estado_anterior_key
-Ref: dim_estado_servicio.estado_servicio_key < fact_estado_servicio_transaccional.estado_nuevo_key
-Ref: dim_fecha.fecha_key < fact_estado_servicio_transaccional.fecha_cambio_key
-Ref: dim_hora.hora_key < fact_estado_servicio_transaccional.hora_cambio_key
+/* fact_servicio */
+Ref: fact_servicio.cliente_key > dim_cliente.cliente_key
+Ref: fact_servicio.mensajero_key > dim_mensajero.mensajero_key
+Ref: fact_servicio.sede_key > dim_sede.sede_key
+Ref: fact_servicio.tipo_servicio_key > dim_tipo_servicio.tipo_servicio_key
+Ref: fact_servicio.estado_servicio_final_key > dim_estado_servicio.estado_servicio_key
+Ref: fact_servicio.fecha_solicitud_key > dim_fecha.fecha_key
+Ref: fact_servicio.fecha_iniciado_key > dim_fecha.fecha_key
+Ref: fact_servicio.fecha_asignacion_key > dim_fecha.fecha_key
+Ref: fact_servicio.fecha_recogida_key > dim_fecha.fecha_key
+Ref: fact_servicio.fecha_entrega_key > dim_fecha.fecha_key
+Ref: fact_servicio.hora_solicitud_key > dim_hora.hora_key
+Ref: fact_servicio.hora_iniciado_key > dim_hora.hora_key
+Ref: fact_servicio.hora_asignacion_key > dim_hora.hora_key
+Ref: fact_servicio.hora_recogida_key > dim_hora.hora_key
+Ref: fact_servicio.hora_entrega_key > dim_hora.hora_key
 
-Ref: fact_servicio.servicio_key < fact_novedad_servicio_transaccional.servicio_key
-Ref: dim_novedad.novedad_key < fact_novedad_servicio_transaccional.novedad_key
-Ref: dim_mensajero.mensajero_key < fact_novedad_servicio_transaccional.mensajero_key
-Ref: dim_fecha.fecha_key < fact_novedad_servicio_transaccional.fecha_novedad_key
-Ref: dim_hora.hora_key < fact_novedad_servicio_transaccional.hora_novedad_key
+/* fact_estado_servicio_transaccional */
+Ref: fact_estado_servicio_transaccional.servicio_key > fact_servicio.servicio_key
+Ref: fact_estado_servicio_transaccional.estado_anterior_key > dim_estado_servicio.estado_servicio_key
+Ref: fact_estado_servicio_transaccional.estado_nuevo_key > dim_estado_servicio.estado_servicio_key
+Ref: fact_estado_servicio_transaccional.fecha_cambio_key > dim_fecha.fecha_key
+Ref: fact_estado_servicio_transaccional.hora_cambio_key > dim_hora.hora_key
+
+/* fact_novedad_servicio_transaccional */
+Ref: fact_novedad_servicio_transaccional.servicio_key > fact_servicio.servicio_key
+Ref: fact_novedad_servicio_transaccional.novedad_key > dim_novedad.novedad_key
+Ref: fact_novedad_servicio_transaccional.mensajero_key > dim_mensajero.mensajero_key
+Ref: fact_novedad_servicio_transaccional.fecha_novedad_key > dim_fecha.fecha_key
+Ref: fact_novedad_servicio_transaccional.hora_novedad_key > dim_hora.hora_key
