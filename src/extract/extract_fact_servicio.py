@@ -4,7 +4,7 @@ from utils.logger import logger
 from typing import Tuple
 from utils.database import db_session, DBConnection
 
-def run_extract() -> Tuple[pd.DataFrame, bool]:
+def run_extract(start_date: str = None) -> Tuple[pd.DataFrame, bool]:
     """
     Extrae los datos necesarios desde la base de datos de origen y retorna un DataFrame.
     """
@@ -122,11 +122,13 @@ def run_extract() -> Tuple[pd.DataFrame, bool]:
             s.es_prueba = FALSE
             AND s.fecha_solicitud IS NOT NULL
             AND s.hora_solicitud IS NOT NULL
+            AND s.fecha_solicitud >= :start_date
         ORDER BY s.id;
         """)
 
         with db_session(DBConnection.SOURCE) as session:
-            return pd.read_sql(query, session.connection()), True
+            df = pd.read_sql(query, session.connection(), params={"start_date": start_date})
+            return df, not df.empty
 
     except Exception as e:
         logger.error("Error extrayendo los datos para fact_servicio", exc_info=True)

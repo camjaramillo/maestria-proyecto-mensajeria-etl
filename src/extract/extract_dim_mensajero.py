@@ -3,7 +3,7 @@ import pandas as pd
 from utils.database import db_session, DBConnection
 from utils.logger import logger
 
-def run_extract() -> Tuple[pd.DataFrame, bool]:
+def run_extract(start_date: str = None) -> Tuple[pd.DataFrame, bool]:
     """Extrae datos de mensajeros y sus relaciones"""
     try:
         query = """

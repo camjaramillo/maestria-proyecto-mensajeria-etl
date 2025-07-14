@@ -3,7 +3,7 @@ import pandas as pd
 from utils.logger import logger
 from typing import Tuple
 
-def run_transform(session) -> Tuple[pd.DataFrame, bool]:
+def run_transform(staging_session) -> Tuple[pd.DataFrame, bool]:
     """Transforma datos desde staging"""
     try:
         query = text("""
@@ -12,10 +12,10 @@ def run_transform(session) -> Tuple[pd.DataFrame, bool]:
             tipo_servicio_id,
             UPPER(TRIM(nombre)) AS nombre,
             TRIM(descripcion) AS descripcion       
-        FROM pg_temp.stg_dim_tipo_servicio
+        FROM stg_dim_tipo_servicio
         """)
         
-        df = pd.read_sql(query, session.connection())
+        df = pd.read_sql(query, staging_session.connection())
         logger.info(f"Transformación completada ({len(df)} filas)")
         return df, True
         

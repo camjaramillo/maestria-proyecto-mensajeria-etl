@@ -3,7 +3,7 @@ import pandas as pd
 from utils.logger import logger
 from utils.database import db_session, DBConnection
 
-def run_extract() -> Tuple[pd.DataFrame, bool]:
+def run_extract(start_date: str = None) -> Tuple[pd.DataFrame, bool]:
     """
     Extrae los datos necesarios desde la base de datos de origen y retorna un DataFrame.
     """

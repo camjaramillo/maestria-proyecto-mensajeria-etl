@@ -3,15 +3,15 @@ import pandas as pd
 from sqlalchemy import text
 from utils.logger import logger
 
-def run_load(df: pd.DataFrame, session, truncate: bool = False) -> Tuple[bool, int]:
+def run_load(df: pd.DataFrame, target_session, truncate: bool = False) -> Tuple[bool, int]:
     """Carga datos a la tabla dimensional final"""
     try:
         # Eliminar tabla
-        session.execute(text("DROP TABLE IF EXISTS dim_mensajero CASCADE"))
-        session.commit()
+        target_session.execute(text("DROP TABLE IF EXISTS dim_mensajero CASCADE"))
+        target_session.commit()
 
         # Crear tabla si no existe
-        session.execute(text("""
+        target_session.execute(text("""
         CREATE TABLE IF NOT EXISTS dim_mensajero (
             mensajero_key           INT PRIMARY KEY,
             mensajero_id            INT,
@@ -22,26 +22,25 @@ def run_load(df: pd.DataFrame, session, truncate: bool = False) -> Tuple[bool, i
             ciudad_operacion        VARCHAR(120),
             departamento_operacion  VARCHAR(120),
             activo                  BOOLEAN,
-            created_at              TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
             CONSTRAINT uk_mensajero_id UNIQUE (mensajero_id)
         )
         """))
         
         # Vaciar tabla si es full refresh
         if truncate:
-            session.execute(text("TRUNCATE TABLE dim_mensajero"))
+            target_session.execute(text("TRUNCATE TABLE dim_mensajero"))
         
         # Cargar datos
         df.to_sql(
             'dim_mensajero',
-            session.connection(),
+            target_session.connection(),
             if_exists='append',
             index=False,
             chunksize=1000
         )
         
         # Verificar conteo
-        count = session.execute(text("SELECT COUNT(*) FROM dim_mensajero")).scalar()
+        count = target_session.execute(text("SELECT COUNT(*) FROM dim_mensajero")).scalar()
         logger.info(f"Carga exitosa. Total registros: {count}")
         return True, len(df)
         

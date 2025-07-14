@@ -7,7 +7,7 @@ from typing import Tuple
 import holidays
 from utils.date_translations import MONTHS_EN_ES, DAYS_EN_ES
 
-def run_extract() -> Tuple[pd.DataFrame, bool]:
+def run_extract(start_date: str = None) -> Tuple[pd.DataFrame, bool]:
     """
     Genera un DataFrame de fechas desde el 1 de enero del año de la fecha mínima
     hasta el 31 de diciembre del año de la fecha máxima en la tabla mensajeria_servicio.

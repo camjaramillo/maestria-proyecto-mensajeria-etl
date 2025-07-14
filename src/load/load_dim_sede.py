@@ -4,15 +4,15 @@ from utils.logger import logger
 from typing import Tuple
 
 
-def run_load(df: pd.DataFrame, session, truncate: bool = False) -> Tuple[bool, int]:
+def run_load(df: pd.DataFrame, target_session, truncate: bool = False) -> Tuple[bool, int]:
     """Carga datos a la tabla dimensional final"""
     try:
         # Eliminar tabla
-        session.execute(text("DROP TABLE IF EXISTS dim_sede CASCADE"))
-        session.commit()
+        target_session.execute(text("DROP TABLE IF EXISTS dim_sede CASCADE"))
+        target_session.commit()
 
         # Crear tabla si no existe
-        session.execute(text("""
+        target_session.execute(text("""
         CREATE TABLE IF NOT EXISTS dim_sede (
             sede_key          INTEGER PRIMARY KEY,
             sede_id           INTEGER NOT NULL,
@@ -23,26 +23,25 @@ def run_load(df: pd.DataFrame, session, truncate: bool = False) -> Tuple[bool, i
             cliente_id        INTEGER NOT NULL,                 
             nit_cliente       VARCHAR(50) NOT NULL,
             nombre_cliente    VARCHAR(120) NOT NULL,
-            created_at        TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
             CONSTRAINT uk_sede_id UNIQUE (sede_id)
         )
         """))
         
         # Vaciar tabla si es full refresh
         if truncate:
-            session.execute(text("TRUNCATE TABLE dim_sede"))
+            target_session.execute(text("TRUNCATE TABLE dim_sede"))
         
         # Cargar datos
         df.to_sql(
             'dim_sede',
-            session.connection(),
+            target_session.connection(),
             if_exists='append',
             index=False,
             chunksize=1000
         )
         
         # Verificar conteo
-        count = session.execute(text("SELECT COUNT(*) FROM dim_sede")).scalar()
+        count = target_session.execute(text("SELECT COUNT(*) FROM dim_sede")).scalar()
         logger.info(f"Carga exitosa. Total registros: {count}")
         return True, len(df)
         

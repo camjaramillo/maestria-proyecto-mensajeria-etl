@@ -71,6 +71,12 @@ Para ejecutar el ETL completo, se debe escribir el comando:
 
 python main.py
 
+Pero, si requise requiere  enviar una fecha específica para filtrar las extracciones, se puede ejecutar:
+
+python main.py --start_date <YYYY-MM-DD>
+
+Por ejemplo: python main.py --start_date 2023-01-01
+
 <br>6. Desactivar el Entorno Virtual (opcional)</br>
 
 Si necesitas desactivar el entorno, en la términal debes escribir:
@@ -87,26 +93,16 @@ docker build -t mensajeria-python-image .
 
 Al hacer esto, se creara la imagen mensajeria-python-image en Docker.
 
-
-<br>2. Iniciar la base de datos de Airflow (una sola vez)</br>
-
-docker compose up airflow-init
-
-<br>3. Iniciar todos los contenedores para ejecutar Airflow</br>
+<br>2. Iniciar el contenedor del proyecto</br>
 
 docker-compose up
 
-
-<br>(opc) Iniciar los servicios principales de AirFlow</br>
-
-docker compose up -d airflow-webserver airflow-scheduler
-
-<br>4. Detener todos los contenedores de Airflow</br>
+<br>3. Detener el contenedor</br>
 
 Para detener el despliegue del proyecto, ejecutar:
 
 docker-compose stop
 
-O para eliminar los contenedores
+O para eliminar el contenedor
 
 docker-composer down

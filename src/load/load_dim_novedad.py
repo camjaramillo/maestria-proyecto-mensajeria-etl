@@ -4,39 +4,38 @@ from utils.logger import logger
 from typing import Tuple
 
 
-def run_load(df: pd.DataFrame, session, truncate: bool = False) -> Tuple[bool, int]:
+def run_load(df: pd.DataFrame, target_session, truncate: bool = False) -> Tuple[bool, int]:
     """Carga datos a la tabla dimensional final"""
     try:
         # Eliminar tabla
-        session.execute(text("DROP TABLE IF EXISTS dim_novedad CASCADE"))
-        session.commit()
+        target_session.execute(text("DROP TABLE IF EXISTS dim_novedad CASCADE"))
+        target_session.commit()
 
         # Crear tabla si no existe
-        session.execute(text("""
+        target_session.execute(text("""
         CREATE TABLE IF NOT EXISTS dim_novedad (
             novedad_key     INTEGER PRIMARY KEY,
             novedad_id      INTEGER,
             nombre          VARCHAR(30) NOT NULL,
-            created_at      TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
             CONSTRAINT uk_novedad_id UNIQUE (novedad_id)
         )
         """))
         
         # Vaciar tabla si es full refresh
         if truncate:
-            session.execute(text("TRUNCATE TABLE dim_novedad"))
+            target_session.execute(text("TRUNCATE TABLE dim_novedad"))
         
         # Cargar datos
         df.to_sql(
             'dim_novedad',
-            session.connection(),
+            target_session.connection(),
             if_exists='append',
             index=False,
             chunksize=1000
         )
         
         # Verificar conteo
-        count = session.execute(text("SELECT COUNT(*) FROM dim_novedad")).scalar()
+        count = target_session.execute(text("SELECT COUNT(*) FROM dim_novedad")).scalar()
         logger.info(f"Carga exitosa. Total registros: {count}")
         return True, len(df)
         

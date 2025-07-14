@@ -3,16 +3,16 @@ import pandas as pd
 
 from utils.logger import logger
 
-def run_staging(df: pd.DataFrame, session) -> bool:
+def run_staging(df: pd.DataFrame, staging_session, target_session = None) -> bool:
     """Carga datos a tabla temporal"""
     try:
          # 1. Eliminar tabla temporal si existe (evita problemas con if_exists='replace')
-        session.execute(text("DROP TABLE IF EXISTS pg_temp.stg_dim_sede"))
-        session.commit()
+        staging_session.execute(text("DROP TABLE IF EXISTS stg_dim_sede"))
+        staging_session.commit()
 
         # 2. Crear tabla temporal
-        session.execute(text("""
-        CREATE TEMPORARY TABLE stg_dim_sede (
+        staging_session.execute(text("""
+        CREATE TABLE IF NOT EXISTS stg_dim_sede (
             sede_id INTEGER NOT NULL,
             nombre VARCHAR(120) NOT NULL,
             direccion VARCHAR(250),
@@ -22,14 +22,15 @@ def run_staging(df: pd.DataFrame, session) -> bool:
             departamento VARCHAR(120) NOT NULL,
             cliente_id INTEGER NOT NULL,                 
             nit_cliente VARCHAR(50) NOT NULL,
-            nombre_cliente VARCHAR(120) NOT NULL
-        ) ON COMMIT PRESERVE ROWS;
+            nombre_cliente VARCHAR(120) NOT NULL,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP                  
+        );
         """))
 
         # 3. Cargar datos
         df.to_sql(
             'stg_dim_sede',
-            session.connection(),
+            staging_session.connection(),
             if_exists='append',
             index=False,
             method='multi',

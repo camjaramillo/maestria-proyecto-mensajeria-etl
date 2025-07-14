@@ -2,16 +2,16 @@ from sqlalchemy import text
 import pandas as pd
 from utils.logger import logger
 
-def run_staging(df: pd.DataFrame, session) -> bool:
+def run_staging(df: pd.DataFrame, staging_session, target_session = None) -> bool:
     """Carga datos a tabla temporal"""
     try:
         # Eliminar tabla temporal si existe
-        session.execute(text("DROP TABLE IF EXISTS pg_temp.stg_dim_fecha"))
-        session.commit()
+        staging_session.execute(text("DROP TABLE IF EXISTS stg_dim_fecha"))
+        staging_session.commit()
 
         # Crear tabla temporal
-        session.execute(text("""
-            CREATE TEMPORARY TABLE stg_dim_fecha (
+        staging_session.execute(text("""
+            CREATE TABLE IF NOT EXISTS stg_dim_fecha (
                 fecha DATE NOT NULL,
                 anio INTEGER NOT NULL,
                 mes INTEGER NOT NULL,
@@ -19,14 +19,15 @@ def run_staging(df: pd.DataFrame, session) -> bool:
                 trimestre INTEGER NOT NULL,
                 nombre_mes VARCHAR(20) NOT NULL,
                 dia_semana VARCHAR(20) NOT NULL,
-                es_festivo BOOLEAN NOT NULL
-            ) ON COMMIT PRESERVE ROWS;
+                es_festivo BOOLEAN NOT NULL,
+                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP             
+            );
         """))
 
         # Cargar datos
         df.to_sql(
             'stg_dim_fecha',
-            session.connection(),
+            staging_session.connection(),
             if_exists='append',
             index=False,
             method='multi',

@@ -3,7 +3,7 @@ import pandas as pd
 from utils.logger import logger
 from typing import Tuple
 
-def run_transform(session) -> Tuple[pd.DataFrame, bool]:
+def run_transform(staging_session) -> Tuple[pd.DataFrame, bool]:
     """Transforma datos desde staging y calcula métricas"""
     try:
         query = text("""
@@ -80,7 +80,7 @@ def run_transform(session) -> Tuple[pd.DataFrame, bool]:
                 LEFT JOIN tiempo_dim_hora tdh_recogida ON sfs.hora_recogida = tdh_recogida.hora
                 LEFT JOIN tiempo_dim_hora tdh_entrega ON sfs.hora_entrega = tdh_entrega.hora
         """)
-        df = pd.read_sql(query, session.connection())
+        df = pd.read_sql(query, staging_session.connection())
         logger.info(f"Transformación completada: {len(df)} filas")
         return df, True
     except Exception as e:

@@ -4,13 +4,15 @@ from extract.extract_fact_estado_servicio_transaccional import run_extract
 from staging.staging_fact_estado_servicio_transaccional import run_staging
 from transform.transform_fact_estado_servicio_transaccional import run_transform
 from load.load_fact_estado_servicio_transaccional import run_load
+from utils.database import DBConnection
 
-def run_etl(truncate: bool = True) -> Tuple[bool, int]:
+def run_etl(truncate: bool = True, start_date = None) -> Tuple[bool, int]:
     return run_etl_with_staging(
-        extract_fn=run_extract,
+        extract_fn=lambda: run_extract(start_date=start_date),
         staging_fn=run_staging,
         transform_fn=run_transform,
         load_fn=run_load,
         table_name="fact_estado_servicio_transaccional",
-        truncate=truncate
+        truncate=truncate,
+        transform_connection=DBConnection.TARGET
     )

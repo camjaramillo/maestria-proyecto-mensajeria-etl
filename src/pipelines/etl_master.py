@@ -65,7 +65,7 @@ PIPELINES = {
     }
 }
 
-def execute(pipelines_to_run: List[str] = None) -> Dict[str, bool]:
+def execute(pipelines_to_run: List[str] = None, start_date = None) -> Dict[str, bool]:
     """
     Orquesta la ejecución de múltiples pipelines
     
@@ -95,7 +95,7 @@ def execute(pipelines_to_run: List[str] = None) -> Dict[str, bool]:
                 PIPELINES[name]['module'], 
                 fromlist=['run_etl']
             )
-            success, _ = module.run_etl(truncate=True)
+            success, _ = module.run_etl(truncate=True, start_date=start_date)
             results[name] = success
             logger.info(f"{'SUCCESS' if success else 'ERROR'} {name.upper()}")
             

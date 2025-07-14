@@ -3,7 +3,7 @@ from datetime import time
 from typing import Tuple
 from utils.logger import logger
 
-def run_extract() -> Tuple[pd.DataFrame, bool]:
+def run_extract(start_date: str = None) -> Tuple[pd.DataFrame, bool]:
     try:
         # Generar una lista de tiempos para cada minuto del día
         times = [time(hour=h, minute=m) for h in range(24) for m in range(60)]

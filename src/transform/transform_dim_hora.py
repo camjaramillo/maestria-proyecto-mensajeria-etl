@@ -3,7 +3,7 @@ import pandas as pd
 from utils.logger import logger
 from typing import Tuple
 
-def run_transform(session) -> Tuple[pd.DataFrame, bool]:
+def run_transform(staging_session) -> Tuple[pd.DataFrame, bool]:
     try:
         query = text("""
             SELECT 
@@ -12,10 +12,10 @@ def run_transform(session) -> Tuple[pd.DataFrame, bool]:
                 hora_entera,
                 minuto,
                 franja_horaria
-            FROM pg_temp.stg_dim_hora
+            FROM stg_dim_hora
         """)
         
-        df = pd.read_sql(query, session.connection())
+        df = pd.read_sql(query, staging_session.connection())
         logger.info(f"Transformación de dim_hora completada ({len(df)} filas)")
         return df, True
     except Exception as e:
