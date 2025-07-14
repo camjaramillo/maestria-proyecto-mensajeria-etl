@@ -18,7 +18,8 @@ def main():
     current_date = datetime.today().strftime('%Y-%m-%d')
 
     parser = argparse.ArgumentParser(description="Ejecuta el ETL con parámetros opcionales")
-    parser.add_argument('--start_date', type=str, default=current_date, help='Fecha mínima para filtrar datos (YYYY-MM-DD)')
+    #parser.add_argument('--start_date', type=str, default=current_date, help='Fecha mínima para filtrar datos (YYYY-MM-DD)')
+    parser.add_argument('--start_date', type=str, default='2023-01-01', help='Fecha mínima para filtrar datos (YYYY-MM-DD)')
     args = parser.parse_args()
     
     try:
