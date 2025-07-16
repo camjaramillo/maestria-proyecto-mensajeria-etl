@@ -6,6 +6,8 @@
 ## 🐍 Configuración del Entorno Virtual
 Para garantizar que las dependencias de este proyecto no interfieran con otras instalaciones de Python en tu sistema, es recomendable crear un entorno virtual. Sigue estos pasos según tu sistema operativo:
 
+<br>Este proyecto es compatible con Python 3.13.3</br>
+
 <br>1. Crear el Entorno Virtual</br>
 
 En Windows:
