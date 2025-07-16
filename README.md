@@ -97,6 +97,20 @@ Al hacer esto, se creara la imagen mensajeria-python-image en Docker.
 
 docker-compose up
 
+Opcional:
+
+- Para correr el contenedor con una fecha específica para el ETL (inicializar contenedor previamente):
+
+docker run mensajeria-python-image python main.py --start_date 2024-06-01
+
+- Para correr el contenedor para un ETL específico:
+
+docker run mensajeria-python-image python main.py --etl dim_cliente
+
+- Para correr el contendor para un ETL y fecha específicos:
+
+docker run mensajeria-python-image python main.py --etl dim_cliente --start_date 2024-06-01
+
 <br>3. Detener el contenedor</br>
 
 Para detener el despliegue del proyecto, ejecutar:

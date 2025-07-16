@@ -18,15 +18,21 @@ def main():
     current_date = datetime.today().strftime('%Y-%m-%d')
 
     parser = argparse.ArgumentParser(description="Ejecuta el ETL con parámetros opcionales")
+    parser.add_argument("--etl", help="Nombre del ETL a ejecutar (o 'full')", default="")
     #parser.add_argument('--start_date', type=str, default=current_date, help='Fecha mínima para filtrar datos (YYYY-MM-DD)')
     parser.add_argument('--start_date', type=str, default='2023-01-01', help='Fecha mínima para filtrar datos (YYYY-MM-DD)')
     args = parser.parse_args()
     
     try:
-        logger.info("Iniciando ETL Master")
-        
         # Ejecutar todos los pipelines o seleccionar específicos
-        results = run_etl_master(start_date=args.start_date)  # Para todos los pipelines
+        if args.etl.lower() in ("", "full"):
+            logger.info("Iniciando ETL Master")
+            results = run_etl_master(start_date=args.start_date)
+        else:
+            logger.info(f"Ejecutando ETL específico: {args.etl}")
+            results = run_etl_master(pipelines_to_run=[args.etl], start_date=args.start_date)
+    
+        # results = run_etl_master(start_date=args.start_date)  # Para todos los pipelines
         # results = run_etl_master(['dim_cliente'])  # Solo DimCliente
         
         # Mostrar resumen

@@ -4,6 +4,7 @@ services:
   etl_app:
     image: mensajeria-python-image
     container_name: etl_mensajeria_python
+    command: ["python", "main.py", "--etl", "full", "--start_date", "2023-01-01"]
     environment:
       - PYTHONUNBUFFERED=1
     volumes:
