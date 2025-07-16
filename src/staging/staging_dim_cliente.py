@@ -8,8 +8,8 @@ def run_staging(df: pd.DataFrame, staging_session, target_session = None) -> boo
     try:
          # 1. Eliminar tabla temporal si existe (evita problemas con if_exists='replace')
         #session.execute(text("DROP TABLE IF EXISTS pg_temp.stg_dim_cliente"))
-        staging_session.execute(text("DROP TABLE IF EXISTS stg_dim_cliente"))
-        staging_session.commit()
+        #staging_session.execute(text("DROP TABLE IF EXISTS stg_dim_cliente"))
+        #staging_session.commit()
 
         # 2. Crear tabla temporal
         #CREATE TEMPORARY TABLE stg_dim_cliente (

@@ -6,8 +6,8 @@ from typing import Tuple
 def run_load(df: pd.DataFrame, target_session, truncate: bool = False) -> Tuple[bool, int]:
     try:
         # Eliminar tabla
-        target_session.execute(text("DROP TABLE IF EXISTS dim_hora CASCADE"))
-        target_session.commit()
+        #target_session.execute(text("DROP TABLE IF EXISTS dim_hora CASCADE"))
+        #target_session.commit()
 
         target_session.execute(text("""
         CREATE TABLE IF NOT EXISTS dim_hora (

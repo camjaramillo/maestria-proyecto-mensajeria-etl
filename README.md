@@ -97,9 +97,9 @@ Al hacer esto, se creara la imagen mensajeria-python-image en Docker.
 
 docker-compose up
 
-Opcional:
+Opcional (inicializar contenedor previamente):
 
-- Para correr el contenedor con una fecha específica para el ETL (inicializar contenedor previamente):
+- Para correr el contenedor con una fecha específica para el ETL:
 
 docker run mensajeria-python-image python main.py --start_date 2024-06-01
 

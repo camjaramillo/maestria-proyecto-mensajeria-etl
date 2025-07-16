@@ -6,8 +6,8 @@ def run_staging(df: pd.DataFrame, staging_session, target_session = None) -> boo
     """Carga datos a tabla temporal"""
     try:
         # Eliminar tabla temporal si existe
-        staging_session.execute(text("DROP TABLE IF EXISTS stg_dim_fecha"))
-        staging_session.commit()
+        #staging_session.execute(text("DROP TABLE IF EXISTS stg_dim_fecha"))
+        #staging_session.commit()
 
         # Crear tabla temporal
         staging_session.execute(text("""

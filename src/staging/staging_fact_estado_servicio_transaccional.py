@@ -8,9 +8,10 @@ def run_staging(df: pd.DataFrame, staging_session, target_session=None) -> bool:
         table_name = 'stg_fact_estado_servicio_transaccional'
 
         # 1. Crear tabla permanente en STAGING
-        staging_session.execute(text(f"DROP TABLE IF EXISTS {table_name}"))
+        #staging_session.execute(text(f"DROP TABLE IF EXISTS {table_name}"))
+        
         staging_session.execute(text(f"""
-        CREATE TABLE {table_name} (
+        CREATE TABLE IF NOT EXISTS {table_name} (
             servicio_id INTEGER NOT NULL,
             estado_anterior_id INTEGER,
             estado_nuevo_id INTEGER,

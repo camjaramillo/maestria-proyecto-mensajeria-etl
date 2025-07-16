@@ -7,8 +7,8 @@ def run_load(df: pd.DataFrame, target_session, truncate: bool = False) -> Tuple[
     """Carga datos a la tabla de hechos final"""
     try:
         # Eliminar tabla
-        target_session.execute(text("DROP TABLE IF EXISTS fact_servicio CASCADE"))
-        target_session.commit()
+        #target_session.execute(text("DROP TABLE IF EXISTS fact_servicio CASCADE"))
+        #target_session.commit()
 
         # Crear tabla si no existe
         target_session.execute(text("""
@@ -55,7 +55,7 @@ def run_load(df: pd.DataFrame, target_session, truncate: bool = False) -> Tuple[
         );
         """))
         if truncate:
-            target_session.execute(text("TRUNCATE TABLE fact_servicio"))
+            target_session.execute(text("TRUNCATE TABLE fact_servicio CASCADE"))
         df.to_sql(
             'fact_servicio',
             target_session.connection(),

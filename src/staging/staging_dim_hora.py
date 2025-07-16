@@ -4,8 +4,8 @@ from utils.logger import logger
 
 def run_staging(df: pd.DataFrame, staging_session, target_session = None) -> bool:
     try:
-        staging_session.execute(text("DROP TABLE IF EXISTS stg_dim_hora"))
-        staging_session.commit()
+        #staging_session.execute(text("DROP TABLE IF EXISTS stg_dim_hora"))
+        #staging_session.commit()
         
         staging_session.execute(text("""
             CREATE TABLE IF NOT EXISTS stg_dim_hora (

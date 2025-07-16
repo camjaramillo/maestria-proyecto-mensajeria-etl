@@ -8,8 +8,8 @@ def run_load(df: pd.DataFrame, target_session, truncate: bool = False) -> Tuple[
     """Carga datos a la tabla dimensional final"""
     try:
         # Eliminar tabla
-        target_session.execute(text("DROP TABLE IF EXISTS dim_sede CASCADE"))
-        target_session.commit()
+        #target_session.execute(text("DROP TABLE IF EXISTS dim_sede CASCADE"))
+        #target_session.commit()
 
         # Crear tabla si no existe
         target_session.execute(text("""

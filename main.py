@@ -24,6 +24,8 @@ def main():
     args = parser.parse_args()
     
     try:
+        logger.info(f'***********************************************************************')
+        logger.info(f'***********************************************************************')
         # Ejecutar todos los pipelines o seleccionar específicos
         if args.etl.lower() in ("", "full"):
             logger.info("Iniciando ETL Master")
@@ -31,7 +33,7 @@ def main():
         else:
             logger.info(f"Ejecutando ETL específico: {args.etl}")
             results = run_etl_master(pipelines_to_run=[args.etl], start_date=args.start_date)
-    
+        
         # results = run_etl_master(start_date=args.start_date)  # Para todos los pipelines
         # results = run_etl_master(['dim_cliente'])  # Solo DimCliente
         

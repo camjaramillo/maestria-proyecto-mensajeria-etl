@@ -84,7 +84,7 @@ def execute(pipelines_to_run: List[str] = None, start_date = None) -> Dict[str, 
             if not results.get(dep, False)
         ]
         
-        if missing_deps:
+        if missing_deps and pipelines_to_run is None:
             logger.error(f"⏭Saltando {name}. Dependencias faltantes: {missing_deps}")
             results[name] = False
             continue
